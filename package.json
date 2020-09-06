@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/core": "^1.0.0-rc.3",
+    "@chakra-ui/icons": "^1.0.0-rc.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-lazyload": "^3.0.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
   "scripts": {
@@ -17,7 +22,39 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "parser": "babel-eslint",
+    "extends": [
+      "airbnb",
+      "airbnb/hooks",
+      "plugin:prettier/recommended"
+    ],
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "react/jsx-props-no-spreading": 0,
+      "no-unused-vars": "warn",
+      "react/button-has-type": 0,
+      "react/jsx-wrap-multilines": 0,
+      "react/prop-types": 0,
+      "react/jsx-curly-newline": 0,
+      "react/jsx-indent": 0,
+      "jsx-a11y/label-has-associated-control": 0,
+      "react/jsx-one-expression-per-line": 0,
+      "arrow-body-style": [
+        "warn",
+        "as-needed"
+      ],
+      "quotes": [
+        "warn",
+        "single"
+      ],
+      "func-names": 0
+    }
   },
   "browserslist": {
     "production": [
@@ -30,5 +67,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "prettier": "^2.1.1"
   }
 }

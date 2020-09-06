@@ -14,18 +14,54 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.upgrade-icon {
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 0;
+}
+.inactive-upgrade {
+  background-image: url('./assets/UpgradeInactive.png');
+}
+.active-upgrade {
+  background-image: url('./assets/UpgradeActive.png');
+}
+.type-icon {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  display: inline-block;
+}
+.str-icon {
+  background-image: url('./assets/STR.png');
+}
+.int-icon {
+  background-image: url('./assets/INT.png');
+}
+.dex-icon {
+  background-image: url('./assets/DEX.png');
+}
+.mnt-icon {
+  background-image: url('./assets/MNT.png');
+}
+.sp-icon {
+  background-image: url('./assets/SP.png');
+}
+.gp-icon {
+  background-image: url('./assets/GP.png');
 }
 
 @keyframes App-logo-spin {
