@@ -53,7 +53,7 @@ const Deck = ({
   const createShareLink = () => {
     const baseUrl = `${window.location.protocol}//${window.location.hostname}${
       window.location.port ? `:${window.location.port}` : ''
-    }/deck`;
+    }`;
 
     navigator.clipboard.writeText(
       `${baseUrl}?trainers=${trainersToUrl(selectedTrainers)}`
