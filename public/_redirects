@@ -1,2 +1,2 @@
-/deck trainers=:trainervalue             /index.html?trainers=:trainervalue
-/deck                                    /index.html
+/deck trainers=:trainervalue             /deck?trainers=:trainervalue
+/deck                                    /
