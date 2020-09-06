@@ -20,9 +20,6 @@ function App() {
           <Layout>
             <Switch>
               <Route exact path='/'>
-                <Redirect to='/deck' />
-              </Route>
-              <Route path='/deck/:trainers?'>
                 <DeckBuilder />
               </Route>
             </Switch>
