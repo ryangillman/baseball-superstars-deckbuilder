@@ -16,11 +16,11 @@ const Header = (props) => {
       as='header'
       className='App-header'
       bg={bgColor.header[colorMode]}
-      px={20}
+      px={[3, 3, 5, 5]}
     >
       <Flex mx='auto' align='center' maxW={1200} flex={1}>
         <Flex flexGrow={1} justify='space-between'>
-          <Heading color={color.header[colorMode]}>
+          <Heading color={color.header[colorMode]} size={['md', 'lg']}>
             Baseball Superstars 2020 - Deck Builder
           </Heading>
         </Flex>

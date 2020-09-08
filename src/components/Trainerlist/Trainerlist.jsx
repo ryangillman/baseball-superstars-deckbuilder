@@ -13,12 +13,12 @@ const Trainerlist = ({
       Trainer List
     </Heading>
     <Grid
-      gridTemplateColumns='repeat(9, auto)'
+      gridTemplateColumns='repeat(auto-fit, 120px)'
       justifyContent='space-between'
       gridGap={10}
       gridColumnGap={2}
     >
-      {allTrainers.map((trainer, i) => (
+      {allTrainers.map((trainer) => (
         <Trainer
           updateSelectedTrainers={() => updateSelectedTrainers(trainer.name)}
           selectedTrainers={selectedTrainers}

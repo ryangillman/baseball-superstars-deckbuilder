@@ -3,7 +3,7 @@ import { Text, Box, Tag } from '@chakra-ui/core';
 import allSkills from '../../assets/skills.json';
 
 const SkillsDisplay = ({ skills }) => {
-  if (!skills) return null;
+  if (!Object.keys(skills).length) return null;
   return (
     skills &&
     Object.entries(skills)
@@ -11,7 +11,7 @@ const SkillsDisplay = ({ skills }) => {
       .map(([skillId, skillLevel]) => (
         <Tag p={0} key={skillId}>
           <Box
-            bg='gray.800'
+            bg='gray.600'
             p={2}
             w='40px'
             color='white'

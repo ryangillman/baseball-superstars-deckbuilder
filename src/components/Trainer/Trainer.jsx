@@ -91,7 +91,12 @@ const Trainer = ({
             justifyContent='space-between'
             alignItems='center'
           >
-            <Text color='gray.600' textAlign='left'>
+            <Text
+              color='gray.600'
+              textAlign='left'
+              overflow='hidden'
+              textOverflow='ellipsis'
+            >
               {trainer.name}
             </Text>
             <Box
@@ -101,6 +106,7 @@ const Trainer = ({
               top='2px'
               w='25px'
               h='25px'
+              flex='0 0 25px'
             >
               <TypeIcon type={trainer.type} />
             </Box>
