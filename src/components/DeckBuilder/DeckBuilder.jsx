@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { forceCheck } from 'react-lazyload';
 import Deck from '../Deck';
 import Trainerlist from '../Trainerlist';
 import allTrainersData from '../../allTrainers';
 import { replaceFirstNullWithValue } from '../../util';
+import useFilter from '../../hooks/useFilter';
 
 const DeckBuilder = () => {
   const [allTrainers, setAllTrainers] = useState(allTrainersData);
@@ -15,63 +17,93 @@ const DeckBuilder = () => {
     null,
   ]);
 
+  const { items, filters, setFilters } = useFilter(allTrainers);
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
 
     const trainers = params.get('trainers');
     if (trainers) {
       const trainerArray = trainers.split(',').map((row) => row.split('_'));
-      setSelectedTrainers(
-        trainerArray.map(([name]) => (name === 'null' ? null : name))
-      );
 
       const trainerStars = trainerArray.reduce(
         (acc, [name, stars]) => ({ ...acc, [name]: parseInt(stars, 10) }),
         {}
       );
 
-      setAllTrainers((prev) => {
-        const newTrainers = Object.entries(trainerStars).reduce(
-          (acc, [key, value]) => {
-            if (value) return { ...acc, [key]: { ...prev[key], stars: value } };
-            return acc;
-          },
-          {}
-        );
+      setSelectedTrainers(
+        trainerArray.map(
+          ([name]) => allTrainers.find((row) => row.name === name) || null
+        )
+      );
 
-        return { ...prev, ...newTrainers };
+      setAllTrainers((prev) => {
+        const newTrainers = prev.map((row) => {
+          if (trainerStars[row.name]) {
+            return { ...row, stars: trainerStars[row.name] };
+          }
+          return row;
+        });
+        return newTrainers;
       });
     }
   }, []);
 
-  const updateTrainerStars = (name, stars) => {
-    setAllTrainers((prev) => ({ ...prev, [name]: { ...prev[name], stars } }));
-  };
+  useEffect(() => {
+    forceCheck();
+  }, [items]);
 
-  const updateSelectedTrainers = (trainerName) => {
+  useEffect(() => {
+    setSelectedTrainers((prev) =>
+      prev.map(
+        (trainer) =>
+          allTrainers.find((row) => row.name === trainer?.name) || null
+      )
+    );
+  }, [allTrainers]);
+
+  const updateTrainerStars = useCallback((name, stars) => {
+    setAllTrainers((prev) =>
+      prev.map((row) => {
+        if (row.name === name) return { ...row, stars };
+        return row;
+      })
+    );
+  }, []);
+
+  const updateSelectedTrainers = useCallback((trainer) => {
     setSelectedTrainers((prev) => {
-      if (prev.includes(trainerName)) {
-        return prev.map((row) => (row === trainerName ? null : row));
+      if (prev.some((row) => row?.name === trainer?.name)) {
+        return prev.map((row) => (row?.name === trainer?.name ? null : row));
       }
-      const newArray = replaceFirstNullWithValue(prev, trainerName);
+      const newArray = replaceFirstNullWithValue(prev, trainer);
       return newArray;
     });
-  };
+  }, []);
+
+  const updateFilters = useCallback(
+    (filterType, filterValue) => {
+      setFilters((prev) => ({ ...prev, [filterType]: filterValue }));
+    },
+    [setFilters]
+  );
 
   return (
     <>
       <Deck
         selectedTrainers={selectedTrainers}
-        setSelectedTrainers={setSelectedTrainers}
-        allTrainers={allTrainers}
         updateTrainerStars={updateTrainerStars}
         updateSelectedTrainers={updateSelectedTrainers}
+        filters={filters}
+        setFilters={setFilters}
       />
       <Trainerlist
         selectedTrainers={selectedTrainers}
         updateSelectedTrainers={updateSelectedTrainers}
-        allTrainers={Object.values(allTrainers)}
+        allTrainers={items}
         updateTrainerStars={updateTrainerStars}
+        updateFilters={updateFilters}
+        skillFilter={filters?.skills}
       />
     </>
   );

@@ -12,12 +12,12 @@ const Layout = ({ children }) => {
       <Header />
       <Flex
         flex='1'
-        p={5}
+        p={[3, 3, 5, 5]}
         mb={4}
         bg={bgColor[colorMode]}
         color={color[colorMode]}
       >
-        <Box maxW={1200} mx='auto' flex={1}>
+        <Box maxW={['100%', null, null, 1200]} flex='0 0 100%' mx='auto'>
           {children}
         </Box>
       </Flex>

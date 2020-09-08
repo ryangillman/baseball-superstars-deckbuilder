@@ -1,15 +1,8 @@
 import trainers from './assets/trainers.json';
 
 const cookie = false;
-let allTrainers = {};
-if (!cookie) {
-  allTrainers = trainers.reduce(
-    (acc, row) => ({
-      ...acc,
-      [row.name]: { ...row, stars: 1 },
-    }),
-    {}
-  );
-}
+const allTrainers = !cookie
+  ? trainers.map((row) => ({ ...row, stars: 1 }))
+  : null;
 
 export default allTrainers;
