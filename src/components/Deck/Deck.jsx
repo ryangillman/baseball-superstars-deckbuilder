@@ -6,9 +6,10 @@ import SkillsDisplay from '../SkillsDisplay';
 
 const Deck = ({
   selectedTrainers,
-  allTrainers,
   updateSelectedTrainers,
   updateTrainerStars,
+  filters,
+  setFilters,
 }) => {
   const [showActiveSkills, setShowActiveSkills] = useState(false);
   const toast = useToast();
@@ -17,25 +18,36 @@ const Deck = ({
     setShowActiveSkills((prev) => !prev);
   };
 
+  const updateSkillFilter = useCallback(
+    (skill, action) => {
+      setFilters((prev) => ({
+        ...prev,
+        skills:
+          action === 'remove'
+            ? prev.skills.filter((row) => row !== skill)
+            : [...(prev?.skills || []), skill],
+      }));
+    },
+    [setFilters]
+  );
+
   const trainersToUrl = useCallback(
     (trainers) =>
-      trainers.reduce((acc, name, i, arr) => {
+      trainers.reduce((acc, trainer, i, arr) => {
         const needsComma = i < arr.length - 1;
-
-        if (allTrainers[name])
-          return `${acc}${name}_${allTrainers[name].stars}${
+        if (trainer !== null)
+          return `${acc}${trainer.name}_${trainer.stars}${
             needsComma ? ',' : ''
           }`;
         return `${acc}null${needsComma ? ',' : ''}`;
       }, ''),
-    [allTrainers]
+    []
   );
 
   const skills = useMemo(() => {
     if (!showActiveSkills) return {};
     return selectedTrainers.reduce((acc, trainer) => {
-      const curTrainerSkills =
-        allTrainers?.[trainer]?.skills?.[allTrainers?.[trainer]?.stars];
+      const curTrainerSkills = trainer?.skills[trainer?.stars];
 
       if (!curTrainerSkills) return acc;
       const newSkillLevels = Object.entries(curTrainerSkills).reduce(
@@ -52,7 +64,7 @@ const Deck = ({
 
       return { ...acc, ...newSkillLevels };
     }, {});
-  }, [selectedTrainers, allTrainers, showActiveSkills]);
+  }, [selectedTrainers, showActiveSkills]);
 
   const createShareLink = () => {
     const baseUrl = `${window.location.protocol}//${window.location.hostname}${
@@ -99,21 +111,21 @@ const Deck = ({
         bg='gray.700'
         mx={[-3, 0]}
       >
-        {[0, 1, 2, 3, 4, 5].map((row, i) => {
-          const trainer = allTrainers[selectedTrainers[i]];
-          if (trainer) {
+        {selectedTrainers.map((trainer, i) => {
+          if (trainer !== null) {
             return (
               <Trainer
                 trainer={trainer}
                 key={trainer.name}
-                updateSelectedTrainers={() =>
-                  updateSelectedTrainers(trainer.name)
-                }
+                updateSelectedTrainers={updateSelectedTrainers}
                 updateTrainerStars={updateTrainerStars}
               />
             );
           }
-          return <TrainerSlot key={row} slotNumber={row + 1} />;
+          // can disable because array always has 6 items and the index is stable
+
+          // eslint-disable-next-line react/no-array-index-key
+          return <TrainerSlot key={i} slotNumber={i + 1} />;
         })}
       </Grid>
       <Flex justifyContent='flex-end'>
@@ -138,7 +150,12 @@ const Deck = ({
             gridRowGap={3}
             gridAutoRows='40px'
           >
-            <SkillsDisplay skills={skills} />
+            <SkillsDisplay
+              skills={skills}
+              updateFilter={updateSkillFilter}
+              skillFilter={filters.skills}
+              withFilter
+            />
           </Grid>
         </Box>
       )}
