@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import Select, { components } from 'react-select';
 import { useTheme, Tooltip, Flex } from '@chakra-ui/core';
 
