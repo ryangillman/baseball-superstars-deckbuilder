@@ -3,6 +3,7 @@ import { Grid, Heading, Input, Flex, Box, Checkbox } from '@chakra-ui/core';
 import Trainer from '../Trainer';
 import allSkills from '../../assets/skills.json';
 import MultiSelect from '../MultiSelect/MultiSelect';
+import UpgradeSelector from '../UpgradeSelector';
 
 const types = [
   {
@@ -107,11 +108,22 @@ const Trainerlist = ({
   updateTrainerStars,
   skillFilter,
   shouldHighlightNeededUpgrades,
+  updateAllTrainerStars,
 }) => (
   <>
     <Heading color='gray.300' mb={3}>
       Trainer List
     </Heading>
+    <Flex color='gray.300'>
+      Set all Trainers to:
+      <UpgradeSelector
+        ml={3}
+        flex={1}
+        onChange={updateAllTrainerStars}
+        activeStars={5}
+        gridTemplateColumns='repeat(auto-fill, 25px)'
+      />
+    </Flex>
     <Flex justifyContent='spaceBetween' flexWrap='wrap' mx={-1} mb={10}>
       <Box flex='0 0 100%' maxW='calc(100% - .5rem)' mx={1} my={3}>
         <Input

@@ -72,6 +72,10 @@ const DeckBuilder = () => {
     );
   }, []);
 
+  const updateAllTrainerStars = useCallback((stars) => {
+    setAllTrainers((prev) => prev.map((row) => ({ ...row, stars })));
+  }, []);
+
   const updateSelectedTrainers = useCallback((trainer) => {
     setSelectedTrainers((prev) => {
       if (prev.some((row) => row?.name === trainer?.name)) {
@@ -106,6 +110,7 @@ const DeckBuilder = () => {
         updateTrainerStars={updateTrainerStars}
         updateFilters={updateFilters}
         skillFilter={filters?.skills}
+        updateAllTrainerStars={updateAllTrainerStars}
         shouldHighlightNeededUpgrades={!filters?.skillSearchOnlyCurrentUpgrade}
       />
     </>
