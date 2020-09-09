@@ -106,6 +106,7 @@ const Trainerlist = ({
   updateFilters,
   updateTrainerStars,
   skillFilter,
+  shouldHighlightNeededUpgrades,
 }) => (
   <>
     <Heading color='gray.300' mb={3}>
@@ -157,6 +158,7 @@ const Trainerlist = ({
             skillFilter?.map((row) => ({
               value: row,
               label: allSkills[row],
+              withColor: shouldHighlightNeededUpgrades,
             })) || []
           }
           onChange={(values) =>
@@ -165,16 +167,29 @@ const Trainerlist = ({
         />
       </Box>
       {skillFilter?.length > 0 && (
-        <Box flex='0 0 100%' mx={1} my={3}>
-          <Checkbox
-            color='gray.300'
-            onChange={(e) =>
-              updateFilters('skillSearchTypeAnd', e.target.checked)
-            }
-          >
-            Only show trainers if they have ALL selected skills
-          </Checkbox>
-        </Box>
+        <>
+          <Box flex='0 0 100%' mx={1} my={3}>
+            <Checkbox
+              color='gray.300'
+              onChange={(e) =>
+                updateFilters('skillSearchTypeAnd', e.target.checked)
+              }
+            >
+              Only show trainers if they have ALL selected skills
+            </Checkbox>
+          </Box>
+          <Box flex='0 0 100%' mx={1} my={3}>
+            <Checkbox
+              color='gray.300'
+              onChange={(e) =>
+                updateFilters('skillSearchOnlyCurrentUpgrade', e.target.checked)
+              }
+            >
+              Only show trainers if they have the selected Skill on their
+              current upgrade level
+            </Checkbox>
+          </Box>
+        </>
       )}
     </Flex>
     <Grid
@@ -193,6 +208,8 @@ const Trainerlist = ({
           key={trainer.name}
           updateTrainerStars={updateTrainerStars}
           showOverlay
+          skillFilter={skillFilter}
+          shouldHighlightNeededUpgrades={shouldHighlightNeededUpgrades}
         />
       ))}
     </Grid>

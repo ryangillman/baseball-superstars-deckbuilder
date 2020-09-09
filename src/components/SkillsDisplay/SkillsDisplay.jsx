@@ -1,7 +1,13 @@
 import React from 'react';
 import Skill from '../Skill';
 
-const SkillsDisplay = ({ skills, skillFilter, updateFilter, withFilter }) => {
+const SkillsDisplay = ({
+  skills,
+  skillFilter,
+  updateFilter,
+  withFilter,
+  shouldHighlightNeededUpgrades,
+}) => {
   if (!Object.keys(skills).length) return null;
   return (
     skills &&
@@ -15,6 +21,7 @@ const SkillsDisplay = ({ skills, skillFilter, updateFilter, withFilter }) => {
             skillId,
             skillLevel,
             isActive: skillFilter?.includes(skillId),
+            shouldHighlightNeededUpgrades,
             updateFilter,
           }}
         />

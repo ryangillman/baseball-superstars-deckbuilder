@@ -25,6 +25,7 @@ const Deck = ({
   updateTrainerStars,
   filters,
   setFilters,
+  shouldHighlightNeededUpgrades,
 }) => {
   const [showActiveSkills, setShowActiveSkills] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
@@ -218,6 +219,7 @@ const Deck = ({
               updateFilter={updateSkillFilter}
               skillFilter={filters.skills}
               withFilter
+              shouldHighlightNeededUpgrades={shouldHighlightNeededUpgrades}
             />
           </Grid>
         </Box>

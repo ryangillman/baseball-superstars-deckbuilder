@@ -97,6 +97,7 @@ const DeckBuilder = () => {
         updateSelectedTrainers={updateSelectedTrainers}
         filters={filters}
         setFilters={setFilters}
+        shouldHighlightNeededUpgrades={!filters?.skillSearchOnlyCurrentUpgrade}
       />
       <Trainerlist
         selectedTrainers={selectedTrainers}
@@ -105,6 +106,7 @@ const DeckBuilder = () => {
         updateTrainerStars={updateTrainerStars}
         updateFilters={updateFilters}
         skillFilter={filters?.skills}
+        shouldHighlightNeededUpgrades={!filters?.skillSearchOnlyCurrentUpgrade}
       />
     </>
   );
