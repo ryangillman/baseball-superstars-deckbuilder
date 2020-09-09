@@ -1,5 +1,20 @@
-import React, { useCallback, useMemo, useState } from 'react';
-import { Grid, Button, Heading, Flex, useToast, Box } from '@chakra-ui/core';
+import React, {
+  useCallback,
+  useMemo,
+  useState,
+  useRef,
+  useEffect,
+} from 'react';
+import {
+  Grid,
+  Button,
+  Heading,
+  Flex,
+  useToast,
+  Box,
+  IconButton,
+} from '@chakra-ui/core';
+import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Trainer from '../Trainer';
 import TrainerSlot from '../TrainerSlot';
 import SkillsDisplay from '../SkillsDisplay';
@@ -12,11 +27,33 @@ const Deck = ({
   setFilters,
 }) => {
   const [showActiveSkills, setShowActiveSkills] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
   const toast = useToast();
+  const stickyRef = useRef();
+  const [hideDeck, setHideDeck] = useState(false);
 
   const toggleShowActiveSkills = () => {
     setShowActiveSkills((prev) => !prev);
   };
+
+  const toggleHideDeck = () => {
+    setHideDeck((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const cachedRef = stickyRef.current;
+    const observer = new IntersectionObserver(
+      ([e]) => setIsSticky(e.intersectionRatio < 0.05),
+      { threshold: [0.05] }
+    );
+
+    observer.observe(cachedRef);
+
+    // unmount
+    return function () {
+      observer.unobserve(cachedRef);
+    };
+  }, []);
 
   const updateSkillFilter = useCallback(
     (skill, action) => {
@@ -86,7 +123,10 @@ const Deck = ({
   return (
     <>
       <Flex justifyContent='space-between' alignItems='center' mb={3}>
-        <Heading color='gray.300'> Your Deck</Heading>
+        <Heading color='gray.300' ref={stickyRef}>
+          {' '}
+          Your Deck
+        </Heading>
         {selectedTrainers.some((row) => row !== null) && (
           <Flex justifyContent='flex-end'>
             <Button colorScheme='blue' onClick={createShareLink}>
@@ -95,39 +135,62 @@ const Deck = ({
           </Flex>
         )}
       </Flex>
-
-      <Grid
-        gridColumnGap='2px'
-        gridTemplateColumns='repeat(6, 120px)'
-        justifyContent='space-between'
+      <Box
         position='sticky'
-        gridGap={5}
-        overflowX='auto'
-        zIndex={1000}
-        top={0}
-        pb={6}
-        pt={[0, 0, 3]}
-        mb={3}
-        bg='gray.700'
-        mx={[-3, 0]}
+        overflowY='visible'
+        top={-1}
+        transform={isSticky && hideDeck ? 'translateY(-100%)' : 'translateY(0)'}
+        transition='transform 0.3s ease-in-out'
+        opacity='1'
+        zIndex='100'
       >
-        {selectedTrainers.map((trainer, i) => {
-          if (trainer !== null) {
-            return (
-              <Trainer
-                trainer={trainer}
-                key={trainer.name}
-                updateSelectedTrainers={updateSelectedTrainers}
-                updateTrainerStars={updateTrainerStars}
-              />
-            );
-          }
-          // can disable because array always has 6 items and the index is stable
+        <Grid
+          gridColumnGap='2px'
+          gridTemplateColumns='repeat(6, 120px)'
+          justifyContent='space-between'
+          gridGap={5}
+          overflowX='auto'
+          zIndex={1000}
+          pb={6}
+          pt={[0, 0, 6]}
+          mb={3}
+          bg='gray.700'
+          mx={[-3, 0]}
+        >
+          {selectedTrainers.map((trainer, i) => {
+            if (trainer !== null) {
+              return (
+                <Trainer
+                  trainer={trainer}
+                  key={trainer.name}
+                  updateSelectedTrainers={updateSelectedTrainers}
+                  updateTrainerStars={updateTrainerStars}
+                />
+              );
+            }
+            // can disable because array always has 6 items and the index is stable
 
-          // eslint-disable-next-line react/no-array-index-key
-          return <TrainerSlot key={i} slotNumber={i + 1} />;
-        })}
-      </Grid>
+            // eslint-disable-next-line react/no-array-index-key
+            return <TrainerSlot key={i} slotNumber={i + 1} />;
+          })}
+        </Grid>
+        {isSticky && (
+          <IconButton
+            onClick={() => toggleHideDeck()}
+            position='absolute'
+            right='0'
+            left='0'
+            bottom='0'
+            transform='translateY(75%)'
+            borderRadius='100%'
+            margin='auto'
+            bg='gray.800'
+            color='gray.300'
+            _hover={{ bg: 'gray.700', color: 'gray.200' }}
+            icon={hideDeck ? <ChevronDownIcon /> : <ChevronUpIcon />}
+          />
+        )}
+      </Box>
       <Flex justifyContent='flex-end'>
         {selectedTrainers.some((row) => row !== null) ? (
           <Button

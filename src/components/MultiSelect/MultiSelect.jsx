@@ -51,10 +51,10 @@ const MultiSelect = ({ items, onChange, ...props }) => {
       placeholder: (provided, state) => ({
         ...provided,
         color: '#A0AEC0',
+        whiteSpace: 'nowrap',
       }),
       valueContainer: (provided, state) => ({
         ...provided,
-        maxWidth: 'calc(100% - 90px)',
         flexWrap: 'nowrap',
       }),
       control: (provided, state) => ({

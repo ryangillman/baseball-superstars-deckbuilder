@@ -112,14 +112,14 @@ const Trainerlist = ({
       Trainer List
     </Heading>
     <Flex justifyContent='spaceBetween' flexWrap='wrap' mx={-1} mb={10}>
-      <Box flex='1 1 600px' mx={1} my={3}>
+      <Box flex='0 0 100%' maxW='calc(100% - .5rem)' mx={1} my={3}>
         <Input
           onChange={(e) => updateFilters('name', e.target.value)}
           placeholder='Search by Name'
           color='gray.300'
         />
       </Box>
-      <Box flex='1 1 30%' mx={1} my={3}>
+      <Box flex={['1 1 40%', null, '1 1 30%']} mx={1} my={3}>
         <MultiSelect
           placeholder='Filter by Position'
           items={positions}
@@ -128,16 +128,7 @@ const Trainerlist = ({
           }
         />
       </Box>
-      <Box flex='1 1 30%' mx={1} my={3}>
-        <MultiSelect
-          placeholder='Filter by Type'
-          items={types}
-          onChange={(values) =>
-            updateFilters('type', values?.map((row) => row.value) || [])
-          }
-        />
-      </Box>
-      <Box flex='1 1 30%' mx={1} my={3}>
+      <Box flex={['1 1 40%', null, '1 1 30%']} mx={1} my={3}>
         <MultiSelect
           placeholder='Filter by Rarity'
           items={rarities}
@@ -146,7 +137,16 @@ const Trainerlist = ({
           }
         />
       </Box>
-      <Box flex='0 0 100%' maxW='100%' mx={1} my={3}>
+      <Box flex={['1 1 40%', null, '1 1 30%']} mx={1} my={3}>
+        <MultiSelect
+          placeholder='Filter by Type'
+          items={types}
+          onChange={(values) =>
+            updateFilters('type', values?.map((row) => row.value) || [])
+          }
+        />
+      </Box>
+      <Box flex='0 0 100%' maxW='calc(100% - .5rem)' mx={1} my={3}>
         <MultiSelect
           placeholder='Filter by Skill'
           items={Object.entries(allSkills).map(([key, value]) => ({
