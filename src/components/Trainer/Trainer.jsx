@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Flex,
   Button,
@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/core';
 import { ViewIcon } from '@chakra-ui/icons';
 import Lazyload from 'react-lazyload';
+import { getSkillColor } from '../../util';
 import trainerImages from '../../assets/trainerImages';
 import SelectedTrainerOverlay from '../SelectedTrainerOverlay';
 import TypeIcon from '../TypeIcon';
@@ -31,10 +32,40 @@ const Trainer = React.memo(
     updateTrainerStars,
     showOverlay,
     trainerIndex,
+    shouldHighlightNeededUpgrades,
+    skillFilter,
   }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [modalStars, setModalStars] = useState(1);
     const rarityColor = `rarity.${trainer.rarity}`;
+
+    const skillGrades = useMemo(() => {
+      if (!shouldHighlightNeededUpgrades || !skillFilter) return {};
+      return skillFilter.reduce((acc, row) => {
+        const color = getSkillColor(row);
+        if (Object.keys(trainer.skills[trainer.stars]).includes(row)) {
+          return acc;
+        }
+        if (Object.values(acc).flat().includes(color)) {
+          return acc;
+        }
+        const starsCount = Object.keys(trainer.skills).find((key) =>
+          Object.keys(trainer.skills[key]).includes(row)
+        );
+
+        return {
+          ...acc,
+          [starsCount]: [
+            ...(acc?.[starsCount] || []),
+            {
+              skillId: row,
+              color,
+              level: trainer.skills?.[starsCount]?.[row],
+            },
+          ],
+        };
+      }, []);
+    }, [skillFilter, shouldHighlightNeededUpgrades, trainer]);
 
     return (
       <>
@@ -126,6 +157,7 @@ const Trainer = React.memo(
             onChange={(stars) => updateTrainerStars(trainer.name, stars)}
             activeStars={trainer.stars}
             gridTemplateColumns='repeat(5, 1fr)'
+            skillGrades={skillGrades}
           />
           <Button
             leftIcon={<ViewIcon />}

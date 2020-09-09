@@ -1,11 +1,24 @@
 import { useMemo, useState } from 'react';
 
-const trainerHasSkill = (trainer, searchValues, searchTypeAnd = false) =>
+const trainerHasSkills = (trainer, searchValues, searchTypeAnd = false) =>
   Object.entries(trainer.skills).some(([, skills]) =>
     searchTypeAnd
       ? searchValues.every((row) => Object.keys(skills).includes(row))
       : searchValues.some((row) => Object.keys(skills).includes(row))
   );
+
+const trainerHasSkillsOnCurrentUpgrade = (
+  trainer,
+  searchValues,
+  searchTypeAnd = false
+) =>
+  searchTypeAnd
+    ? searchValues.every((row) =>
+        Object.keys(trainer.skills[trainer.stars]).includes(row)
+      )
+    : searchValues.some((row) =>
+        Object.keys(trainer.skills[trainer.stars]).includes(row)
+      );
 
 const useFilter = (allTrainers) => {
   const [filters, setFilters] = useState({});
@@ -31,9 +44,22 @@ const useFilter = (allTrainers) => {
             case 'skills':
               if (
                 value.length &&
-                !trainerHasSkill(row, value, filters.skillSearchTypeAnd)
-              )
+                !filters.skillSearchOnlyCurrentUpgrade &&
+                !trainerHasSkills(row, value, filters.skillSearchTypeAnd)
+              ) {
                 return false;
+              }
+              if (
+                value.length &&
+                filters.skillSearchOnlyCurrentUpgrade &&
+                !trainerHasSkillsOnCurrentUpgrade(
+                  row,
+                  value,
+                  filters.skillSearchTypeAnd
+                )
+              ) {
+                return false;
+              }
               break;
             default:
               return true;

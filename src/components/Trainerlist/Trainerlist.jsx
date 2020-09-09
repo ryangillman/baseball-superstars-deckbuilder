@@ -3,6 +3,7 @@ import { Grid, Heading, Input, Flex, Box, Checkbox } from '@chakra-ui/core';
 import Trainer from '../Trainer';
 import allSkills from '../../assets/skills.json';
 import MultiSelect from '../MultiSelect/MultiSelect';
+import UpgradeSelector from '../UpgradeSelector';
 
 const types = [
   {
@@ -106,20 +107,32 @@ const Trainerlist = ({
   updateFilters,
   updateTrainerStars,
   skillFilter,
+  shouldHighlightNeededUpgrades,
+  updateAllTrainerStars,
 }) => (
   <>
     <Heading color='gray.300' mb={3}>
       Trainer List
     </Heading>
+    <Flex color='gray.300'>
+      Set all Trainers to:
+      <UpgradeSelector
+        ml={3}
+        flex={1}
+        onChange={updateAllTrainerStars}
+        activeStars={5}
+        gridTemplateColumns='repeat(auto-fill, 25px)'
+      />
+    </Flex>
     <Flex justifyContent='spaceBetween' flexWrap='wrap' mx={-1} mb={10}>
-      <Box flex='1 1 600px' mx={1} my={3}>
+      <Box flex='0 0 100%' maxW='calc(100% - .5rem)' mx={1} my={3}>
         <Input
           onChange={(e) => updateFilters('name', e.target.value)}
           placeholder='Search by Name'
           color='gray.300'
         />
       </Box>
-      <Box flex='1 1 30%' mx={1} my={3}>
+      <Box flex={['1 1 40%', null, '1 1 30%']} mx={1} my={3}>
         <MultiSelect
           placeholder='Filter by Position'
           items={positions}
@@ -128,16 +141,7 @@ const Trainerlist = ({
           }
         />
       </Box>
-      <Box flex='1 1 30%' mx={1} my={3}>
-        <MultiSelect
-          placeholder='Filter by Type'
-          items={types}
-          onChange={(values) =>
-            updateFilters('type', values?.map((row) => row.value) || [])
-          }
-        />
-      </Box>
-      <Box flex='1 1 30%' mx={1} my={3}>
+      <Box flex={['1 1 40%', null, '1 1 30%']} mx={1} my={3}>
         <MultiSelect
           placeholder='Filter by Rarity'
           items={rarities}
@@ -146,7 +150,16 @@ const Trainerlist = ({
           }
         />
       </Box>
-      <Box flex='0 0 100%' maxW='100%' mx={1} my={3}>
+      <Box flex={['1 1 40%', null, '1 1 30%']} mx={1} my={3}>
+        <MultiSelect
+          placeholder='Filter by Type'
+          items={types}
+          onChange={(values) =>
+            updateFilters('type', values?.map((row) => row.value) || [])
+          }
+        />
+      </Box>
+      <Box flex='0 0 100%' maxW='calc(100% - .5rem)' mx={1} my={3}>
         <MultiSelect
           placeholder='Filter by Skill'
           items={Object.entries(allSkills).map(([key, value]) => ({
@@ -157,6 +170,7 @@ const Trainerlist = ({
             skillFilter?.map((row) => ({
               value: row,
               label: allSkills[row],
+              withColor: shouldHighlightNeededUpgrades,
             })) || []
           }
           onChange={(values) =>
@@ -165,16 +179,29 @@ const Trainerlist = ({
         />
       </Box>
       {skillFilter?.length > 0 && (
-        <Box flex='0 0 100%' mx={1} my={3}>
-          <Checkbox
-            color='gray.300'
-            onChange={(e) =>
-              updateFilters('skillSearchTypeAnd', e.target.checked)
-            }
-          >
-            Only show trainers if they have ALL selected skills
-          </Checkbox>
-        </Box>
+        <>
+          <Box flex='0 0 100%' mx={1} my={3}>
+            <Checkbox
+              color='gray.300'
+              onChange={(e) =>
+                updateFilters('skillSearchTypeAnd', e.target.checked)
+              }
+            >
+              Only show trainers if they have ALL selected skills
+            </Checkbox>
+          </Box>
+          <Box flex='0 0 100%' mx={1} my={3}>
+            <Checkbox
+              color='gray.300'
+              onChange={(e) =>
+                updateFilters('skillSearchOnlyCurrentUpgrade', e.target.checked)
+              }
+            >
+              Only show trainers if they have the selected Skill on their
+              current upgrade level
+            </Checkbox>
+          </Box>
+        </>
       )}
     </Flex>
     <Grid
@@ -193,6 +220,8 @@ const Trainerlist = ({
           key={trainer.name}
           updateTrainerStars={updateTrainerStars}
           showOverlay
+          skillFilter={skillFilter}
+          shouldHighlightNeededUpgrades={shouldHighlightNeededUpgrades}
         />
       ))}
     </Grid>

@@ -1,10 +1,19 @@
 import React, { useMemo } from 'react';
 import Select, { components } from 'react-select';
 import { useTheme, Tooltip, Flex } from '@chakra-ui/core';
+import { getSkillColor } from '../../util';
 
 const MultiValueContainer = ({ data, ...props }) => (
   <Tooltip label={data.label}>
-    <Flex flex='0 1 auto' minW={0}>
+    <Flex
+      flex='0 1 auto'
+      minW={0}
+      {...(data.withColor && {
+        border: `2px solid ${getSkillColor(data.value)}`,
+      })}
+      borderRadius='2px'
+      mx='2px'
+    >
       <components.MultiValueContainer {...props} data={data} />
     </Flex>
   </Tooltip>
@@ -51,10 +60,10 @@ const MultiSelect = ({ items, onChange, ...props }) => {
       placeholder: (provided, state) => ({
         ...provided,
         color: '#A0AEC0',
+        whiteSpace: 'nowrap',
       }),
       valueContainer: (provided, state) => ({
         ...provided,
-        maxWidth: 'calc(100% - 90px)',
         flexWrap: 'nowrap',
       }),
       control: (provided, state) => ({
