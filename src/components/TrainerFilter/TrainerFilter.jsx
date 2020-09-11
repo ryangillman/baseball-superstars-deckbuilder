@@ -78,7 +78,7 @@ const TrainerFilter = ({ updateAllTrainerStars, setFilters, skillFilter }) => {
               .sort((a, b) => (a[0] > b[0] ? 1 : -1))
               .map(([key, value]) => ({
                 value: key,
-                label: value,
+                label: value.name,
               }))}
             value={
               skillFilter?.map((row) => ({
