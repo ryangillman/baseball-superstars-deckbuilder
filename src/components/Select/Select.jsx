@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
-import ReactSelect, { components } from 'react-select';
-import { useTheme, Tooltip, Flex } from '@chakra-ui/core';
-import { getSkillColor } from '../../util';
+import ReactSelect from 'react-select';
+import { useTheme } from '@chakra-ui/core';
 
 // const MultiValueContainer = ({ data, ...props }) => (
 //   <Tooltip label={data.label}>

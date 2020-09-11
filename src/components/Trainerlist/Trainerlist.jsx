@@ -35,6 +35,8 @@ const Trainerlist = ({
       );
     }
     return null;
+    // doesn't need selectedTrainers dep since skills is already a dependency of selectedTrainers
+    // eslint-disable-next-line
   }, [skills, allTrainers]);
 
   return (

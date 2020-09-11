@@ -4,7 +4,6 @@ import Trainerlist from '../Trainerlist';
 import allTrainersData from '../../allTrainers';
 import { replaceFirstNullWithValue } from '../../util';
 import useFilter from '../../hooks/useFilter';
-import useTrainerDisplaySettings from '../../hooks/useTrainerDisplaySettings';
 
 const getTrainersFromParams = () => {
   const params = new URLSearchParams(window.location.search);
@@ -18,10 +17,7 @@ const getTrainersFromParams = () => {
   return null;
 };
 
-const getSortBy = (state) => state.sortBy;
-
 const DeckBuilder = () => {
-  const sortBy = useTrainerDisplaySettings((state) => state.sortBy);
   const [allTrainers, setAllTrainers] = useState(allTrainersData);
   const [selectedTrainerIds, setSelectedTrainerIds] = useState([
     null,

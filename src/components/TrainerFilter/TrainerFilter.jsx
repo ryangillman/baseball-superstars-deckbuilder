@@ -14,7 +14,6 @@ const TrainerFilter = ({ updateAllTrainerStars, setFilters, skillFilter }) => {
   const {
     setState: trainerDisplaySettingsSetState,
     searchSkillOnlyInActiveUpgrade: dontHighlightNeededUpgrades,
-    sortBy,
   } = useTrainerDisplaySettings();
   return (
     <>
