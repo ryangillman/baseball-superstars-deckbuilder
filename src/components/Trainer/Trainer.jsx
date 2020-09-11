@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import {
   Flex,
   Button,
@@ -15,15 +15,18 @@ import {
   Heading,
 } from '@chakra-ui/core';
 import { ViewIcon } from '@chakra-ui/icons';
-import Lazyload from 'react-lazyload';
-import { getSkillColor } from '../../util';
 import trainerImages from '../../assets/trainerImages';
 import SelectedTrainerOverlay from '../SelectedTrainerOverlay';
 import TypeIcon from '../TypeIcon';
 import TrainerStatsTable from '../TrainerStatsTable';
 import SkillsDisplay from '../SkillsDisplay';
 import UpgradeSelector from '../UpgradeSelector';
+import { getSkillColor } from '../../util';
+
 import TeamIcon from '../TeamIcon';
+import useTrainerDisplaySettings, {
+  getSearchSkillOnlyInActiveUpgrade,
+} from '../../hooks/useTrainerDisplaySettings';
 
 const Trainer = React.memo(
   ({
@@ -32,40 +35,65 @@ const Trainer = React.memo(
     updateTrainerStars,
     showOverlay,
     trainerIndex,
-    shouldHighlightNeededUpgrades,
     skillFilter,
+    onUpgradeMouseEnter,
+    onUpgradeMouseLeave,
+    trainerValue,
   }) => {
+    const dontHighlightNeededUpgrades = useTrainerDisplaySettings(
+      getSearchSkillOnlyInActiveUpgrade
+    );
+
+    const onUpgradeSelectorChange = useCallback(
+      (stars) => updateTrainerStars(trainer.name, stars),
+      [trainer.name, updateTrainerStars]
+    );
+
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [modalStars, setModalStars] = useState(1);
     const rarityColor = `rarity.${trainer.rarity}`;
 
     const skillGrades = useMemo(() => {
-      if (!shouldHighlightNeededUpgrades || !skillFilter) return {};
+      if (dontHighlightNeededUpgrades || !skillFilter) return {};
       return skillFilter.reduce((acc, row) => {
         const color = getSkillColor(row);
-        if (Object.keys(trainer.skills[trainer.stars]).includes(row)) {
-          return acc;
-        }
-        if (Object.values(acc).flat().includes(color)) {
-          return acc;
-        }
-        const starsCount = Object.keys(trainer.skills).find((key) =>
-          Object.keys(trainer.skills[key]).includes(row)
-        );
 
+        const starsCount = Object.keys(trainer.skills)
+          .filter((key) => Object.keys(trainer.skills[key]).includes(row))
+          .map((key) => ({ key, level: trainer.skills[key][row] }))
+          .filter((star, i, arr) => {
+            const otherKeys = arr
+              .filter(
+                (innerRow) =>
+                  innerRow.level === star.level && innerRow.key !== star.key
+              )
+              .map((innerRow) => parseInt(innerRow.key, 10));
+            if (!otherKeys.length) return true;
+            return (
+              parseInt(star.key, 10) ===
+              Math.min(...[...otherKeys, parseInt(star.key, 10)])
+            );
+          });
+        const newValues = starsCount.reduce(
+          (innerAcc, stars) => ({
+            ...innerAcc,
+            [stars?.key]: [
+              ...(acc?.[stars?.key] || []),
+              {
+                skillId: row,
+                color,
+                level: stars.level,
+              },
+            ],
+          }),
+          {}
+        );
         return {
           ...acc,
-          [starsCount]: [
-            ...(acc?.[starsCount] || []),
-            {
-              skillId: row,
-              color,
-              level: trainer.skills?.[starsCount]?.[row],
-            },
-          ],
+          ...newValues,
         };
-      }, []);
-    }, [skillFilter, shouldHighlightNeededUpgrades, trainer]);
+      }, {});
+    }, [skillFilter, dontHighlightNeededUpgrades, trainer]);
 
     return (
       <>
@@ -86,13 +114,11 @@ const Trainer = React.memo(
             onClick={() => updateSelectedTrainers(trainer)}
           >
             <Box position='relative'>
-              <Lazyload offset={200} once>
-                <img
-                  width='100%'
-                  src={trainerImages[trainer.name]}
-                  alt={trainer.name}
-                />
-              </Lazyload>
+              <img
+                width='100%'
+                src={trainerImages[trainer.name]}
+                alt={trainer.name}
+              />
 
               <Flex
                 position='absolute'
@@ -111,6 +137,22 @@ const Trainer = React.memo(
               show={showOverlay && trainerIndex !== -1}
               text={trainerIndex + 1}
             />
+            {trainerValue && trainerIndex === -1 && (
+              <Flex
+                alignItems='center'
+                justifyContent='center'
+                position='absolute'
+                right={0}
+                left='5px'
+                top='5px'
+                width='30px'
+                height='30px'
+                pointerEvents='none'
+                bg='gray.200'
+              >
+                <Text>{trainerValue}</Text>
+              </Flex>
+            )}
             <Box
               position='absolute'
               right={0}
@@ -154,10 +196,12 @@ const Trainer = React.memo(
             </Flex>
           </Button>
           <UpgradeSelector
-            onChange={(stars) => updateTrainerStars(trainer.name, stars)}
+            onChange={onUpgradeSelectorChange}
             activeStars={trainer.stars}
             gridTemplateColumns='repeat(5, 1fr)'
             skillGrades={skillGrades}
+            onUpgradeMouseEnter={onUpgradeMouseEnter}
+            onUpgradeMouseLeave={onUpgradeMouseLeave}
           />
           <Button
             leftIcon={<ViewIcon />}

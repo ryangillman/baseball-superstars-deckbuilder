@@ -1,10 +1,4 @@
-import React, {
-  useCallback,
-  useMemo,
-  useState,
-  useRef,
-  useEffect,
-} from 'react';
+import React, { useCallback, useState, useRef, useEffect } from 'react';
 import {
   Grid,
   Button,
@@ -18,6 +12,8 @@ import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Trainer from '../Trainer';
 import TrainerSlot from '../TrainerSlot';
 import SkillsDisplay from '../SkillsDisplay';
+import { getSkillLevelsSum } from '../../util';
+import useSkills from '../../hooks/useSkills';
 
 const Deck = ({
   selectedTrainers,
@@ -25,8 +21,15 @@ const Deck = ({
   updateTrainerStars,
   filters,
   setFilters,
-  shouldHighlightNeededUpgrades,
 }) => {
+  const {
+    tempSkills,
+    skills,
+    skillDiff,
+    setTempSkills,
+    setState: setSkillState,
+  } = useSkills();
+
   const [showActiveSkills, setShowActiveSkills] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const toast = useToast();
@@ -40,6 +43,23 @@ const Deck = ({
   const toggleHideDeck = () => {
     setHideDeck((prev) => !prev);
   };
+
+  const getTempSkills = useCallback(
+    (trainer) => (stars) => {
+      if (showActiveSkills) {
+        const trainers = selectedTrainers.map((row) =>
+          row?.name === trainer?.name ? { ...trainer, stars } : row
+        );
+        return getSkillLevelsSum(trainers);
+      }
+      return null;
+    },
+    [selectedTrainers, showActiveSkills]
+  );
+
+  useEffect(() => {
+    setSkillState({ skills: getSkillLevelsSum(selectedTrainers) });
+  }, [selectedTrainers, setSkillState]);
 
   useEffect(() => {
     const cachedRef = stickyRef.current;
@@ -59,7 +79,6 @@ const Deck = ({
   const updateSkillFilter = useCallback(
     (skill, action) => {
       setFilters((prev) => ({
-        ...prev,
         skills:
           action === 'remove'
             ? prev.skills.filter((row) => row !== skill)
@@ -82,28 +101,6 @@ const Deck = ({
     []
   );
 
-  const skills = useMemo(() => {
-    if (!showActiveSkills) return {};
-    return selectedTrainers.reduce((acc, trainer) => {
-      const curTrainerSkills = trainer?.skills[trainer?.stars];
-
-      if (!curTrainerSkills) return acc;
-      const newSkillLevels = Object.entries(curTrainerSkills).reduce(
-        (skillsAcc, [skillName, skillLevel]) => {
-          let currLevel = skillLevel;
-          if (acc[skillName]) currLevel = acc[skillName] + skillLevel;
-          return {
-            ...skillsAcc,
-            [skillName]: Math.min(parseInt(currLevel, 10), 5),
-          };
-        },
-        {}
-      );
-
-      return { ...acc, ...newSkillLevels };
-    }, {});
-  }, [selectedTrainers, showActiveSkills]);
-
   const createShareLink = () => {
     const baseUrl = `${window.location.protocol}//${window.location.hostname}${
       window.location.port ? `:${window.location.port}` : ''
@@ -121,6 +118,7 @@ const Deck = ({
       isClosable: true,
     });
   };
+
   return (
     <>
       <Flex justifyContent='space-between' alignItems='center' mb={3}>
@@ -166,6 +164,10 @@ const Deck = ({
                   key={trainer.name}
                   updateSelectedTrainers={updateSelectedTrainers}
                   updateTrainerStars={updateTrainerStars}
+                  onUpgradeMouseEnter={(stars) =>
+                    setTempSkills(getTempSkills(trainer)(stars))
+                  }
+                  onUpgradeMouseLeave={() => setTempSkills(null)}
                 />
               );
             }
@@ -215,11 +217,11 @@ const Deck = ({
             gridAutoRows='40px'
           >
             <SkillsDisplay
-              skills={skills}
+              skills={tempSkills || skills}
+              skillDiff={skillDiff}
               updateFilter={updateSkillFilter}
               skillFilter={filters.skills}
               withFilter
-              shouldHighlightNeededUpgrades={shouldHighlightNeededUpgrades}
             />
           </Grid>
         </Box>

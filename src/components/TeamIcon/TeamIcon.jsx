@@ -6,6 +6,10 @@ const TeamIcon = ({ team }) => {
       return <div className='team-icon team-pumas' alt={team} title={team} />;
     case 'Shining Angels':
       return <div className='team-icon team-angels' alt={team} title={team} />;
+    case 'River City':
+      return (
+        <div className='team-icon team-rivercity' alt={team} title={team} />
+      );
     default:
       return null;
   }

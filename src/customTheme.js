@@ -7,8 +7,8 @@ const customTheme = {
     rarity: {
       UR: '#FFAB17',
       SSR: '#ff4242',
-      SR: '#8222FC',
-      R: '#0014FF',
+      SR: '#4B1C86',
+      R: '#1927D0',
       N: '#65CF24',
     },
   },

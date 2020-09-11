@@ -1,25 +1,24 @@
 import React, { useMemo } from 'react';
-import Select, { components } from 'react-select';
-import { useTheme, Tooltip, Flex } from '@chakra-ui/core';
-import { getSkillColor } from '../../util';
+import ReactSelect from 'react-select';
+import { useTheme } from '@chakra-ui/core';
 
-const MultiValueContainer = ({ data, ...props }) => (
-  <Tooltip label={data.label}>
-    <Flex
-      flex='0 1 auto'
-      minW={0}
-      {...(data.withColor && {
-        border: `2px solid ${getSkillColor(data.value)}`,
-      })}
-      borderRadius='2px'
-      mx='2px'
-    >
-      <components.MultiValueContainer {...props} data={data} />
-    </Flex>
-  </Tooltip>
-);
+// const MultiValueContainer = ({ data, ...props }) => (
+//   <Tooltip label={data.label}>
+//     <Flex
+//       flex='0 1 auto'
+//       minW={0}
+//       {...(data.withColor && {
+//         border: `2px solid ${getSkillColor(data.value)}`,
+//       })}
+//       borderRadius='2px'
+//       mx='2px'
+//     >
+//       <components.MultiValueContainer {...props} data={data} />
+//     </Flex>
+//   </Tooltip>
+// );
 
-const MultiSelect = ({ items, onChange, ...props }) => {
+const Select = ({ items, onChange, ...props }) => {
   const theme = useTheme();
   const chakraStyles = useMemo(
     () => ({
@@ -41,19 +40,12 @@ const MultiSelect = ({ items, onChange, ...props }) => {
         ...provided,
         padding: 0,
       }),
-      multiValue: (provided, state) => ({
-        ...provided,
-        backgroundColor: theme.colors.whiteAlpha['200'],
-      }),
-      multiValueLabel: (provided, state) => ({
-        ...provided,
-        color: theme.colors.gray['300'],
-      }),
-      multiValueRemove: (provided, state) => ({
-        ...provided,
-        color: theme.colors.gray['300'],
-      }),
+
       input: (provided, state) => ({
+        ...provided,
+        color: theme.colors.gray['300'],
+      }),
+      singleValue: (provided, state) => ({
         ...provided,
         color: theme.colors.gray['300'],
       }),
@@ -99,10 +91,9 @@ const MultiSelect = ({ items, onChange, ...props }) => {
   );
 
   return (
-    <Select
-      isMulti
+    <ReactSelect
       options={items}
-      components={{ MultiValueContainer }}
+      // components={{ MultiValueContainer }}
       onChange={onChange}
       styles={chakraStyles}
       {...props}
@@ -110,4 +101,4 @@ const MultiSelect = ({ items, onChange, ...props }) => {
   );
 };
 
-export default MultiSelect;
+export default Select;
