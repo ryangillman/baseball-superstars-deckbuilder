@@ -3,10 +3,10 @@ import Skill from '../Skill';
 
 const SkillsDisplay = ({
   skills,
+  skillDiff,
   skillFilter,
   updateFilter,
   withFilter,
-  shouldHighlightNeededUpgrades,
 }) => {
   if (!Object.keys(skills).length) return null;
   return (
@@ -17,11 +17,11 @@ const SkillsDisplay = ({
         <Skill
           {...{
             withFilter,
+            skillDiff: skillDiff?.[skillId],
             key: skillId,
             skillId,
             skillLevel,
             isActive: skillFilter?.includes(skillId),
-            shouldHighlightNeededUpgrades,
             updateFilter,
           }}
         />

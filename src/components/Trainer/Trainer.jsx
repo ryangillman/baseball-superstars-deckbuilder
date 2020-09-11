@@ -24,6 +24,9 @@ import TrainerStatsTable from '../TrainerStatsTable';
 import SkillsDisplay from '../SkillsDisplay';
 import UpgradeSelector from '../UpgradeSelector';
 import TeamIcon from '../TeamIcon';
+import useTrainerDisplaySettings, {
+  getSearchSkillOnlyInActiveUpgrade,
+} from '../../hooks/useTrainerDisplaySettings';
 
 const Trainer = React.memo(
   ({
@@ -32,40 +35,58 @@ const Trainer = React.memo(
     updateTrainerStars,
     showOverlay,
     trainerIndex,
-    shouldHighlightNeededUpgrades,
     skillFilter,
+    onUpgradeMouseEnter,
+    onUpgradeMouseLeave,
   }) => {
+    const dontHighlightNeededUpgrades = useTrainerDisplaySettings(
+      getSearchSkillOnlyInActiveUpgrade
+    );
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [modalStars, setModalStars] = useState(1);
     const rarityColor = `rarity.${trainer.rarity}`;
 
     const skillGrades = useMemo(() => {
-      if (!shouldHighlightNeededUpgrades || !skillFilter) return {};
+      if (dontHighlightNeededUpgrades || !skillFilter) return {};
       return skillFilter.reduce((acc, row) => {
         const color = getSkillColor(row);
-        if (Object.keys(trainer.skills[trainer.stars]).includes(row)) {
-          return acc;
-        }
-        if (Object.values(acc).flat().includes(color)) {
-          return acc;
-        }
-        const starsCount = Object.keys(trainer.skills).find((key) =>
-          Object.keys(trainer.skills[key]).includes(row)
-        );
 
+        const starsCount = Object.keys(trainer.skills)
+          .filter((key) => Object.keys(trainer.skills[key]).includes(row))
+          .map((key) => ({ key, level: trainer.skills[key][row] }))
+          .filter((star, i, arr) => {
+            const otherKeys = arr
+              .filter(
+                (innerRow) =>
+                  innerRow.level === star.level && innerRow.key !== star.key
+              )
+              .map((innerRow) => parseInt(innerRow.key, 10));
+            if (!otherKeys.length) return true;
+            return (
+              parseInt(star.key, 10) ===
+              Math.min(...[...otherKeys, parseInt(star.key, 10)])
+            );
+          });
+        const newValues = starsCount.reduce(
+          (innerAcc, stars) => ({
+            ...innerAcc,
+            [stars?.key]: [
+              ...(acc?.[stars?.key] || []),
+              {
+                skillId: row,
+                color,
+                level: stars.level,
+              },
+            ],
+          }),
+          {}
+        );
         return {
           ...acc,
-          [starsCount]: [
-            ...(acc?.[starsCount] || []),
-            {
-              skillId: row,
-              color,
-              level: trainer.skills?.[starsCount]?.[row],
-            },
-          ],
+          ...newValues,
         };
-      }, []);
-    }, [skillFilter, shouldHighlightNeededUpgrades, trainer]);
+      }, {});
+    }, [skillFilter, dontHighlightNeededUpgrades, trainer]);
 
     return (
       <>
@@ -158,6 +179,8 @@ const Trainer = React.memo(
             activeStars={trainer.stars}
             gridTemplateColumns='repeat(5, 1fr)'
             skillGrades={skillGrades}
+            onUpgradeMouseEnter={onUpgradeMouseEnter}
+            onUpgradeMouseLeave={onUpgradeMouseLeave}
           />
           <Button
             leftIcon={<ViewIcon />}

@@ -1,4 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useCallback } from 'react';
+
+import useTrainerDisplaySettings from './useTrainerDisplaySettings';
 
 const trainerHasSkills = (trainer, searchValues, searchTypeAnd = false) =>
   Object.entries(trainer.skills).some(([, skills]) =>
@@ -20,8 +22,26 @@ const trainerHasSkillsOnCurrentUpgrade = (
         Object.keys(trainer.skills[trainer.stars]).includes(row)
       );
 
+const getTrainerDisplaySettings = (state) => [
+  state.skillSearchTypeAnd,
+  state.searchSkillOnlyInActiveUpgrade,
+];
+
 const useFilter = (allTrainers) => {
+  const [
+    skillSearchTypeAnd,
+    searchSkillOnlyInActiveUpgrade,
+  ] = useTrainerDisplaySettings(getTrainerDisplaySettings);
   const [filters, setFilters] = useState({});
+
+  const updateFilters = useCallback((object, replaceAll = false) => {
+    setFilters((prev) => {
+      if (typeof object === 'function') {
+        return replaceAll ? object(prev) : { ...prev, ...object(prev) };
+      }
+      return replaceAll ? object : { ...prev, ...object };
+    });
+  }, []);
 
   const items = useMemo(
     () =>
@@ -41,21 +61,24 @@ const useFilter = (allTrainers) => {
             case 'type':
               if (value.length && !value.includes(row.type)) return false;
               break;
+            case 'bonusteams':
+              if (value.length && !value.includes(row.bonusTeam)) return false;
+              break;
             case 'skills':
               if (
                 value.length &&
-                !filters.skillSearchOnlyCurrentUpgrade &&
-                !trainerHasSkills(row, value, filters.skillSearchTypeAnd)
+                !searchSkillOnlyInActiveUpgrade &&
+                !trainerHasSkills(row, value, skillSearchTypeAnd)
               ) {
                 return false;
               }
               if (
                 value.length &&
-                filters.skillSearchOnlyCurrentUpgrade &&
+                searchSkillOnlyInActiveUpgrade &&
                 !trainerHasSkillsOnCurrentUpgrade(
                   row,
                   value,
-                  filters.skillSearchTypeAnd
+                  skillSearchTypeAnd
                 )
               ) {
                 return false;
@@ -67,9 +90,9 @@ const useFilter = (allTrainers) => {
           return true;
         })
       ),
-    [allTrainers, filters]
+    [allTrainers, filters, searchSkillOnlyInActiveUpgrade, skillSearchTypeAnd]
   );
-  return { items, filters, setFilters };
+  return { items, filters, setFilters: updateFilters };
 };
 
 export default useFilter;

@@ -33,7 +33,7 @@ const TrainerStatsTable = ({ stats }) => (
           key={row.STR}
           justifyContent='center'
           justifySelf='stretch'
-          aligntItems='center'
+          alignItems='center'
         >
           {row.STR}
         </Flex>
@@ -41,39 +41,39 @@ const TrainerStatsTable = ({ stats }) => (
       <Flex
         justifyContent='center'
         justifySelf='stretch'
-        aligntItems='center'
+        alignItems='center'
         bg='gray.800'
       >
         INT
       </Flex>
       {Object.values(stats).map((row) => (
-        <Flex justifyContent='center' aligntItems='center' key={row.INT}>
+        <Flex justifyContent='center' alignItems='center' key={row.INT}>
           {row.INT}
         </Flex>
       ))}
       <Flex
         justifyContent='center'
-        aligntItems='center'
+        alignItems='center'
         bg='gray.800'
         justifySelf='stretch'
       >
         DEX
       </Flex>
       {Object.values(stats).map((row) => (
-        <Flex justifyContent='center' key={row.DEX} aligntItems='center'>
+        <Flex justifyContent='center' key={row.DEX} alignItems='center'>
           {row.DEX}
         </Flex>
       ))}
       <Flex
         justifyContent='center'
-        aligntItems='center'
+        alignItems='center'
         bg='gray.800'
         justifySelf='stretch'
       >
         MNT
       </Flex>
       {Object.values(stats).map((row) => (
-        <Flex justifyContent='center' key={row.MNT} aligntItems='center'>
+        <Flex justifyContent='center' key={row.MNT} alignItems='center'>
           {row.MNT}
         </Flex>
       ))}

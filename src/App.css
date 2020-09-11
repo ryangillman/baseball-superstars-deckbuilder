@@ -83,6 +83,9 @@ body {
 .team-angels {
   background-image: url('./assets/teams/angels.png');
 }
+.team-rivercity {
+  background-image: url('./assets/teams/rivercity.png');
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

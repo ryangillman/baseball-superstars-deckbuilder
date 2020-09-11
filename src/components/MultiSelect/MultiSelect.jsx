@@ -25,7 +25,15 @@ const MultiSelect = ({ items, onChange, ...props }) => {
     () => ({
       option: (provided, state) => ({
         ...provided,
-        backgroundColor: theme.colors.gray['800'],
+        backgroundColor: state.isFocused
+          ? theme.colors.gray['600']
+          : theme.colors.gray['800'],
+        '&:hover': {
+          backgroundColor: theme.colors.gray['600'],
+        },
+        '&:focus': {
+          backgroundColor: theme.colors.gray['600'],
+        },
         color: theme.colors.gray['300'],
         borderTop: `1px solid ${theme.colors.gray['700']}`,
       }),
