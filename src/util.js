@@ -33,14 +33,53 @@ const getSkillLevelDiff = (newSkills, oldSkills) =>
     .filter((row) => newSkills[row] !== oldSkills[row])
     .reduce((acc, key) => {
       if (!oldSkills[key]) {
-        return { ...acc, [key]: newSkills[key] };
+        return { ...acc, [key]: { value: newSkills[key], from: 0 } };
       }
-      return { ...acc, [key]: newSkills[key] - oldSkills[key] };
+      return {
+        ...acc,
+        [key]: { value: newSkills[key] - oldSkills[key], from: oldSkills[key] },
+      };
     }, {});
+
+const getValue = (num, from) => {
+  let val = 0;
+  for (let i = from + 1; i <= num; i += 1) {
+    switch (num) {
+      case 5:
+        val += 15;
+        break;
+      case 4:
+        val += 8;
+        break;
+      default:
+        val += num;
+        break;
+    }
+  }
+  return val;
+};
+
+const getSkillValuesForDeck = (oldSkills, addedSkills) =>
+  Object.keys(addedSkills).reduce((acc, row) => {
+    if (!oldSkills[row]) {
+      return acc + getValue(Math.min(parseInt(addedSkills[row], 10), 5), 0);
+    }
+    return (
+      acc +
+      getValue(
+        Math.min(
+          parseInt(addedSkills[row], 10) + parseInt(oldSkills[row], 10),
+          5
+        ),
+        parseInt(oldSkills[row], 10)
+      )
+    );
+  }, 0);
 
 export {
   replaceFirstNullWithValue,
   getSkillColor,
   getSkillLevelsSum,
   getSkillLevelDiff,
+  getSkillValuesForDeck,
 };

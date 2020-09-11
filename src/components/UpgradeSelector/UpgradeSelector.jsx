@@ -59,4 +59,4 @@ const UpgradeSelector = ({
   </Grid>
 );
 
-export default UpgradeSelector;
+export default React.memo(UpgradeSelector);

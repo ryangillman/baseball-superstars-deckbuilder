@@ -1,10 +1,4 @@
-import React, {
-  useCallback,
-  useMemo,
-  useState,
-  useRef,
-  useEffect,
-} from 'react';
+import React, { useCallback, useState, useRef, useEffect } from 'react';
 import {
   Grid,
   Button,
@@ -18,7 +12,8 @@ import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Trainer from '../Trainer';
 import TrainerSlot from '../TrainerSlot';
 import SkillsDisplay from '../SkillsDisplay';
-import { getSkillLevelsSum, getSkillLevelDiff } from '../../util';
+import { getSkillLevelsSum } from '../../util';
+import useSkills from '../../hooks/useSkills';
 
 const Deck = ({
   selectedTrainers,
@@ -27,7 +22,14 @@ const Deck = ({
   filters,
   setFilters,
 }) => {
-  const [tempSkills, setTempSkills] = useState(null);
+  const {
+    tempSkills,
+    skills,
+    skillDiff,
+    setTempSkills,
+    setState: setSkillState,
+  } = useSkills();
+
   const [showActiveSkills, setShowActiveSkills] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const toast = useToast();
@@ -42,7 +44,7 @@ const Deck = ({
     setHideDeck((prev) => !prev);
   };
 
-  const computeTempSkills = useCallback(
+  const getTempSkills = useCallback(
     (trainer) => (stars) => {
       if (showActiveSkills) {
         const trainers = selectedTrainers.map((row) =>
@@ -54,6 +56,10 @@ const Deck = ({
     },
     [selectedTrainers, showActiveSkills]
   );
+
+  useEffect(() => {
+    setSkillState({ skills: getSkillLevelsSum(selectedTrainers) });
+  }, [selectedTrainers, setSkillState]);
 
   useEffect(() => {
     const cachedRef = stickyRef.current;
@@ -94,18 +100,6 @@ const Deck = ({
       }, ''),
     []
   );
-
-  const skills = useMemo(() => {
-    if (!showActiveSkills) return {};
-    return getSkillLevelsSum(selectedTrainers);
-  }, [selectedTrainers, showActiveSkills]);
-
-  const skillDiff = useMemo(() => {
-    if (!tempSkills) {
-      return null;
-    }
-    return getSkillLevelDiff(tempSkills, skills);
-  }, [tempSkills, skills]);
 
   const createShareLink = () => {
     const baseUrl = `${window.location.protocol}//${window.location.hostname}${
@@ -171,9 +165,9 @@ const Deck = ({
                   updateSelectedTrainers={updateSelectedTrainers}
                   updateTrainerStars={updateTrainerStars}
                   onUpgradeMouseEnter={(stars) =>
-                    setTempSkills(computeTempSkills(trainer)(stars))
+                    setTempSkills(getTempSkills(trainer)(stars))
                   }
-                  onUpgradeMouseLeave={(stars) => setTempSkills(null)}
+                  onUpgradeMouseLeave={() => setTempSkills(null)}
                 />
               );
             }

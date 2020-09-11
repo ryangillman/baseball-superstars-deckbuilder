@@ -1,16 +1,10 @@
-import React, {
-  useState,
-  useEffect,
-  useCallback,
-  useRef,
-  useMemo,
-} from 'react';
-import { forceCheck } from 'react-lazyload';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Deck from '../Deck';
 import Trainerlist from '../Trainerlist';
 import allTrainersData from '../../allTrainers';
 import { replaceFirstNullWithValue } from '../../util';
 import useFilter from '../../hooks/useFilter';
+import useTrainerDisplaySettings from '../../hooks/useTrainerDisplaySettings';
 
 const getTrainersFromParams = () => {
   const params = new URLSearchParams(window.location.search);
@@ -24,7 +18,10 @@ const getTrainersFromParams = () => {
   return null;
 };
 
+const getSortBy = (state) => state.sortBy;
+
 const DeckBuilder = () => {
+  const sortBy = useTrainerDisplaySettings((state) => state.sortBy);
   const [allTrainers, setAllTrainers] = useState(allTrainersData);
   const [selectedTrainerIds, setSelectedTrainerIds] = useState([
     null,
@@ -65,10 +62,6 @@ const DeckBuilder = () => {
       ),
     [allTrainers, selectedTrainerIds]
   );
-
-  useEffect(() => {
-    forceCheck();
-  }, [items]);
 
   const updateTrainerStars = useCallback((name, stars) => {
     setAllTrainers((prev) =>

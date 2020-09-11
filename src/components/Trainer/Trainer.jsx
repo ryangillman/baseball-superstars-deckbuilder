@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import {
   Flex,
   Button,
@@ -15,14 +15,14 @@ import {
   Heading,
 } from '@chakra-ui/core';
 import { ViewIcon } from '@chakra-ui/icons';
-import Lazyload from 'react-lazyload';
-import { getSkillColor } from '../../util';
 import trainerImages from '../../assets/trainerImages';
 import SelectedTrainerOverlay from '../SelectedTrainerOverlay';
 import TypeIcon from '../TypeIcon';
 import TrainerStatsTable from '../TrainerStatsTable';
 import SkillsDisplay from '../SkillsDisplay';
 import UpgradeSelector from '../UpgradeSelector';
+import { getSkillColor } from '../../util';
+
 import TeamIcon from '../TeamIcon';
 import useTrainerDisplaySettings, {
   getSearchSkillOnlyInActiveUpgrade,
@@ -38,10 +38,17 @@ const Trainer = React.memo(
     skillFilter,
     onUpgradeMouseEnter,
     onUpgradeMouseLeave,
+    trainerValue,
   }) => {
     const dontHighlightNeededUpgrades = useTrainerDisplaySettings(
       getSearchSkillOnlyInActiveUpgrade
     );
+
+    const onUpgradeSelectorChange = useCallback(
+      (stars) => updateTrainerStars(trainer.name, stars),
+      [trainer.name, updateTrainerStars]
+    );
+
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [modalStars, setModalStars] = useState(1);
     const rarityColor = `rarity.${trainer.rarity}`;
@@ -107,13 +114,11 @@ const Trainer = React.memo(
             onClick={() => updateSelectedTrainers(trainer)}
           >
             <Box position='relative'>
-              <Lazyload offset={200} once>
-                <img
-                  width='100%'
-                  src={trainerImages[trainer.name]}
-                  alt={trainer.name}
-                />
-              </Lazyload>
+              <img
+                width='100%'
+                src={trainerImages[trainer.name]}
+                alt={trainer.name}
+              />
 
               <Flex
                 position='absolute'
@@ -132,6 +137,22 @@ const Trainer = React.memo(
               show={showOverlay && trainerIndex !== -1}
               text={trainerIndex + 1}
             />
+            {trainerValue && trainerIndex === -1 && (
+              <Flex
+                alignItems='center'
+                justifyContent='center'
+                position='absolute'
+                right={0}
+                left='5px'
+                top='5px'
+                width='30px'
+                height='30px'
+                pointerEvents='none'
+                bg='gray.200'
+              >
+                <Text>{trainerValue}</Text>
+              </Flex>
+            )}
             <Box
               position='absolute'
               right={0}
@@ -175,7 +196,7 @@ const Trainer = React.memo(
             </Flex>
           </Button>
           <UpgradeSelector
-            onChange={(stars) => updateTrainerStars(trainer.name, stars)}
+            onChange={onUpgradeSelectorChange}
             activeStars={trainer.stars}
             gridTemplateColumns='repeat(5, 1fr)'
             skillGrades={skillGrades}

@@ -8,11 +8,13 @@ import positions from '../../assets/positions';
 import types from '../../assets/types';
 import bonusteams from '../../assets/bonusteams';
 import useTrainerDisplaySettings from '../../hooks/useTrainerDisplaySettings';
+import Select from '../Select';
 
 const TrainerFilter = ({ updateAllTrainerStars, setFilters, skillFilter }) => {
   const {
     setState: trainerDisplaySettingsSetState,
     searchSkillOnlyInActiveUpgrade: dontHighlightNeededUpgrades,
+    sortBy,
   } = useTrainerDisplaySettings();
   return (
     <>
@@ -82,12 +84,30 @@ const TrainerFilter = ({ updateAllTrainerStars, setFilters, skillFilter }) => {
             value={
               skillFilter?.map((row) => ({
                 value: row,
-                label: allSkills[row],
+                label: allSkills[row].name,
                 withColor: !dontHighlightNeededUpgrades,
               })) || []
             }
             onChange={(values) =>
               setFilters({ skills: values?.map((row) => row.value) || [] })
+            }
+          />
+        </Box>
+        <Box flex='0 0 100%' maxW='calc(100% - .5rem)' mx={1} my={3}>
+          <Select
+            placeholder='Sort By'
+            items={[
+              { value: 'rarity', label: 'Rarity' },
+              {
+                value: 'skillvalue',
+                label: 'Trainervalue by Skill compatibility',
+              },
+            ]}
+            onChange={(value) =>
+              trainerDisplaySettingsSetState('sortBy', {
+                type: value.value,
+                order: 'desc',
+              })
             }
           />
         </Box>

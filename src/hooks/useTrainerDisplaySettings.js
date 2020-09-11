@@ -5,7 +5,7 @@ const useTrainerDisplaySettings = create((set) => ({
   searchSkillOnlyInActiveUpgrade: false,
   toggle: (key) => set((state) => ({ [key]: !state.key })),
   setState: (key, value) => set(() => ({ [key]: value })),
-  sortBy: { type: ['rarity', 'alphabet'], order: 'asc' },
+  sortBy: { type: 'rarity', order: 'asc' },
 }));
 
 export default useTrainerDisplaySettings;
