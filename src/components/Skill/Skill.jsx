@@ -33,6 +33,7 @@ const Skill = ({
       key={skillId}
       border={isActive ? '3px solid' : ''}
       borderColor={borderColor}
+      opacity={skillLevel === 0 ? 0.4 : 1}
     >
       <Box
         bg={skillLevel === 5 ? 'gray.200' : 'gray.600'}
