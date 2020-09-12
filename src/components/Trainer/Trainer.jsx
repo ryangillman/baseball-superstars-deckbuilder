@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useMemo, useCallback } from 'react';
 import { Flex, Button, Text, Box, useDisclosure } from '@chakra-ui/core';
 import { ViewIcon } from '@chakra-ui/icons';
 import trainerImages from '../../assets/trainerImages';
