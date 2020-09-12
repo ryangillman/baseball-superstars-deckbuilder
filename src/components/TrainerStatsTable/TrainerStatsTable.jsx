@@ -4,7 +4,7 @@ import { Grid, Box, Flex } from '@chakra-ui/core';
 const TrainerStatsTable = ({ stats }) => (
   <Grid
     gridTemplateColumns='repeat(6, 1fr)'
-    gridTemplateRows='repeat(4, 30px)'
+    gridTemplateRows='repeat(5, 30px)'
     gridGap={1}
     rowGap={1}
     alignItems='center'
@@ -23,59 +23,30 @@ const TrainerStatsTable = ({ stats }) => (
           {row}*
         </Flex>
       ))}
-    </>
-    <>
-      <Flex justifyContent='center' justifySelf='stretch' bg='gray.800'>
-        STR
-      </Flex>
-      {Object.values(stats).map((row) => (
+      {Object.keys(stats['1']).map((key, i) => (
         <Flex
-          key={row.STR}
+          key={key}
+          gridRow={i + 2}
           justifyContent='center'
           justifySelf='stretch'
-          alignItems='center'
+          bg='gray.800'
         >
-          {row.STR}
+          {key.toUpperCase()}
         </Flex>
       ))}
-      <Flex
-        justifyContent='center'
-        justifySelf='stretch'
-        alignItems='center'
-        bg='gray.800'
-      >
-        INT
-      </Flex>
-      {Object.values(stats).map((row) => (
-        <Flex justifyContent='center' alignItems='center' key={row.INT}>
-          {row.INT}
-        </Flex>
-      ))}
-      <Flex
-        justifyContent='center'
-        alignItems='center'
-        bg='gray.800'
-        justifySelf='stretch'
-      >
-        DEX
-      </Flex>
-      {Object.values(stats).map((row) => (
-        <Flex justifyContent='center' key={row.DEX} alignItems='center'>
-          {row.DEX}
-        </Flex>
-      ))}
-      <Flex
-        justifyContent='center'
-        alignItems='center'
-        bg='gray.800'
-        justifySelf='stretch'
-      >
-        MNT
-      </Flex>
-      {Object.values(stats).map((row) => (
-        <Flex justifyContent='center' key={row.MNT} alignItems='center'>
-          {row.MNT}
-        </Flex>
+      {Object.entries(stats).map(([key, value]) => (
+        <React.Fragment key={key}>
+          {Object.entries(value).map(([statKey, stat], i) => (
+            <Flex
+              key={`${statKey}`}
+              gridRow={i + 2}
+              justifyContent='center'
+              justifySelf='stretch'
+            >
+              {stat}
+            </Flex>
+          ))}
+        </React.Fragment>
       ))}
     </>
   </Grid>

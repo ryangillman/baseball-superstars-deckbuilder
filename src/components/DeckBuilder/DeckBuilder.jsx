@@ -77,8 +77,7 @@ const DeckBuilder = () => {
       if (prev.includes(trainer?.name)) {
         return prev.map((row) => (row === trainer?.name ? null : row));
       }
-      const newArray = replaceFirstNullWithValue(prev, trainer?.name);
-      return newArray;
+      return replaceFirstNullWithValue(prev, trainer?.name);
     });
   }, []);
 

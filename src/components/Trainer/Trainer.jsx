@@ -1,25 +1,10 @@
-import React, { useState, useMemo, useCallback } from 'react';
-import {
-  Flex,
-  Button,
-  Text,
-  Box,
-  Grid,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-  Image,
-  Heading,
-} from '@chakra-ui/core';
+import React, { useMemo, useCallback } from 'react';
+import { Flex, Button, Text, Box, useDisclosure } from '@chakra-ui/core';
 import { ViewIcon } from '@chakra-ui/icons';
 import trainerImages from '../../assets/trainerImages';
 import SelectedTrainerOverlay from '../SelectedTrainerOverlay';
 import TypeIcon from '../TypeIcon';
-import TrainerStatsTable from '../TrainerStatsTable';
-import SkillsDisplay from '../SkillsDisplay';
+import TrainerDetailsModal from '../TrainerDetailsModal';
 import UpgradeSelector from '../UpgradeSelector';
 import { getSkillColor } from '../../util';
 
@@ -33,7 +18,7 @@ const Trainer = React.memo(
     trainer,
     updateSelectedTrainers,
     updateTrainerStars,
-    showOverlay,
+    showOverlay = false,
     trainerIndex,
     skillFilter,
     onUpgradeMouseEnter,
@@ -50,7 +35,6 @@ const Trainer = React.memo(
     );
 
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const [modalStars, setModalStars] = useState(1);
     const rarityColor = `rarity.${trainer.rarity}`;
 
     const skillGrades = useMemo(() => {
@@ -213,77 +197,7 @@ const Trainer = React.memo(
             Details
           </Button>
         </Flex>
-        {isOpen && (
-          <Modal isOpen={isOpen} onClose={onClose}>
-            <ModalOverlay zIndex={9999}>
-              <ModalContent zIndex={10000} w='480px'>
-                <ModalCloseButton color='gray.300' />
-                <ModalBody color='gray.300'>
-                  <Flex justifyContent='center' flexWrap='wrap' mt={10}>
-                    <Image
-                      src={trainerImages[trainer.name]}
-                      width='120px'
-                      flex='0 0 120px'
-                    />
-                    <Heading flex='0 0 100%' textAlign='center'>
-                      {trainer.name}
-                    </Heading>
-                  </Flex>
-                  <Flex justifyContent='space-around' mb={6}>
-                    <Flex flexDirection='column' alignItems='center' flex={1}>
-                      <Text textAlign='center'>Type</Text>
-                      <Box width='45px' height='45px' ml='10px'>
-                        <TypeIcon type={trainer.type} />
-                      </Box>
-                    </Flex>
-                    <Box textAlign='center' flex={1}>
-                      <Text>Rarity</Text>
-                      <Text color={rarityColor} fontSize={24}>
-                        {trainer.rarity}
-                      </Text>
-                    </Box>
-                    <Box textAlign='center' flex={1}>
-                      <Text>Position</Text>
-                      <Text fontSize={24}>{trainer.position}</Text>
-                    </Box>
-                    {trainer.bonusTeam && (
-                      <Flex alignItems='center' flex={1} flexDirection='column'>
-                        <Text>Bonus Team</Text>
-                        <Box w='50px' h='50px'>
-                          <TeamIcon team={trainer.bonusTeam} />
-                        </Box>
-                      </Flex>
-                    )}
-                  </Flex>
-                  <Heading size='lg' textAlign='center' mb={3}>
-                    Stats
-                  </Heading>
-                  <TrainerStatsTable stats={trainer.stats} />
-                  <Box mt={10}>
-                    <Heading size='lg' textAlign='center'>
-                      Skills
-                    </Heading>
-                    <UpgradeSelector
-                      onChange={setModalStars}
-                      activeStars={modalStars}
-                      gridTemplateColumns='repeat(5, 30px)'
-                      justifyContent='center'
-                    />
-                    <Grid
-                      gridTemplateColumns='repeat(2, 1fr)'
-                      gridColumnGap={3}
-                      gridRowGap={3}
-                      gridAutoRows='40px'
-                      mt={2}
-                    >
-                      <SkillsDisplay skills={trainer.skills[modalStars]} />
-                    </Grid>
-                  </Box>
-                </ModalBody>
-              </ModalContent>
-            </ModalOverlay>
-          </Modal>
-        )}
+        <TrainerDetailsModal {...{ isOpen, onClose, trainer }} />
       </>
     );
   }

@@ -28,8 +28,8 @@ const getSkillLevelsSum = (trainers) =>
     return { ...acc, ...newSkillLevels };
   }, {});
 
-const getSkillLevelDiff = (newSkills, oldSkills) =>
-  Object.keys(newSkills)
+const getSkillLevelDiff = (newSkills, oldSkills) => {
+  const changedSkills = Object.keys(newSkills)
     .filter((row) => newSkills[row] !== oldSkills[row])
     .reduce((acc, key) => {
       if (!oldSkills[key]) {
@@ -40,6 +40,19 @@ const getSkillLevelDiff = (newSkills, oldSkills) =>
         [key]: { value: newSkills[key] - oldSkills[key], from: oldSkills[key] },
       };
     }, {});
+
+  const missingSkills = Object.keys(oldSkills)
+    .filter((row) => newSkills?.[row] === undefined)
+    .reduce(
+      (acc, key) => ({
+        ...acc,
+        [key]: { value: -oldSkills[key], from: oldSkills[key] },
+      }),
+      {}
+    );
+
+  return { ...changedSkills, ...missingSkills };
+};
 
 const getValue = (num, from) => {
   let val = 0;
@@ -76,7 +89,16 @@ const getSkillValuesForDeck = (oldSkills, addedSkills) =>
     );
   }, 0);
 
+const trainersToUrl = (trainers) =>
+  trainers.reduce((acc, trainer, i, arr) => {
+    const needsComma = i < arr.length - 1;
+    if (trainer !== null)
+      return `${acc}${trainer.name}_${trainer.stars}${needsComma ? ',' : ''}`;
+    return `${acc}null${needsComma ? ',' : ''}`;
+  }, '');
+
 export {
+  trainersToUrl,
   replaceFirstNullWithValue,
   getSkillColor,
   getSkillLevelsSum,

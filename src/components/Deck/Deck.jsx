@@ -12,7 +12,11 @@ import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Trainer from '../Trainer';
 import TrainerSlot from '../TrainerSlot';
 import SkillsDisplay from '../SkillsDisplay';
-import { getSkillLevelsSum } from '../../util';
+import {
+  getSkillLevelsSum,
+  getSkillLevelDiff,
+  trainersToUrl,
+} from '../../util';
 import useSkills from '../../hooks/useSkills';
 
 const Deck = ({
@@ -22,19 +26,14 @@ const Deck = ({
   filters,
   setFilters,
 }) => {
-  const {
-    tempSkills,
-    skills,
-    skillDiff,
-    setTempSkills,
-    setState: setSkillState,
-  } = useSkills();
-
   const [showActiveSkills, setShowActiveSkills] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [hideDeck, setHideDeck] = useState(false);
+  const [tempSkills, setTempSkills] = useState(false);
+
+  const { skills, setState: setSkillState } = useSkills();
   const toast = useToast();
   const stickyRef = useRef();
-  const [hideDeck, setHideDeck] = useState(false);
 
   const toggleShowActiveSkills = () => {
     setShowActiveSkills((prev) => !prev);
@@ -43,6 +42,8 @@ const Deck = ({
   const toggleHideDeck = () => {
     setHideDeck((prev) => !prev);
   };
+
+  const skillDiff = tempSkills ? getSkillLevelDiff(tempSkills, skills) : null;
 
   const getTempSkills = useCallback(
     (trainer) => (stars) => {
@@ -62,6 +63,7 @@ const Deck = ({
   }, [selectedTrainers, setSkillState]);
 
   useEffect(() => {
+    // Inform component of being sticky or not since there is no real event handler for this
     const cachedRef = stickyRef.current;
     const observer = new IntersectionObserver(
       ([e]) => setIsSticky(e.intersectionRatio < 0.05),
@@ -86,19 +88,6 @@ const Deck = ({
       }));
     },
     [setFilters]
-  );
-
-  const trainersToUrl = useCallback(
-    (trainers) =>
-      trainers.reduce((acc, trainer, i, arr) => {
-        const needsComma = i < arr.length - 1;
-        if (trainer !== null)
-          return `${acc}${trainer.name}_${trainer.stars}${
-            needsComma ? ',' : ''
-          }`;
-        return `${acc}null${needsComma ? ',' : ''}`;
-      }, ''),
-    []
   );
 
   const createShareLink = () => {
