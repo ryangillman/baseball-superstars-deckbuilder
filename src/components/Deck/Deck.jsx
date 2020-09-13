@@ -8,6 +8,7 @@ import {
   Box,
   IconButton,
 } from '@chakra-ui/core';
+import { useHistory } from 'react-router-dom';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Trainer from '../Trainer';
 import TrainerSlot from '../TrainerSlot';
@@ -15,7 +16,7 @@ import SkillsDisplay from '../SkillsDisplay';
 import {
   getSkillLevelsSum,
   getSkillLevelDiff,
-  trainersToUrl,
+  createDeckUrl,
 } from '../../util';
 import useSkills from '../../hooks/useSkills';
 
@@ -26,6 +27,7 @@ const Deck = ({
   filters,
   setFilters,
 }) => {
+  const history = useHistory();
   const [showActiveSkills, setShowActiveSkills] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [hideDeck, setHideDeck] = useState(false);
@@ -60,7 +62,11 @@ const Deck = ({
 
   useEffect(() => {
     setSkillState({ skills: getSkillLevelsSum(selectedTrainers) });
-  }, [selectedTrainers, setSkillState]);
+    history.push(createDeckUrl(selectedTrainers));
+
+    // setSkillState is stable
+    // eslint-disable-next-line
+  }, [selectedTrainers]);
 
   useEffect(() => {
     // Inform component of being sticky or not since there is no real event handler for this
@@ -90,14 +96,8 @@ const Deck = ({
     [setFilters]
   );
 
-  const createShareLink = () => {
-    const baseUrl = `${window.location.protocol}//${window.location.hostname}${
-      window.location.port ? `:${window.location.port}` : ''
-    }`;
-
-    navigator.clipboard.writeText(
-      `${baseUrl}?trainers=${trainersToUrl(selectedTrainers)}`
-    );
+  const copyDeckUrlToClipboard = useCallback(() => {
+    navigator.clipboard.writeText(createDeckUrl(selectedTrainers, true));
 
     toast({
       title: 'Success.',
@@ -106,7 +106,7 @@ const Deck = ({
       duration: 9000,
       isClosable: true,
     });
-  };
+  }, [selectedTrainers, toast]);
 
   return (
     <>
@@ -117,7 +117,7 @@ const Deck = ({
         </Heading>
         {selectedTrainers.some((row) => row !== null) && (
           <Flex justifyContent='flex-end'>
-            <Button colorScheme='blue' onClick={createShareLink}>
+            <Button colorScheme='blue' onClick={copyDeckUrlToClipboard}>
               Share Deck
             </Button>
           </Flex>
