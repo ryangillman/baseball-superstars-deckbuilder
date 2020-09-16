@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Flex, Input, Checkbox } from '@chakra-ui/core';
-import allSkills from '../../assets/skills.json';
+import useSkills from '../../hooks/useSkills';
 import MultiSelect from '../MultiSelect/MultiSelect';
 import UpgradeSelector from '../UpgradeSelector';
 import rarities from '../../assets/rarities';
@@ -10,23 +10,15 @@ import bonusteams from '../../assets/bonusteams';
 import useTrainerDisplaySettings from '../../hooks/useTrainerDisplaySettings';
 import Select from '../Select';
 
-const TrainerFilter = ({ updateAllTrainerStars, setFilters, skillFilter }) => {
+const TrainerFilter = ({ setFilters, skillFilter }) => {
   const {
     setState: trainerDisplaySettingsSetState,
     searchSkillOnlyInActiveUpgrade: dontHighlightNeededUpgrades,
   } = useTrainerDisplaySettings();
+  const { data: allSkills } = useSkills();
+
   return (
     <>
-      <Flex color='gray.300'>
-        Set all Trainers to:
-        <UpgradeSelector
-          ml={3}
-          flex={1}
-          onChange={updateAllTrainerStars}
-          activeStars={5}
-          gridTemplateColumns='repeat(auto-fill, 25px)'
-        />
-      </Flex>
       <Flex justifyContent='spaceBetween' flexWrap='wrap' mx={-1} mb={10}>
         <Box flex='0 0 100%' maxW='calc(100% - .5rem)' mx={1} my={3}>
           <Input
@@ -74,7 +66,7 @@ const TrainerFilter = ({ updateAllTrainerStars, setFilters, skillFilter }) => {
         <Box flex='0 0 100%' maxW='calc(100% - .5rem)' mx={1} my={3}>
           <MultiSelect
             placeholder='Filter by Skill'
-            items={Object.entries(allSkills)
+            items={Object.entries(allSkills || {})
               .sort((a, b) => (a[0] > b[0] ? 1 : -1))
               .map(([key, value]) => ({
                 value: key,
@@ -83,7 +75,7 @@ const TrainerFilter = ({ updateAllTrainerStars, setFilters, skillFilter }) => {
             value={
               skillFilter?.map((row) => ({
                 value: row,
-                label: allSkills[row].name,
+                label: allSkills?.[row]?.name,
                 withColor: !dontHighlightNeededUpgrades,
               })) || []
             }

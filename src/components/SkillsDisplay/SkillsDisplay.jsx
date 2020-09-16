@@ -1,17 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Skill from '../Skill';
-import allSkills from '../../assets/skills.json';
+import useSkills from '../../hooks/useSkills';
 
 const rarityIndex = ['UR', 'SSR', 'SR', 'R', 'N'];
-
-const sortByGradeAndLevel = (a, b) => {
-  const indexA = rarityIndex.indexOf(allSkills[a[0]]?.skillGrade);
-  const indexB = rarityIndex.indexOf(allSkills[b[0]]?.skillGrade);
-  if (indexA === indexB) {
-    return a[1] > b[1] ? -1 : 1;
-  }
-  return indexA < indexB ? -1 : 1;
-};
 
 const SkillsDisplay = ({
   skills,
@@ -20,6 +11,20 @@ const SkillsDisplay = ({
   updateFilter,
   withFilter,
 }) => {
+  const { data: allSkills } = useSkills();
+
+  const sortByGradeAndLevel = useCallback(
+    (a, b) => {
+      const indexA = rarityIndex.indexOf(allSkills[a[0]]?.skillGrade);
+      const indexB = rarityIndex.indexOf(allSkills[b[0]]?.skillGrade);
+      if (indexA === indexB) {
+        return a[1] > b[1] ? -1 : 1;
+      }
+      return indexA < indexB ? -1 : 1;
+    },
+    [allSkills]
+  );
+
   if (!Object.keys(skills).length) return null;
 
   // To show which skills disappeared due to possible downgrade of hero
@@ -36,6 +41,8 @@ const SkillsDisplay = ({
           .map(([skillId, skillLevel]) => (
             <Skill
               {...{
+                skillName: allSkills?.[skillId]?.name,
+                skillGrade: allSkills?.[skillId]?.skillGrade,
                 withFilter,
                 skillDiff: skillDiff?.[skillId]?.value,
                 key: skillId,

@@ -1,8 +1,8 @@
 import { useQuery } from 'react-query';
-import getSkills from '../api/skillQueries';
+import getTrainers from '../api/trainerQueries';
 
 const useTrainers = () =>
-  useQuery(['skills'], getSkills, {
+  useQuery(['trainers'], getTrainers, {
     staleTime: Infinity,
   });
 

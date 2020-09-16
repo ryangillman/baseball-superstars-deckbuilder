@@ -112,6 +112,8 @@ const createDeckUrl = (trainers, withBaseUrl = false) => {
   return completeUrl;
 };
 
+const createRosterObject = (acc, row) => ({ ...acc, [row.name]: row.stars });
+
 export {
   createDeckUrl,
   trainersToUrl,
@@ -120,4 +122,5 @@ export {
   getSkillLevelsSum,
   getSkillLevelDiff,
   getSkillValuesForDeck,
+  createRosterObject,
 };

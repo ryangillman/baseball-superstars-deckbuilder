@@ -18,7 +18,7 @@ import {
   getSkillLevelDiff,
   createDeckUrl,
 } from '../../util';
-import useSkills from '../../hooks/useSkills';
+import useSkillState from '../../hooks/useSkillState';
 
 const Deck = ({
   selectedTrainers,
@@ -33,7 +33,7 @@ const Deck = ({
   const [hideDeck, setHideDeck] = useState(false);
   const [tempSkills, setTempSkills] = useState(false);
 
-  const { skills, setState: setSkillState } = useSkills();
+  const { skills, setState: setSkillState } = useSkillState();
   const toast = useToast();
   const stickyRef = useRef();
 
@@ -61,9 +61,9 @@ const Deck = ({
   );
 
   useEffect(() => {
-    setSkillState({ skills: getSkillLevelsSum(selectedTrainers) });
-    history.push(createDeckUrl(selectedTrainers));
-
+    if (selectedTrainers) {
+      setSkillState({ skills: getSkillLevelsSum(selectedTrainers) });
+    }
     // setSkillState is stable
     // eslint-disable-next-line
   }, [selectedTrainers]);

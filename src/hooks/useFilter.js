@@ -45,7 +45,7 @@ const useFilter = (allTrainers) => {
 
   const items = useMemo(
     () =>
-      allTrainers.filter((row) =>
+      allTrainers?.filter((row) =>
         Object.entries(filters).every(([key, value]) => {
           switch (key) {
             case 'name':
@@ -62,7 +62,11 @@ const useFilter = (allTrainers) => {
               if (value.length && !value.includes(row.type)) return false;
               break;
             case 'bonusteams':
-              if (value.length && !value.includes(row.bonusTeam)) return false;
+              if (
+                value.length &&
+                !row?.bonusTeam?.some((team) => value.includes(team))
+              )
+                return false;
               break;
             case 'skills':
               if (
@@ -89,7 +93,7 @@ const useFilter = (allTrainers) => {
           }
           return true;
         })
-      ),
+      ) || [],
     [allTrainers, filters, searchSkillOnlyInActiveUpgrade, skillSearchTypeAnd]
   );
   return { items, filters, setFilters: updateFilters };
