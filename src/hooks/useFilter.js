@@ -1,4 +1,5 @@
 import { useMemo, useState, useCallback } from 'react';
+import { battingPositions, pitchingPositions } from '../assets/positions';
 
 import useTrainerDisplaySettings from './useTrainerDisplaySettings';
 
@@ -45,16 +46,29 @@ const useFilter = (allTrainers) => {
 
   const items = useMemo(
     () =>
-      allTrainers.filter((row) =>
+      allTrainers?.filter((row) =>
         Object.entries(filters).every(([key, value]) => {
           switch (key) {
             case 'name':
               if (!row.name.toLowerCase().includes(value.toLowerCase()))
                 return false;
               break;
-            case 'position':
-              if (value.length && !value.includes(row.position)) return false;
+            case 'position': {
+              if (
+                value.length &&
+                !value.includes(row.position) &&
+                !(
+                  value.includes('pitching') &&
+                  pitchingPositions.includes(row.position)
+                ) &&
+                !(
+                  value.includes('batting') &&
+                  battingPositions.includes(row.position)
+                )
+              )
+                return false;
               break;
+            }
             case 'rarity':
               if (value.length && !value.includes(row.rarity)) return false;
               break;
@@ -62,7 +76,11 @@ const useFilter = (allTrainers) => {
               if (value.length && !value.includes(row.type)) return false;
               break;
             case 'bonusteams':
-              if (value.length && !value.includes(row.bonusTeam)) return false;
+              if (
+                value.length &&
+                !row?.bonusTeam?.some((team) => value.includes(team))
+              )
+                return false;
               break;
             case 'skills':
               if (
@@ -89,7 +107,7 @@ const useFilter = (allTrainers) => {
           }
           return true;
         })
-      ),
+      ) || [],
     [allTrainers, filters, searchSkillOnlyInActiveUpgrade, skillSearchTypeAnd]
   );
   return { items, filters, setFilters: updateFilters };

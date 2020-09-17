@@ -126,6 +126,5 @@
   "change_of_mood": { "name": "Change of Mood", "skillGrade": "N" },
   "special_force": { "name": "Special Force", "skillGrade": "N" },
   "confidence": { "name": "Confidence", "skillGrade": "N" },
-  "alert": { "name": "Alert", "skillGrade": "N" },
-  "torando": { "name": "Torando" }
+  "alert": { "name": "Alert", "skillGrade": "N" }
 }

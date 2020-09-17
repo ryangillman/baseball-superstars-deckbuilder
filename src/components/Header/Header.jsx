@@ -1,7 +1,9 @@
 import React from 'react';
-import { useColorMode, Flex, Box, Heading } from '@chakra-ui/core';
+import { useColorMode, Flex, Box, Heading, Link } from '@chakra-ui/core';
+import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
-const Header = (props) => {
+const Header = () => {
   const { colorMode } = useColorMode();
   const bgColor = {
     header: { light: 'gray.300', dark: 'gray.800' },
@@ -11,6 +13,8 @@ const Header = (props) => {
     button: { light: 'gray.300', dark: 'gray.700' },
     header: { light: 'gray.800', dark: 'white' },
   };
+  const { user } = useAuth();
+
   return (
     <Box
       as='header'
@@ -20,9 +24,28 @@ const Header = (props) => {
     >
       <Flex mx='auto' align='center' maxW={1200} flex={1}>
         <Flex flexGrow={1} justify='space-between'>
-          <Heading color={color.header[colorMode]} size={['md', 'lg']}>
+          <Heading as='h1' color={color.header[colorMode]} size='xl'>
             Baseball Superstars 2020 - Deck Builder
           </Heading>
+        </Flex>
+        <Flex flex='auto' justifyContent='flex-end'>
+          <Link to='/' as={NavLink} mr={10}>
+            Build a Deck
+          </Link>
+          <Link to='/roster' as={NavLink} mr={10}>
+            My Roster
+          </Link>
+          {!user ? (
+            <Link to='/login' as={NavLink}>
+              Login
+            </Link>
+          ) : (
+            <>
+              <Link to='/profile' as={NavLink}>
+                Profile
+              </Link>
+            </>
+          )}
         </Flex>
       </Flex>
       {/* <IconButton

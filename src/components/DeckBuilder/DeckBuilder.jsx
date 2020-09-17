@@ -1,24 +1,64 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  useRef,
+} from 'react';
+import {
+  Flex,
+  Text,
+  Switch,
+  Alert,
+  AlertIcon,
+  AlertDescription,
+  useToast,
+} from '@chakra-ui/core';
 import Deck from '../Deck';
 import Trainerlist from '../Trainerlist';
-import allTrainersData from '../../allTrainers';
-import { replaceFirstNullWithValue } from '../../util';
+
+import { replaceFirstNullWithValue, createRosterObject } from '../../util';
 import useFilter from '../../hooks/useFilter';
+import useTrainers from '../../hooks/useTrainers';
+import useRoster from '../../hooks/useRoster';
+import useAuth from '../../hooks/useAuth';
+import useSaveRoster from '../../hooks/useSaveRoster';
 
 const getTrainersFromParams = () => {
   const params = new URLSearchParams(window.location.search);
 
   const trainers = params.get('trainers');
+
   if (trainers) {
-    const trainerArray = trainers.split(',').map((row) => row.split('_'));
-    return trainerArray;
+    return trainers.split(',').map((row) => row.split('_'));
     // [["trainerName", "upgradeLevel"]]
   }
   return null;
 };
 
+const getRosterIdFromParams = () => {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('rosterid') || null;
+};
+
+const setTrainersToParamValues = (trainerParams, onlyRoster, roster) => (
+  row
+) => {
+  const paramTrainer = trainerParams.find((val) => val[0] === row.name);
+  if (paramTrainer) {
+    return { ...row, stars: parseInt(paramTrainer[1], 10) };
+  }
+  if (onlyRoster) {
+    return { ...row, stars: roster?.[row.name] };
+  }
+  return { ...row, stars: 1 };
+};
+
 const DeckBuilder = () => {
-  const [allTrainers, setAllTrainers] = useState(allTrainersData);
+  const [allTrainers, setAllTrainers] = useState([]);
+  const { user } = useAuth();
+  const saveRosterPersistent = useSaveRoster();
+  const toast = useToast();
   const [selectedTrainerIds, setSelectedTrainerIds] = useState([
     null,
     null,
@@ -27,37 +67,97 @@ const DeckBuilder = () => {
     null,
     null,
   ]);
+  const { data: trainers, isSuccess: isSuccessTrainers } = useTrainers();
+  const rosterId = useRef(getRosterIdFromParams());
+
+  const [useRosterTrainers, setUseRosterTrainers] = useState(
+    getTrainersFromParams() === null ||
+      (getTrainersFromParams !== null && rosterId.current)
+  );
+  const { data: roster, isSuccess: isSuccessRoster } = useRoster(
+    rosterId.current
+  );
 
   const { items, filters, setFilters } = useFilter(allTrainers);
 
   useEffect(() => {
-    const trainerData = getTrainersFromParams();
-    if (trainerData) {
-      setAllTrainers((prev) => {
-        const newTrainers = prev.map((row) => {
-          const paramTrainer = trainerData.find((val) => val[0] === row.name);
-          if (paramTrainer) {
-            return { ...row, stars: parseInt(paramTrainer[1], 10) };
-          }
-          return row;
-        });
-        return newTrainers;
+    if (!isSuccessRoster || !isSuccessTrainers) return;
+
+    setAllTrainers(() => {
+      if (useRosterTrainers) {
+        return (
+          trainers
+            ?.map((row) => ({ ...row, stars: roster?.trainers?.[row.name] }))
+            .filter((row) => row.stars !== 0) || []
+        );
+      }
+      return trainers?.map((row) => ({ ...row, stars: 1 })) || [];
+    });
+    // roster and trainers are stable values, don't need to be in dependency array
+    // eslint-disable-next-line
+  }, [useRosterTrainers]);
+
+  useEffect(() => {
+    if (!isSuccessTrainers || !isSuccessRoster) return;
+    if (!roster && !user) {
+      saveRosterPersistent(
+        trainers
+          .map((row) => ({ ...row, stars: 1 }))
+          .reduce(createRosterObject, {}),
+        true
+      );
+      toast({
+        title: 'Success.',
+        description: 'Initial rostersetup complete.',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      });
+    }
+    const trainerParams = getTrainersFromParams();
+
+    if (trainerParams) {
+      setAllTrainers(() => {
+        const trainerArray = trainers.map(
+          setTrainersToParamValues(
+            trainerParams,
+            !!rosterId.current,
+            roster?.trainers
+          )
+        );
+        if (rosterId.current) {
+          return trainerArray.filter((row) => row.stars !== 0);
+        }
+        return trainerArray;
       });
       setSelectedTrainerIds(() =>
-        trainerData.map(([name]) => (name === 'null' ? null : name))
+        trainerParams.map(([name]) => (name === 'null' ? null : name))
       );
+      // setUseRosterTrainers(!!rosterId);
+    } else if (rosterId.current || useRosterTrainers) {
+      setAllTrainers(() =>
+        trainers
+          ?.map((row) => ({
+            ...row,
+            stars: roster?.trainers?.[row.name],
+          }))
+          .filter((row) => row.stars !== 0)
+      );
+    } else {
+      setAllTrainers(trainers.map((row) => ({ ...row, stars: 1 })));
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [trainers, roster, isSuccessRoster, isSuccessTrainers]);
 
-  const selectedTrainers = useMemo(
-    () =>
-      selectedTrainerIds.map(
-        (id) => allTrainers.find((trainer) => trainer.name === id) || null
-      ),
-    [allTrainers, selectedTrainerIds]
-  );
+  const selectedTrainers = useMemo(() => {
+    if (!isSuccessTrainers || !isSuccessRoster || !allTrainers.length)
+      return null;
+
+    return selectedTrainerIds.map(
+      (id) => allTrainers.find((trainer) => trainer.name === id) || null
+    );
+  }, [allTrainers, selectedTrainerIds, isSuccessRoster, isSuccessTrainers]);
 
   const updateTrainerStars = useCallback((name, stars) => {
     setAllTrainers((prev) =>
@@ -81,6 +181,16 @@ const DeckBuilder = () => {
     });
   }, []);
 
+  if (roster === 'Error')
+    return (
+      <Alert bg='red.600' color='white'>
+        <AlertIcon color='white' />
+        <AlertDescription>
+          You do not have Permission to view this Roster, please ask its owner
+          to set his Roster visibility in his Profile
+        </AlertDescription>
+      </Alert>
+    );
   return (
     <>
       <Deck
@@ -89,7 +199,25 @@ const DeckBuilder = () => {
         updateSelectedTrainers={updateSelectedTrainers}
         filters={filters}
         setFilters={setFilters}
+        rosterId={rosterId.current}
       />
+      <Flex justifyContent='center' alignItems='center'>
+        <Text color='gray.300' fontWeight='700' fontSize='20px'>
+          Show all trainers
+        </Text>
+        <Switch
+          size='lg'
+          isChecked={useRosterTrainers}
+          mx={3}
+          onChange={(e) => setUseRosterTrainers(e.target.checked)}
+        />
+        <Text color='gray.300' fontWeight='700' fontSize='20px'>
+          Show only{' '}
+          {rosterId.current && roster
+            ? `Roster of ${roster?.owner} `
+            : 'my Roster'}
+        </Text>
+      </Flex>
       <Trainerlist
         selectedTrainers={selectedTrainers}
         updateSelectedTrainers={updateSelectedTrainers}
@@ -98,6 +226,8 @@ const DeckBuilder = () => {
         setFilters={setFilters}
         skillFilter={filters?.skills}
         updateAllTrainerStars={updateAllTrainerStars}
+        showOverlay
+        showInfo
       />
     </>
   );

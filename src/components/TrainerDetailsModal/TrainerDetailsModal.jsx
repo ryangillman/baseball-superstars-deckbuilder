@@ -66,9 +66,11 @@ const TrainerDetailsModal = ({ isOpen, onClose, trainer }) => {
               {trainer.bonusTeam && (
                 <Flex alignItems='center' flex={1} flexDirection='column'>
                   <Text>Bonus Team</Text>
-                  <Box w='50px' h='50px'>
-                    <TeamIcon team={trainer.bonusTeam} />
-                  </Box>
+                  {trainer.bonusTeam.map((team) => (
+                    <Box w='50px' key={team} h='50px'>
+                      <TeamIcon team={team} />
+                    </Box>
+                  ))}
                 </Flex>
               )}
             </Flex>

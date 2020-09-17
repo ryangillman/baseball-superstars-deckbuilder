@@ -1,5 +1,13 @@
 const positions = [
   {
+    value: 'batting',
+    label: 'Batting',
+  },
+  {
+    value: 'pitching',
+    label: 'Pitching',
+  },
+  {
     value: '1B',
     label: '1B',
   },
@@ -44,5 +52,9 @@ const positions = [
     label: 'CP',
   },
 ];
+
+export const battingPositions = ['1B', '2B', '3B', 'C', 'CF', 'LF', 'RF', 'SS'];
+
+export const pitchingPositions = ['SP', 'RP', 'CP'];
 
 export default positions;

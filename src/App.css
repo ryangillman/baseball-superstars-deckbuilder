@@ -22,7 +22,6 @@ body {
   height: 100px;
   display: flex;
   align-items: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 

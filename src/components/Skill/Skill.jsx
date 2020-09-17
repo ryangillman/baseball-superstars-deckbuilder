@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Box, Tag, IconButton, Flex, useTheme } from '@chakra-ui/core';
 import { SearchIcon } from '@chakra-ui/icons';
 import { getSkillColor } from '../../util';
-import allSkills from '../../assets/skills.json';
+
 import useTrainerDisplaySettings, {
   getSearchSkillOnlyInActiveUpgrade,
 } from '../../hooks/useTrainerDisplaySettings';
@@ -10,6 +10,8 @@ import useTrainerDisplaySettings, {
 const Skill = ({
   skillLevel,
   skillId,
+  skillGrade,
+  skillName,
   isActive,
   updateFilter,
   skillDiff,
@@ -37,9 +39,7 @@ const Skill = ({
     >
       <Box
         bg={skillLevel === 5 ? 'gray.200' : 'gray.600'}
-        border={`3px solid ${
-          theme.colors.rarity[allSkills[skillId].skillGrade]
-        }`}
+        border={`3px solid ${theme.colors.rarity[skillGrade]}`}
         p={2}
         w='40px'
         color={skillLevel === 5 ? 'black' : 'white'}
@@ -57,7 +57,7 @@ const Skill = ({
         alignItems='center'
         justifyContent='space-between'
       >
-        <Text display='inline-block'>{allSkills[skillId]?.name}</Text>
+        <Text display='inline-block'>{skillName}</Text>
         {skillDiff && (
           <Text
             color={skillDiff < 0 ? 'red.300' : 'green.200'}

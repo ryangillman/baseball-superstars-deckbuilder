@@ -8,6 +8,7 @@ import {
   Box,
   IconButton,
 } from '@chakra-ui/core';
+import { useHistory } from 'react-router-dom';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Trainer from '../Trainer';
 import TrainerSlot from '../TrainerSlot';
@@ -15,9 +16,10 @@ import SkillsDisplay from '../SkillsDisplay';
 import {
   getSkillLevelsSum,
   getSkillLevelDiff,
-  trainersToUrl,
+  createDeckUrl,
 } from '../../util';
-import useSkills from '../../hooks/useSkills';
+import useSkillState from '../../hooks/useSkillState';
+import useAuth from '../../hooks/useAuth';
 
 const Deck = ({
   selectedTrainers,
@@ -25,15 +27,19 @@ const Deck = ({
   updateTrainerStars,
   filters,
   setFilters,
+  rosterId,
 }) => {
+  const history = useHistory();
   const [showActiveSkills, setShowActiveSkills] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [hideDeck, setHideDeck] = useState(false);
   const [tempSkills, setTempSkills] = useState(false);
 
-  const { skills, setState: setSkillState } = useSkills();
+  const { skills, setState: setSkillState } = useSkillState();
   const toast = useToast();
   const stickyRef = useRef();
+
+  const { user } = useAuth();
 
   const toggleShowActiveSkills = () => {
     setShowActiveSkills((prev) => !prev);
@@ -59,8 +65,15 @@ const Deck = ({
   );
 
   useEffect(() => {
-    setSkillState({ skills: getSkillLevelsSum(selectedTrainers) });
-  }, [selectedTrainers, setSkillState]);
+    if (selectedTrainers !== null) {
+      setSkillState({ skills: getSkillLevelsSum(selectedTrainers) });
+      history.push(
+        createDeckUrl(selectedTrainers, false, rosterId || user?.roster)
+      );
+    }
+    // setSkillState is stable
+    // eslint-disable-next-line
+  }, [selectedTrainers]);
 
   useEffect(() => {
     // Inform component of being sticky or not since there is no real event handler for this
@@ -90,23 +103,28 @@ const Deck = ({
     [setFilters]
   );
 
-  const createShareLink = () => {
-    const baseUrl = `${window.location.protocol}//${window.location.hostname}${
-      window.location.port ? `:${window.location.port}` : ''
-    }`;
+  const copyDeckUrlToClipboard = useCallback(
+    (withRoster) => {
+      navigator.clipboard.writeText(
+        createDeckUrl(
+          selectedTrainers,
+          true,
+          withRoster ? rosterId || user.roster : undefined,
+          withRoster
+        )
+      );
 
-    navigator.clipboard.writeText(
-      `${baseUrl}?trainers=${trainersToUrl(selectedTrainers)}`
-    );
-
-    toast({
-      title: 'Success.',
-      description: 'Deck URL was copied to your clipboard.',
-      status: 'success',
-      duration: 9000,
-      isClosable: true,
-    });
-  };
+      toast({
+        title: 'Success.',
+        description: 'Deck URL was copied to your clipboard.',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      });
+    },
+    // eslint-disable-next-line
+    [selectedTrainers, toast, rosterId, user]
+  );
 
   return (
     <>
@@ -115,9 +133,21 @@ const Deck = ({
           {' '}
           Your Deck
         </Heading>
-        {selectedTrainers.some((row) => row !== null) && (
+        {selectedTrainers?.some((row) => row !== null) && (
           <Flex justifyContent='flex-end'>
-            <Button colorScheme='blue' onClick={createShareLink}>
+            {(rosterId || user?.roster) && (
+              <Button
+                colorScheme='blue'
+                onClick={() => copyDeckUrlToClipboard(true)}
+                mr={5}
+              >
+                Share Deck & Roster
+              </Button>
+            )}
+            <Button
+              colorScheme='blue'
+              onClick={() => copyDeckUrlToClipboard(false)}
+            >
               Share Deck
             </Button>
           </Flex>
@@ -145,7 +175,7 @@ const Deck = ({
           bg='gray.700'
           mx={[-3, 0]}
         >
-          {selectedTrainers.map((trainer, i) => {
+          {selectedTrainers?.map((trainer, i) => {
             if (trainer !== null) {
               return (
                 <Trainer
@@ -184,7 +214,7 @@ const Deck = ({
         )}
       </Box>
       <Flex justifyContent='flex-end'>
-        {selectedTrainers.some((row) => row !== null) ? (
+        {selectedTrainers?.some((row) => row !== null) ? (
           <Button
             onClick={toggleShowActiveSkills}
             size='sm'

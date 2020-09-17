@@ -90,18 +90,48 @@ const getSkillValuesForDeck = (oldSkills, addedSkills) =>
   }, 0);
 
 const trainersToUrl = (trainers) =>
-  trainers.reduce((acc, trainer, i, arr) => {
-    const needsComma = i < arr.length - 1;
-    if (trainer !== null)
-      return `${acc}${trainer.name}_${trainer.stars}${needsComma ? ',' : ''}`;
-    return `${acc}null${needsComma ? ',' : ''}`;
-  }, '');
+  trainers.some((row) => row !== null)
+    ? trainers.reduce((acc, trainer, i, arr) => {
+        const needsComma = i < arr.length - 1;
+        if (trainer !== null)
+          return `${acc}${trainer.name}_${trainer.stars}${
+            needsComma ? ',' : ''
+          }`;
+        return `${acc}null${needsComma ? ',' : ''}`;
+      }, 'trainers=')
+    : '';
+
+const createDeckUrl = (trainers, withBaseUrl = false, rId, withRoster) => {
+  const params = new URLSearchParams(window.location.search);
+  if (withRoster === false) params.delete('rosterid');
+  if (rId) params.set('rosterid', rId);
+
+  const { trainers: trainerParam, ...restParams } =
+    Object.fromEntries(params.entries()) || {};
+
+  const paramsString = Object.entries(restParams || {})
+    .map(([key, value]) => `${key}=${value}`)
+    .join('&');
+
+  const baseUrl = withBaseUrl
+    ? `${window.location.protocol}//${window.location.hostname}${
+        window.location.port ? `:${window.location.port}` : ''
+      }/?${paramsString ? `${paramsString}&` : ''}`
+    : `/?${paramsString ? `${paramsString}&` : ''}`;
+
+  const completeUrl = `${baseUrl}${trainersToUrl(trainers)}`;
+  return completeUrl;
+};
+
+const createRosterObject = (acc, row) => ({ ...acc, [row.name]: row.stars });
 
 export {
+  createDeckUrl,
   trainersToUrl,
   replaceFirstNullWithValue,
   getSkillColor,
   getSkillLevelsSum,
   getSkillLevelDiff,
   getSkillValuesForDeck,
+  createRosterObject,
 };
