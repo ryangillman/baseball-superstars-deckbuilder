@@ -2770,6 +2770,118 @@
     }
   },
   {
+    "name": "Kyoko",
+    "rarity": "SSR",
+    "position": "2B",
+    "type": "DEX",
+    "bonusTeam": ["River City"],
+    "skills": {
+      "1": {
+        "2b_s_resolve": 1,
+        "tenacity": 2,
+        "roadrunner": 1,
+        "pull_hit": 1,
+        "if_throw_god": 1,
+        "slugger_power": 1,
+        "walk_off_hit": 1
+      },
+      "2": {
+        "2b_s_resolve": 1,
+        "tenacity": 2,
+        "big_bang": 1,
+        "roadrunner": 1,
+        "pull_hit": 1,
+        "if_throw_god": 1,
+        "slugger_power": 1,
+        "walk_off_hit": 1
+      },
+      "3": {
+        "2b_s_resolve": 1,
+        "tenacity": 3,
+        "big_bang": 2,
+        "roadrunner": 1,
+        "pull_hit": 2,
+        "if_throw_god": 1,
+        "slugger_power": 1,
+        "walk_off_hit": 1
+      },
+      "4": {
+        "2b_s_resolve": 1,
+        "tenacity": 3,
+        "big_bang": 2,
+        "power_batter": 1,
+        "roadrunner": 1,
+        "pull_hit": 2,
+        "anti_rh_pitcher": 1,
+        "if_throw_god": 1,
+        "slugger_power": 1,
+        "walk_off_hit": 1
+      },
+      "5": {
+        "2b_s_resolve": 2,
+        "tenacity": 3,
+        "power_batter": 2,
+        "big_bang": 2,
+        "roadrunner": 1,
+        "anti_rh_pitcher": 2,
+        "pull_hit": 2,
+        "if_throw_god": 1,
+        "slugger_power": 1,
+        "walk_off_hit": 1
+      }
+    },
+    "devBonus": {
+      "1": [
+        "[UR] Bat On Sale (Batter)",
+        "Initial Affinity +10",
+        "Sp. Training Reward +125%",
+        "Training STM Use (All) -20%",
+        "Personal Training Trigger Rate +15%"
+      ],
+      "2": [
+        "[UR] Bat On Sale (Batter)",
+        "Initial Affinity +10",
+        "Sp. Training Reward +125%",
+        "Training STM Use (All) -20%",
+        "Training Event Reward +20%",
+        "Personal Training Trigger Rate +15%"
+      ],
+      "3": [
+        "[UR] Bat On Sale (Batter)",
+        "Initial Affinity +20",
+        "Sp. Training Reward +125%",
+        "Training STM Use (All) -20%",
+        "Training Event Reward +20%",
+        "Personal Training Trigger Rate +15%"
+      ],
+      "4": [
+        "[UR] Bat On Sale (Batter)",
+        "Initial Affinity +20",
+        "Sp. Training Reward +125%",
+        "DEX Training Placement +10%",
+        "Training STM Use (All) -20%",
+        "Training Event Reward +20%",
+        "Personal Training Trigger Rate +15%"
+      ],
+      "5": [
+        "[UR] Bat On Sale (Batter)",
+        "Initial Affinity +20",
+        "Sp. Training Reward +125%",
+        "DEX Training Placement +10%",
+        "Training STM Use (All) -30%",
+        "Training Event Reward +20%",
+        "Personal Training Trigger Rate +15%"
+      ]
+    },
+    "stats": {
+      "1": { "STR": "648", "INT": "439", "DEX": "821", "MNT": "619" },
+      "2": { "STR": "697", "INT": "467", "DEX": "867", "MNT": "670" },
+      "3": { "STR": "747", "INT": "504", "DEX": "913", "MNT": "721" },
+      "4": { "STR": "796", "INT": "541", "DEX": "959", "MNT": "772" },
+      "5": { "STR": "846", "INT": "579", "DEX": "1006", "MNT": "824" }
+    }
+  },
+  {
     "name": "Monique",
     "rarity": "SSR",
     "position": "C",
@@ -4664,6 +4776,7 @@
     "devBonus": {
       "1": [
         "Initial Affinity +10",
+        "Initial Affinity +10",
         "Training Reward (INT) +8",
         "Sp. Training Reward +125%",
         "INT Training Placement +10%",
@@ -5370,6 +5483,119 @@
       "3": { "STR": "785", "INT": "688", "DEX": "672", "MNT": "688" },
       "4": { "STR": "831", "INT": "735", "DEX": "715", "MNT": "734" },
       "5": { "STR": "877", "INT": "782", "DEX": "759", "MNT": "781" }
+    }
+  },
+  {
+    "name": "Misako",
+    "rarity": "SSR",
+    "position": "SP",
+    "type": "STR",
+    "bonusTeam": ["River City"],
+    "skills": {
+      "1": {
+        "super_right_arm": 1,
+        "sp_s_resolve": 1,
+        "super_fastball": 2,
+        "monstrous_pitch": 1,
+        "anti_rh_batter": 1,
+        "power_pitch": 1,
+        "confidence": 1
+      },
+      "2": {
+        "super_right_arm": 1,
+        "sp_s_resolve": 1,
+        "super_fastball": 2,
+        "monstrous_pitch": 1,
+        "anti_rh_batter": 2,
+        "steel_arm": 1,
+        "power_pitch": 1,
+        "confidence": 1
+      },
+      "3": {
+        "super_right_arm": 1,
+        "sp_s_resolve": 1,
+        "super_fastball": 3,
+        "slurve": 1,
+        "monstrous_pitch": 1,
+        "steel_arm": 2,
+        "anti_rh_batter": 2,
+        "power_pitch": 1,
+        "confidence": 1
+      },
+      "4": {
+        "super_right_arm": 1,
+        "sp_s_resolve": 1,
+        "super_fastball": 3,
+        "slurve": 1,
+        "monstrous_pitch": 1,
+        "heavy_ball": 1,
+        "steel_arm": 2,
+        "anti_rh_batter": 2,
+        "power_pitch": 1,
+        "confidence": 1
+      },
+      "5": {
+        "super_right_arm": 2,
+        "sp_s_resolve": 1,
+        "super_fastball": 3,
+        "heavy_ball": 2,
+        "monstrous_pitch": 2,
+        "slurve": 1,
+        "steel_arm": 2,
+        "anti_rh_batter": 2,
+        "power_pitch": 1,
+        "confidence": 1
+      }
+    },
+    "devBonus": {
+      "1": [
+        "Initial Affinity +10",
+        "Sp. Training Trigger Rate +5%",
+        "Sp. Training Reward +125%",
+        "Game Reward +15%",
+        "Training STM Use (All) -20%"
+      ],
+      "2": [
+        "Initial Affinity +10",
+        "Sp. Training Trigger Rate +5%",
+        "Sp. Training Reward +125%",
+        "Game Reward +15%",
+        "Training STM Use (All) -20%",
+        "Trainer Event Reward +20%"
+      ],
+      "3": [
+        "Initial Affinity +20",
+        "Sp. Training Trigger Rate +5%",
+        "Sp. Training Reward +125%",
+        "Game Reward +15%",
+        "Training STM Use (All) -20%",
+        "Trainer Event Reward +20%"
+      ],
+      "4": [
+        "[UR] Glove On Sale (Pitcher)",
+        "Initial Affinity +20",
+        "Sp. Training Trigger Rate +5%",
+        "Sp. Training Reward +125%",
+        "Game Reward +15%",
+        "Training STM Use (All) -20%",
+        "Trainer Event Reward +20%"
+      ],
+      "5": [
+        "[UR] Glove On Sale (Pitcher)",
+        "Initial Affinity +20",
+        "Sp. Training Trigger Rate +5%",
+        "Sp. Training Reward +125%",
+        "Game Reward +15%",
+        "Training STM Use (All) -30%",
+        "Trainer Event Reward +20%"
+      ]
+    },
+    "stats": {
+      "1": { "STR": "713", "INT": "623", "DEX": "586", "MNT": "661" },
+      "2": { "STR": "765", "INT": "670", "DEX": "639", "MNT": "713" },
+      "3": { "STR": "817", "INT": "717", "DEX": "692", "MNT": "764" },
+      "4": { "STR": "869", "INT": "764", "DEX": "815", "MNT": "745" },
+      "5": { "STR": "921", "INT": "811", "DEX": "799", "MNT": "867" }
     }
   },
   {
@@ -7512,7 +7738,7 @@
         "focused_defense": 2
       },
       "5": {
-        "cf_s_resolve": 1,
+        "cf_s_resolve": 2,
         "provoke": 1,
         "of_defense_god": 3,
         "drive": 2,
