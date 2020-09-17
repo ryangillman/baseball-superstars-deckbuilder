@@ -1,12 +1,11 @@
 import React from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { Redirect, useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import firebasePackage from 'firebase/app';
 import 'firebase/auth';
 import { Text } from '@chakra-ui/core';
 import firebase from '../../firebase';
 import useAuth from '../../hooks/useAuth';
-import { getUserData, createInitialUser } from '../../api/userQueries';
 
 const uiConfig = {
   // Popup signin flow rather than redirect flow.
@@ -14,7 +13,7 @@ const uiConfig = {
 
   // signInSuccessUrl: '/roster',
   callbacks: {
-    signInSuccessWithAuthResult: (userAuth) => false,
+    signInSuccessWithAuthResult: () => false,
   },
   // We will display Google and Facebook as auth providers.
   signInOptions: [
@@ -23,7 +22,7 @@ const uiConfig = {
   ],
 };
 
-const SignUp = (props) => {
+const SignUp = () => {
   const { user } = useAuth();
 
   if (user) return <Redirect to='/roster' />;
