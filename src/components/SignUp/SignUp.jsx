@@ -1,6 +1,6 @@
 import React from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import firebasePackage from 'firebase/app';
 import 'firebase/auth';
 import { Text } from '@chakra-ui/core';
@@ -8,23 +8,13 @@ import firebase from '../../firebase';
 import useAuth from '../../hooks/useAuth';
 import { getUserData, createInitialUser } from '../../api/userQueries';
 
-const checkForNewUser = async ({ user }) => {
-  if (!(await getUserData(user.uid))) {
-    createInitialUser(user.uid, JSON.parse(localStorage.getItem('roster')));
-  }
-  return false;
-};
-
 const uiConfig = {
   // Popup signin flow rather than redirect flow.
   signInFlow: 'popup',
 
   // signInSuccessUrl: '/roster',
   callbacks: {
-    signInSuccessWithAuthResult: (user) => {
-      checkForNewUser(user);
-      return false;
-    },
+    signInSuccessWithAuthResult: (userAuth) => false,
   },
   // We will display Google and Facebook as auth providers.
   signInOptions: [
