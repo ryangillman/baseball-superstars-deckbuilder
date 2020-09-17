@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  useRef,
+} from 'react';
 import { Flex, Text, Switch } from '@chakra-ui/core';
 import Deck from '../Deck';
 import Trainerlist from '../Trainerlist';
@@ -12,6 +18,7 @@ const getTrainersFromParams = () => {
   const params = new URLSearchParams(window.location.search);
 
   const trainers = params.get('trainers');
+
   if (trainers) {
     return trainers.split(',').map((row) => row.split('_'));
     // [["trainerName", "upgradeLevel"]]
@@ -39,7 +46,6 @@ const setTrainersToParamValues = (trainerParams, onlyRoster, roster) => (
 
 const DeckBuilder = () => {
   const [allTrainers, setAllTrainers] = useState([]);
-  const [useRosterTrainers, setUseRosterTrainers] = useState(true);
   const [selectedTrainerIds, setSelectedTrainerIds] = useState([
     null,
     null,
@@ -49,10 +55,15 @@ const DeckBuilder = () => {
     null,
   ]);
   const { data: trainers, isSuccess: isSuccessTrainers } = useTrainers();
+  const rosterId = useRef(getRosterIdFromParams());
 
-  const rosterId = getRosterIdFromParams();
-
-  const { data: roster, isSuccess: isSuccessRoster } = useRoster(rosterId);
+  const [useRosterTrainers, setUseRosterTrainers] = useState(
+    getTrainersFromParams() === null ||
+      (getTrainersFromParams !== null && rosterId.current)
+  );
+  const { data: roster, isSuccess: isSuccessRoster } = useRoster(
+    rosterId.current
+  );
 
   const { items, filters, setFilters } = useFilter(allTrainers);
 
@@ -80,9 +91,13 @@ const DeckBuilder = () => {
     if (trainerParams) {
       setAllTrainers(() => {
         const trainerArray = trainers.map(
-          setTrainersToParamValues(trainerParams, !!rosterId, roster?.trainers)
+          setTrainersToParamValues(
+            trainerParams,
+            !!rosterId.current,
+            roster?.trainers
+          )
         );
-        if (rosterId) {
+        if (rosterId.current) {
           return trainerArray.filter((row) => row.stars !== 0);
         }
         return trainerArray;
@@ -91,7 +106,7 @@ const DeckBuilder = () => {
         trainerParams.map(([name]) => (name === 'null' ? null : name))
       );
       // setUseRosterTrainers(!!rosterId);
-    } else if (rosterId || useRosterTrainers) {
+    } else if (rosterId.current || useRosterTrainers) {
       setAllTrainers(() =>
         trainers
           ?.map((row) => ({
@@ -107,13 +122,14 @@ const DeckBuilder = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trainers, roster, isSuccessRoster, isSuccessTrainers]);
 
-  const selectedTrainers = useMemo(
-    () =>
-      selectedTrainerIds.map(
-        (id) => allTrainers.find((trainer) => trainer.name === id) || null
-      ),
-    [allTrainers, selectedTrainerIds]
-  );
+  const selectedTrainers = useMemo(() => {
+    if (!isSuccessTrainers || !isSuccessRoster || !allTrainers.length)
+      return null;
+
+    return selectedTrainerIds.map(
+      (id) => allTrainers.find((trainer) => trainer.name === id) || null
+    );
+  }, [allTrainers, selectedTrainerIds, isSuccessRoster, isSuccessTrainers]);
 
   const updateTrainerStars = useCallback((name, stars) => {
     setAllTrainers((prev) =>
@@ -145,6 +161,7 @@ const DeckBuilder = () => {
         updateSelectedTrainers={updateSelectedTrainers}
         filters={filters}
         setFilters={setFilters}
+        rosterId={rosterId.current}
       />
       <Flex justifyContent='center' alignItems='center'>
         <Text color='gray.300' fontWeight='700' fontSize='20px'>
@@ -157,7 +174,10 @@ const DeckBuilder = () => {
           onChange={(e) => setUseRosterTrainers(e.target.checked)}
         />
         <Text color='gray.300' fontWeight='700' fontSize='20px'>
-          Show only {rosterId ? `${roster?.owner || ''}s ` : 'my'} Roster
+          Show only{' '}
+          {rosterId.current && roster
+            ? `Roster of ${roster?.owner} `
+            : 'my Roster'}
         </Text>
       </Flex>
       <Trainerlist
@@ -169,6 +189,7 @@ const DeckBuilder = () => {
         skillFilter={filters?.skills}
         updateAllTrainerStars={updateAllTrainerStars}
         showOverlay
+        showInfo
       />
     </>
   );

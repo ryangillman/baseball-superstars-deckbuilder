@@ -1,4 +1,5 @@
 import { useMemo, useState, useCallback } from 'react';
+import { battingPositions, pitchingPositions } from '../assets/positions';
 
 import useTrainerDisplaySettings from './useTrainerDisplaySettings';
 
@@ -52,9 +53,22 @@ const useFilter = (allTrainers) => {
               if (!row.name.toLowerCase().includes(value.toLowerCase()))
                 return false;
               break;
-            case 'position':
-              if (value.length && !value.includes(row.position)) return false;
+            case 'position': {
+              if (
+                value.length &&
+                !value.includes(row.position) &&
+                !(
+                  value.includes('pitching') &&
+                  pitchingPositions.includes(row.position)
+                ) &&
+                !(
+                  value.includes('batting') &&
+                  battingPositions.includes(row.position)
+                )
+              )
+                return false;
               break;
+            }
             case 'rarity':
               if (value.length && !value.includes(row.rarity)) return false;
               break;

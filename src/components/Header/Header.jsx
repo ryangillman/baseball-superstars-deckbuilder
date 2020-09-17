@@ -3,7 +3,7 @@ import { useColorMode, Flex, Box, Heading, Link } from '@chakra-ui/core';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
-const Header = (props) => {
+const Header = () => {
   const { colorMode } = useColorMode();
   const bgColor = {
     header: { light: 'gray.300', dark: 'gray.800' },
@@ -41,7 +41,7 @@ const Header = (props) => {
             </Link>
           ) : (
             <>
-              <Link to='/profile' mr={10} as={NavLink}>
+              <Link to='/profile' as={NavLink}>
                 Profile
               </Link>
             </>

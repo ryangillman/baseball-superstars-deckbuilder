@@ -19,6 +19,7 @@ import {
   createDeckUrl,
 } from '../../util';
 import useSkillState from '../../hooks/useSkillState';
+import useAuth from '../../hooks/useAuth';
 
 const Deck = ({
   selectedTrainers,
@@ -26,6 +27,7 @@ const Deck = ({
   updateTrainerStars,
   filters,
   setFilters,
+  rosterId,
 }) => {
   const history = useHistory();
   const [showActiveSkills, setShowActiveSkills] = useState(false);
@@ -36,6 +38,8 @@ const Deck = ({
   const { skills, setState: setSkillState } = useSkillState();
   const toast = useToast();
   const stickyRef = useRef();
+
+  const { user } = useAuth();
 
   const toggleShowActiveSkills = () => {
     setShowActiveSkills((prev) => !prev);
@@ -61,8 +65,11 @@ const Deck = ({
   );
 
   useEffect(() => {
-    if (selectedTrainers) {
+    if (selectedTrainers !== null) {
       setSkillState({ skills: getSkillLevelsSum(selectedTrainers) });
+      history.push(
+        createDeckUrl(selectedTrainers, false, rosterId || user?.roster)
+      );
     }
     // setSkillState is stable
     // eslint-disable-next-line
@@ -96,17 +103,27 @@ const Deck = ({
     [setFilters]
   );
 
-  const copyDeckUrlToClipboard = useCallback(() => {
-    navigator.clipboard.writeText(createDeckUrl(selectedTrainers, true));
+  const copyDeckUrlToClipboard = useCallback(
+    (withRoster) => {
+      navigator.clipboard.writeText(
+        createDeckUrl(
+          selectedTrainers,
+          true,
+          withRoster ? rosterId || user.roster : undefined,
+          withRoster
+        )
+      );
 
-    toast({
-      title: 'Success.',
-      description: 'Deck URL was copied to your clipboard.',
-      status: 'success',
-      duration: 9000,
-      isClosable: true,
-    });
-  }, [selectedTrainers, toast]);
+      toast({
+        title: 'Success.',
+        description: 'Deck URL was copied to your clipboard.',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      });
+    },
+    [selectedTrainers, toast, rosterId, user.roster]
+  );
 
   return (
     <>
@@ -115,9 +132,21 @@ const Deck = ({
           {' '}
           Your Deck
         </Heading>
-        {selectedTrainers.some((row) => row !== null) && (
+        {selectedTrainers?.some((row) => row !== null) && (
           <Flex justifyContent='flex-end'>
-            <Button colorScheme='blue' onClick={copyDeckUrlToClipboard}>
+            {(rosterId || user?.roster) && (
+              <Button
+                colorScheme='blue'
+                onClick={() => copyDeckUrlToClipboard(true)}
+                mr={5}
+              >
+                Share Deck & Roster
+              </Button>
+            )}
+            <Button
+              colorScheme='blue'
+              onClick={() => copyDeckUrlToClipboard(false)}
+            >
               Share Deck
             </Button>
           </Flex>
@@ -145,7 +174,7 @@ const Deck = ({
           bg='gray.700'
           mx={[-3, 0]}
         >
-          {selectedTrainers.map((trainer, i) => {
+          {selectedTrainers?.map((trainer, i) => {
             if (trainer !== null) {
               return (
                 <Trainer
@@ -184,7 +213,7 @@ const Deck = ({
         )}
       </Box>
       <Flex justifyContent='flex-end'>
-        {selectedTrainers.some((row) => row !== null) ? (
+        {selectedTrainers?.some((row) => row !== null) ? (
           <Button
             onClick={toggleShowActiveSkills}
             size='sm'

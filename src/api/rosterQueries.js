@@ -1,5 +1,4 @@
 import firebase from '../firebase';
-import { createRosterObject } from '../util';
 
 export const getRosterById = async (_, id) => {
   if (id) {

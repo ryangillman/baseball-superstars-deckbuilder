@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Box, Tag, IconButton, Flex, useTheme } from '@chakra-ui/core';
 import { SearchIcon } from '@chakra-ui/icons';
 import { getSkillColor } from '../../util';
-import useSkills from '../../hooks/useSkills';
+
 import useTrainerDisplaySettings, {
   getSearchSkillOnlyInActiveUpgrade,
 } from '../../hooks/useTrainerDisplaySettings';

@@ -6,6 +6,7 @@ import SelectedTrainerOverlay from '../SelectedTrainerOverlay';
 import TypeIcon from '../TypeIcon';
 import TrainerDetailsModal from '../TrainerDetailsModal';
 import UpgradeSelector from '../UpgradeSelector';
+import TrainerAvatar from '../TrainerAvatar';
 import { getSkillColor } from '../../util';
 
 import TeamIcon from '../TeamIcon';
@@ -119,8 +120,7 @@ const Trainer = ({
                 <CloseIcon />
               </Button>
             )}
-            <img
-              width='100%'
+            <TrainerAvatar
               src={trainerImages[trainer.name]}
               alt={trainer.name}
             />
@@ -222,7 +222,7 @@ const Trainer = ({
           Details
         </Button>
       </Flex>
-      <TrainerDetailsModal {...{ isOpen, onClose, trainer }} />
+      {isOpen && <TrainerDetailsModal {...{ isOpen, onClose, trainer }} />}
     </>
   );
 };

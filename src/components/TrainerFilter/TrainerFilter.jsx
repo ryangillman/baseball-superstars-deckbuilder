@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Flex, Input, Checkbox } from '@chakra-ui/core';
 import useSkills from '../../hooks/useSkills';
 import MultiSelect from '../MultiSelect/MultiSelect';
-import UpgradeSelector from '../UpgradeSelector';
 import rarities from '../../assets/rarities';
 import positions from '../../assets/positions';
 import types from '../../assets/types';
@@ -138,4 +137,4 @@ const TrainerFilter = ({ setFilters, skillFilter }) => {
   );
 };
 
-export default TrainerFilter;
+export default React.memo(TrainerFilter);

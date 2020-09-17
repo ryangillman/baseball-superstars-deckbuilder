@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Grid, Heading, Flex, Text, Switch } from '@chakra-ui/core';
+import { Grid, Heading, Flex, Text } from '@chakra-ui/core';
 import Trainer from '../Trainer';
 import TrainerFilter from '../TrainerFilter';
 import useSkillState from '../../hooks/useSkillState';
@@ -27,7 +27,7 @@ const Trainerlist = ({
 
   const allTrainerValues = useMemo(() => {
     if (!allTrainers || !allTrainers?.length) return null;
-    if (selectedTrainers.some((row) => row !== null)) {
+    if (selectedTrainers?.some((row) => row !== null)) {
       return allTrainers?.reduce(
         (acc, trainer) => ({
           ...acc,
@@ -111,7 +111,7 @@ const Trainerlist = ({
             })
           : allTrainers
         ).map((trainer) => {
-          const trainerIndex = selectedTrainers.findIndex(
+          const trainerIndex = selectedTrainers?.findIndex(
             (row) => row?.name === trainer?.name
           );
           return (

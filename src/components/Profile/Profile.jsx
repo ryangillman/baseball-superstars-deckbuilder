@@ -8,20 +8,21 @@ import {
   Heading,
   Button,
   useToast,
-  Link,
   Flex,
 } from '@chakra-ui/core';
-import { NavLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import useRoster from '../../hooks/useRoster';
 import useAuth from '../../hooks/useAuth';
 import { updateUserData } from '../../api/userQueries';
 import { updateRosterData } from '../../api/rosterQueries';
 
-const Profile = (props) => {
+const Profile = () => {
   const [username, setUserName] = useState('');
   const [shareRoster, setShareRoster] = useState(false);
   const { user, signOut } = useAuth();
   const { data } = useRoster();
+
+  const history = useHistory();
 
   useEffect(() => {
     setShareRoster(data?.isShared || false);
@@ -70,12 +71,22 @@ const Profile = (props) => {
         >
           Make your Roster visible to anyone with the link
         </Checkbox>
+        <FormHelperText>
+          The link to your roster is:{' '}
+          <code>{`${process.env.REACT_APP_URL}?rosterid=${user?.roster}`}</code>
+        </FormHelperText>
       </FormControl>
       <Flex w='100%' mt={10} justifyContent='space-between'>
         <Button colorScheme='blue' onClick={saveSettings}>
           Save Settings
         </Button>
-        <Button colorScheme='red' onClick={signOut}>
+        <Button
+          colorScheme='red'
+          onClick={() => {
+            signOut();
+            history.push('/');
+          }}
+        >
           Logout
         </Button>
       </Flex>
