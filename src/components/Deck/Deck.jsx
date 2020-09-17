@@ -122,7 +122,8 @@ const Deck = ({
         isClosable: true,
       });
     },
-    [selectedTrainers, toast, rosterId, user.roster]
+    // eslint-disable-next-line
+    [selectedTrainers, toast, rosterId, user]
   );
 
   return (
