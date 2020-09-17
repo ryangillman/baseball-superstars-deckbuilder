@@ -2773,7 +2773,7 @@
     "name": "Kyoko",
     "rarity": "SSR",
     "position": "2B",
-    "type": "Dex",
+    "type": "DEX",
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
