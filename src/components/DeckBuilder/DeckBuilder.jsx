@@ -17,7 +17,7 @@ import {
 import Deck from '../Deck';
 import Trainerlist from '../Trainerlist';
 
-import { replaceFirstNullWithValue, createRosterObject } from '../../util';
+import { replaceFirstNullWithValue } from '../../util';
 import useFilter from '../../hooks/useFilter';
 import useTrainers from '../../hooks/useTrainers';
 import useRoster from '../../hooks/useRoster';
@@ -56,9 +56,7 @@ const setTrainersToParamValues = (trainerParams, onlyRoster, roster) => (
 
 const DeckBuilder = () => {
   const [allTrainers, setAllTrainers] = useState([]);
-  const { user } = useAuth();
-  const saveRosterPersistent = useSaveRoster();
-  const toast = useToast();
+
   const [selectedTrainerIds, setSelectedTrainerIds] = useState([
     null,
     null,
@@ -99,21 +97,7 @@ const DeckBuilder = () => {
 
   useEffect(() => {
     if (!isSuccessTrainers || !isSuccessRoster) return;
-    if (!roster && !user) {
-      saveRosterPersistent(
-        trainers
-          .map((row) => ({ ...row, stars: 1 }))
-          .reduce(createRosterObject, {}),
-        true
-      );
-      toast({
-        title: 'Success.',
-        description: 'Initial rostersetup complete.',
-        status: 'success',
-        duration: 9000,
-        isClosable: true,
-      });
-    }
+
     const trainerParams = getTrainersFromParams();
 
     if (trainerParams) {
