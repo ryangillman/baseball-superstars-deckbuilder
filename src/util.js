@@ -120,7 +120,7 @@ const createDeckUrl = (trainers, withBaseUrl = false, rId, withRoster) => {
     : `/?${paramsString ? `${paramsString}&` : ''}`;
 
   const completeUrl = `${baseUrl}${trainersToUrl(trainers)}`;
-  return completeUrl;
+  return encodeURI(completeUrl);
 };
 
 const createRosterObject = (acc, row) => ({ ...acc, [row.name]: row.stars });
