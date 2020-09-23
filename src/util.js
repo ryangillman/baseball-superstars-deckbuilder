@@ -1,4 +1,8 @@
 import randomColor from 'randomcolor';
+import { getSkills } from './api/skillQueries';
+
+let allSkills;
+const skillGrades = ['N', 'R', 'SR', 'SSR', 'UR'];
 
 const replaceFirstNullWithValue = (arr, value) => {
   const firstIndexOfNull = arr.indexOf(null);
@@ -54,36 +58,45 @@ const getSkillLevelDiff = (newSkills, oldSkills) => {
   return { ...changedSkills, ...missingSkills };
 };
 
-const getValue = (num, from, skillValueFactor) => {
+const getValue = (num, from, skillValueFactor = 1) => {
   let val = 0;
   for (let i = from + 1; i <= num; i += 1) {
     switch (num) {
       case 5:
-        val += 8;
+        val += 8 * skillValueFactor;
         break;
       case 4:
-        val += 5;
+        val += 5 * skillValueFactor;
         break;
       default:
-        val += num;
+        val += num * skillValueFactor;
         break;
     }
   }
   return val;
 };
 
-const getSkillValuesForDeck = (oldSkills, addedSkills) =>
-  Object.keys(addedSkills).reduce((acc, row) => {
+const getSkillValuesForDeck = (oldSkills, addedSkills) => {
+  if (!allSkills) allSkills = getSkills();
+  return Object.keys(addedSkills).reduce((acc, row) => {
+    const skillValueFactor =
+      (skillGrades?.indexOf(allSkills[row].skillGrade) || 0) + 1;
     const oldSkillLevel = parseInt(oldSkills[row], 10) || 0;
     const newSkillLevel = parseInt(addedSkills[row], 10);
 
     if (!oldSkillLevel) {
-      return acc + getValue(Math.min(newSkillLevel, 5), 0);
+      return acc + getValue(Math.min(newSkillLevel, 5), 0, skillValueFactor);
     }
     return (
-      acc + getValue(Math.min(newSkillLevel + oldSkillLevel, 5), oldSkillLevel)
+      acc +
+      getValue(
+        Math.min(newSkillLevel + oldSkillLevel, 5),
+        oldSkillLevel,
+        skillValueFactor
+      )
     );
   }, 0);
+};
 
 const trainersToUrl = (trainers) =>
   trainers.some((row) => row !== null)

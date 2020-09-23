@@ -12,7 +12,7 @@ import { useHistory } from 'react-router-dom';
 import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import Trainer from '../Trainer';
 import TrainerSlot from '../TrainerSlot';
-import SkillsDisplay from '../SkillsDisplay';
+import SkillsDisplayWithCategories from '../SkillDisplayWithCategories';
 import {
   getSkillLevelsSum,
   getSkillLevelDiff,
@@ -20,6 +20,7 @@ import {
 } from '../../util';
 import useSkillState from '../../hooks/useSkillState';
 import useAuth from '../../hooks/useAuth';
+import SkillsDisplay from '../SkillsDisplay';
 
 const Deck = ({
   selectedTrainers,
@@ -34,6 +35,7 @@ const Deck = ({
   const [isSticky, setIsSticky] = useState(false);
   const [hideDeck, setHideDeck] = useState(false);
   const [tempSkills, setTempSkills] = useState(false);
+  const [withCategories, setWithCategories] = useState(true);
 
   const { skills, setState: setSkillState } = useSkillState();
   const toast = useToast();
@@ -229,20 +231,43 @@ const Deck = ({
       </Flex>
       {Object.keys(skills).length > 0 && showActiveSkills && (
         <Box bg='gray.800' border='2px inset' mt={-3} mb={5} p={2}>
-          <Grid
-            gridTemplateColumns='repeat(auto-fit, minmax(200px, 1fr))'
-            gridColumnGap={3}
-            gridRowGap={3}
-            gridAutoRows='40px'
-          >
-            <SkillsDisplay
+          <Flex justifyContent='center'>
+            <Button
+              colorScheme='blue'
+              onClick={() => setWithCategories((prev) => !prev)}
+              mb={5}
+              size='sm'
+            >
+              {withCategories
+                ? 'Hide Skill categories'
+                : 'Show Skill categories'}
+            </Button>
+          </Flex>
+          {withCategories && (
+            <SkillsDisplayWithCategories
               skills={tempSkills || skills}
               skillDiff={skillDiff}
               updateFilter={updateSkillFilter}
               skillFilter={filters.skills}
               withFilter
             />
-          </Grid>
+          )}
+          {!withCategories && (
+            <Grid
+              gridTemplateColumns='repeat(auto-fit, minmax(200px, 1fr))'
+              gridColumnGap={3}
+              gridRowGap={3}
+              gridAutoRows='40px'
+            >
+              <SkillsDisplay
+                skills={tempSkills || skills}
+                skillDiff={skillDiff}
+                updateFilter={updateSkillFilter}
+                skillFilter={filters.skills}
+                withFilter
+              />
+            </Grid>
+          )}
         </Box>
       )}
     </>

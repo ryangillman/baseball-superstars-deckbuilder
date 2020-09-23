@@ -88,9 +88,7 @@ const Trainerlist = ({
             in terms of Skill compatibility for your current deck. The higher
             the value the better, there is no max value for this at the moment.
             This is highly ALPHA and untested status so please take with a grain
-            of salt. (It does NOT take skill rarity into account yet). It does
-            however give higher value to this trainer for getting skills to
-            level 4/5 in your deck.
+            of salt. THIS WILL NOT CREATE THE PERFECT DECK FOR YOU.
           </Text>
         </Flex>
       )}
