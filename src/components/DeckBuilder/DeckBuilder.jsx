@@ -12,7 +12,6 @@ import {
   Alert,
   AlertIcon,
   AlertDescription,
-  useToast,
 } from '@chakra-ui/core';
 import Deck from '../Deck';
 import Trainerlist from '../Trainerlist';
@@ -21,8 +20,6 @@ import { replaceFirstNullWithValue } from '../../util';
 import useFilter from '../../hooks/useFilter';
 import useTrainers from '../../hooks/useTrainers';
 import useRoster from '../../hooks/useRoster';
-import useAuth from '../../hooks/useAuth';
-import useSaveRoster from '../../hooks/useSaveRoster';
 
 const getTrainersFromParams = () => {
   const params = new URLSearchParams(window.location.search);
