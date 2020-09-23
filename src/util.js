@@ -54,15 +54,15 @@ const getSkillLevelDiff = (newSkills, oldSkills) => {
   return { ...changedSkills, ...missingSkills };
 };
 
-const getValue = (num, from) => {
+const getValue = (num, from, skillValueFactor) => {
   let val = 0;
   for (let i = from + 1; i <= num; i += 1) {
     switch (num) {
       case 5:
-        val += 15;
+        val += 8;
         break;
       case 4:
-        val += 8;
+        val += 5;
         break;
       default:
         val += num;
@@ -74,18 +74,14 @@ const getValue = (num, from) => {
 
 const getSkillValuesForDeck = (oldSkills, addedSkills) =>
   Object.keys(addedSkills).reduce((acc, row) => {
-    if (!oldSkills[row]) {
-      return acc + getValue(Math.min(parseInt(addedSkills[row], 10), 5), 0);
+    const oldSkillLevel = parseInt(oldSkills[row], 10) || 0;
+    const newSkillLevel = parseInt(addedSkills[row], 10);
+
+    if (!oldSkillLevel) {
+      return acc + getValue(Math.min(newSkillLevel, 5), 0);
     }
     return (
-      acc +
-      getValue(
-        Math.min(
-          parseInt(addedSkills[row], 10) + parseInt(oldSkills[row], 10),
-          5
-        ),
-        parseInt(oldSkills[row], 10)
-      )
+      acc + getValue(Math.min(newSkillLevel + oldSkillLevel, 5), oldSkillLevel)
     );
   }, 0);
 
@@ -120,7 +116,7 @@ const createDeckUrl = (trainers, withBaseUrl = false, rId, withRoster) => {
     : `/?${paramsString ? `${paramsString}&` : ''}`;
 
   const completeUrl = `${baseUrl}${trainersToUrl(trainers)}`;
-  return completeUrl;
+  return encodeURI(completeUrl);
 };
 
 const createRosterObject = (acc, row) => ({ ...acc, [row.name]: row.stars });

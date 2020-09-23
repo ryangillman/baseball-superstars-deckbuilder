@@ -20,21 +20,6 @@ const RosterManager = () => {
 
   useEffect(() => {
     if ((isSuccessRoster, isSuccessTrainers)) {
-      if (!data && !user) {
-        saveRosterPersistent(
-          allTrainers
-            .map((row) => ({ ...row, stars: 1 }))
-            .reduce(createRosterObject, {}),
-          true
-        );
-        toast({
-          title: 'Success.',
-          description: 'Initial rostersetup complete.',
-          status: 'success',
-          duration: 9000,
-          isClosable: true,
-        });
-      }
       setRoster(() => {
         if (!data?.trainers)
           return allTrainers.map((row) => ({ ...row, stars: 1 }));

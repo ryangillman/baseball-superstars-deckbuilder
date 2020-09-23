@@ -1,9 +1,9 @@
 import { useQuery } from 'react-query';
 import getSkills from '../api/skillQueries';
 
-const useTrainers = () =>
+const useSkills = () =>
   useQuery(['skills'], getSkills, {
     staleTime: Infinity,
   });
 
-export default useTrainers;
+export default useSkills;
