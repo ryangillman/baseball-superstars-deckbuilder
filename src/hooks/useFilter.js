@@ -3,24 +3,38 @@ import { battingPositions, pitchingPositions } from '../assets/positions';
 
 import useTrainerDisplaySettings from './useTrainerDisplaySettings';
 
-const trainerHasSkills = (trainer, searchValues, searchTypeAnd = false) =>
+const trainerHasSkills = (
+  trainer,
+  { skillNames, skillLevels },
+  searchTypeAnd = false
+) =>
   Object.entries(trainer.skills).some(([, skills]) =>
     searchTypeAnd
-      ? searchValues.every((row) => Object.keys(skills).includes(row))
-      : searchValues.some((row) => Object.keys(skills).includes(row))
+      ? skillNames.every(
+          (row) =>
+            Object.keys(skills).includes(row) && skills[row] >= skillLevels[row]
+        )
+      : skillNames.some(
+          (row) =>
+            Object.keys(skills).includes(row) && skills[row] >= skillLevels[row]
+        )
   );
 
 const trainerHasSkillsOnCurrentUpgrade = (
   trainer,
-  searchValues,
+  { skillNames, skillLevels } = {},
   searchTypeAnd = false
 ) =>
   searchTypeAnd
-    ? searchValues.every((row) =>
-        Object.keys(trainer.skills[trainer.stars]).includes(row)
+    ? skillNames.every(
+        (row) =>
+          Object.keys(trainer.skills[trainer.stars]).includes(row) &&
+          trainer.skills[trainer.stars][row] >= skillLevels[row]
       )
-    : searchValues.some((row) =>
-        Object.keys(trainer.skills[trainer.stars]).includes(row)
+    : skillNames.some(
+        (row) =>
+          Object.keys(trainer.skills[trainer.stars]).includes(row) &&
+          trainer.skills[trainer.stars][row] >= skillLevels[row]
       );
 
 const getTrainerDisplaySettings = (state) => [
@@ -84,14 +98,14 @@ const useFilter = (allTrainers) => {
               break;
             case 'skills':
               if (
-                value.length &&
+                value?.skillNames?.length &&
                 !searchSkillOnlyInActiveUpgrade &&
                 !trainerHasSkills(row, value, skillSearchTypeAnd)
               ) {
                 return false;
               }
               if (
-                value.length &&
+                value?.skillNames?.length &&
                 searchSkillOnlyInActiveUpgrade &&
                 !trainerHasSkillsOnCurrentUpgrade(
                   row,

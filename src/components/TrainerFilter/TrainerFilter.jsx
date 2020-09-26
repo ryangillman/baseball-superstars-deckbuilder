@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Flex, Input, Checkbox } from '@chakra-ui/core';
+import { Box, Flex, Input, Checkbox, IconButton, Text } from '@chakra-ui/core';
+import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 import useSkills from '../../hooks/useSkills';
 import MultiSelect from '../MultiSelect/MultiSelect';
 import rarities from '../../assets/rarities';
@@ -8,6 +9,68 @@ import types from '../../assets/types';
 import bonusteams from '../../assets/bonusteams';
 import useTrainerDisplaySettings from '../../hooks/useTrainerDisplaySettings';
 import Select from '../Select';
+
+const MultiValueLabel = ({
+  data,
+  selectProps: {
+    selectProps: { setFilters },
+  },
+}) => (
+  <>
+    <Text
+      color='gray.300'
+      textOverflow='ellipsis'
+      minW={0}
+      whiteSpace='nowrap'
+      p='3px'
+      fontSize='85%'
+      as='span'
+    >
+      {data?.label}
+    </Text>
+
+    <IconButton
+      variant='ghost'
+      size='xs'
+      ml={2}
+      icon={<AddIcon />}
+      disabled={data?.level === 5}
+      onMouseDown={(e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        setFilters((prev) => ({
+          skills: {
+            ...prev.skills,
+            skillLevels: {
+              ...prev.skills.skillLevels,
+              [data.value]: prev.skills.skillLevels[data.value] + 1,
+            },
+          },
+        }));
+      }}
+    />
+
+    <IconButton
+      variant='ghost'
+      size='xs'
+      icon={<MinusIcon />}
+      disabled={data?.level === 1}
+      onMouseDown={(e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        setFilters((prev) => ({
+          skills: {
+            ...prev.skills,
+            skillLevels: {
+              ...prev.skills.skillLevels,
+              [data.value]: prev.skills.skillLevels[data.value] - 1,
+            },
+          },
+        }));
+      }}
+    />
+  </>
+);
 
 const TrainerFilter = ({ setFilters, skillFilter }) => {
   const {
@@ -65,6 +128,8 @@ const TrainerFilter = ({ setFilters, skillFilter }) => {
         <Box flex='0 0 100%' maxW='calc(100% - .5rem)' mx={1} my={3}>
           <MultiSelect
             placeholder='Filter by Skill'
+            selectProps={{ setFilters }}
+            components={{ MultiValueLabel }}
             items={Object.entries(allSkills || {})
               .sort((a, b) => (a[0] > b[0] ? 1 : -1))
               .map(([key, value]) => ({
@@ -72,14 +137,34 @@ const TrainerFilter = ({ setFilters, skillFilter }) => {
                 label: value.name,
               }))}
             value={
-              skillFilter?.map((row) => ({
+              skillFilter?.skillNames?.map((row) => ({
                 value: row,
-                label: allSkills?.[row]?.name,
+                level: skillFilter?.skillLevels?.[row] || 1,
+                label: `${allSkills?.[row]?.name} Lv.${
+                  skillFilter?.skillLevels?.[row] || 1
+                }+`,
                 withColor: !dontHighlightNeededUpgrades,
               })) || []
             }
             onChange={(values) =>
-              setFilters({ skills: values?.map((row) => row.value) || [] })
+              setFilters((prev) => {
+                if (!values) return { skills: {} };
+                const skillLevels = values.reduce(
+                  (acc, { value: skillName }) => ({
+                    [skillName]: prev?.skills?.skillLevels?.[skillName] || 1,
+                  }),
+                  {}
+                );
+                return {
+                  skills: {
+                    skillNames: values.map((value) => value.value),
+                    skillLevels: {
+                      ...prev?.skills?.skillLevels,
+                      ...skillLevels,
+                    },
+                  },
+                };
+              })
             }
           />
         </Box>
@@ -101,7 +186,7 @@ const TrainerFilter = ({ setFilters, skillFilter }) => {
             }
           />
         </Box>
-        {skillFilter?.length > 0 && (
+        {skillFilter?.skillNames?.length > 0 && (
           <>
             <Box flex='0 0 100%' mx={1} my={3}>
               <Checkbox

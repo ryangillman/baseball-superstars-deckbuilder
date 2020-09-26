@@ -41,7 +41,7 @@ const Trainer = ({
 
   const skillGrades = useMemo(() => {
     if (dontHighlightNeededUpgrades || !skillFilter) return {};
-    return skillFilter.reduce((acc, row) => {
+    return skillFilter.skillNames?.reduce((acc, row) => {
       const color = getSkillColor(row);
 
       const starsCount = Object.keys(trainer.skills)

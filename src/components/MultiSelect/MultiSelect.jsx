@@ -4,7 +4,7 @@ import { useTheme, Tooltip, Flex } from '@chakra-ui/core';
 import { getSkillColor } from '../../util';
 
 const MultiValueContainer = ({ data, ...props }) => (
-  <Tooltip label={data.label}>
+  <Tooltip label={`${data.label}`}>
     <Flex
       flex='0 1 auto'
       minW={0}
@@ -19,7 +19,12 @@ const MultiValueContainer = ({ data, ...props }) => (
   </Tooltip>
 );
 
-const MultiSelect = ({ items, onChange, ...props }) => {
+const MultiSelect = ({
+  items,
+  onChange,
+  components: propComponents,
+  ...props
+}) => {
   const theme = useTheme();
   const chakraStyles = useMemo(
     () => ({
@@ -44,6 +49,7 @@ const MultiSelect = ({ items, onChange, ...props }) => {
       multiValue: (provided, state) => ({
         ...provided,
         backgroundColor: theme.colors.whiteAlpha['200'],
+        alignItems: 'center',
       }),
       multiValueLabel: (provided, state) => ({
         ...provided,
@@ -52,6 +58,7 @@ const MultiSelect = ({ items, onChange, ...props }) => {
       multiValueRemove: (provided, state) => ({
         ...provided,
         color: theme.colors.gray['300'],
+        height: '100%',
       }),
       input: (provided, state) => ({
         ...provided,
@@ -102,7 +109,7 @@ const MultiSelect = ({ items, onChange, ...props }) => {
     <Select
       isMulti
       options={items}
-      components={{ MultiValueContainer }}
+      components={{ MultiValueContainer, ...propComponents }}
       onChange={onChange}
       styles={chakraStyles}
       {...props}

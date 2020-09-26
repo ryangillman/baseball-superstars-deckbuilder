@@ -3,7 +3,7 @@ import { Grid, Heading, Flex, Text } from '@chakra-ui/core';
 import Trainer from '../Trainer';
 import TrainerFilter from '../TrainerFilter';
 import useSkillState from '../../hooks/useSkillState';
-import { getSkillValuesForDeck } from '../../util';
+import { getTrainerValueForDeck } from '../../util';
 import useTrainerDisplaySettings from '../../hooks/useTrainerDisplaySettings';
 import UpgradeSelector from '../UpgradeSelector';
 
@@ -31,7 +31,7 @@ const Trainerlist = ({
       return allTrainers?.reduce(
         (acc, trainer) => ({
           ...acc,
-          [trainer?.name]: getSkillValuesForDeck(
+          [trainer?.name]: getTrainerValueForDeck(
             skills,
             trainer?.skills[trainer?.stars] || {}
           ),
