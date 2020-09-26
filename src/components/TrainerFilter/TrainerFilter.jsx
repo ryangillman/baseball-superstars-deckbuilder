@@ -186,7 +186,7 @@ const TrainerFilter = ({ setFilters, skillFilter }) => {
             }
           />
         </Box>
-        {skillFilter?.length > 0 && (
+        {skillFilter?.skillNames?.length > 0 && (
           <>
             <Box flex='0 0 100%' mx={1} my={3}>
               <Checkbox
