@@ -76,26 +76,23 @@ const getValue = (num, from, skillValueFactor = 1) => {
   return val;
 };
 
-const getSkillValuesForDeck = (oldSkills, addedSkills) => {
-  if (!allSkills) allSkills = getSkills();
-  return Object.keys(addedSkills).reduce((acc, row) => {
+const getSkillValuesOfTrainer = (skillsInDeck, trainerSkills) =>
+  Object.keys(trainerSkills).map((row) => {
     const skillValueFactor =
       (skillGrades?.indexOf(allSkills[row].skillGrade) || 0) + 1;
-    const oldSkillLevel = parseInt(oldSkills[row], 10) || 0;
-    const newSkillLevel = parseInt(addedSkills[row], 10);
-
-    if (!oldSkillLevel) {
-      return acc + getValue(Math.min(newSkillLevel, 5), 0, skillValueFactor);
-    }
-    return (
-      acc +
-      getValue(
-        Math.min(newSkillLevel + oldSkillLevel, 5),
-        oldSkillLevel,
-        skillValueFactor
-      )
+    const deckSkillLevel = parseInt(skillsInDeck[row], 10) || 0;
+    const trainerSkillLevel = parseInt(trainerSkills[row], 10);
+    return getValue(
+      Math.min(trainerSkillLevel + deckSkillLevel, 5),
+      deckSkillLevel,
+      skillValueFactor
     );
-  }, 0);
+  });
+
+const getTrainerValueForDeck = (skillsInDeck, trainerSkills) => {
+  if (!allSkills) allSkills = getSkills();
+  const skillValues = getSkillValuesOfTrainer(skillsInDeck, trainerSkills);
+  return skillValues.reduce((acc, row) => acc + row);
 };
 
 const trainersToUrl = (trainers) =>
@@ -141,6 +138,6 @@ export {
   getSkillColor,
   getSkillLevelsSum,
   getSkillLevelDiff,
-  getSkillValuesForDeck,
+  getTrainerValueForDeck,
   createRosterObject,
 };

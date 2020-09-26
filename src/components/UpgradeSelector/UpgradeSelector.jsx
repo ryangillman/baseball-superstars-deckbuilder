@@ -33,6 +33,7 @@ const UpgradeSelector = ({
         {(activeStars < stars &&
           skillGrades?.[stars]?.map((row, i, arr) => (
             <Box
+              key={row}
               {...{
                 border: '4px solid',
                 borderRadius: '30px',
