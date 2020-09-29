@@ -11,6 +11,10 @@ const positions = [
     value: 'River City',
     label: 'River City',
   },
+  {
+    value: 'Mystic Unicorns',
+    label: 'Mystic Unicorns',
+  },
 ];
 
 export default positions;
