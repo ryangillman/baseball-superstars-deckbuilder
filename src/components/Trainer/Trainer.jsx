@@ -142,23 +142,7 @@ const Trainer = ({
             show={(showOverlay && trainerIndex !== -1) || trainer.stars === 0}
             text={overlayText || ''}
           />
-          {(trainerValue && (
-            <Flex
-              alignItems='center'
-              justifyContent='center'
-              position='absolute'
-              right={0}
-              left='5px'
-              top='5px'
-              width='30px'
-              height='30px'
-              pointerEvents='none'
-              bg='gray.200'
-            >
-              <Text>{trainerValue}</Text>
-            </Flex>
-          )) ||
-            null}
+
           <Flex
             position='absolute'
             right={0}

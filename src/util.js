@@ -3,6 +3,7 @@ import { getSkills } from './api/skillQueries';
 
 let allSkills;
 const skillGrades = ['N', 'R', 'SR', 'SSR', 'UR'];
+const skillCost = { N: 25, R: 50, SR: 75, SSR: 100, UR: 125 };
 
 const replaceFirstNullWithValue = (arr, value) => {
   const firstIndexOfNull = arr.indexOf(null);
@@ -57,19 +58,98 @@ const getSkillLevelDiff = (newSkills, oldSkills) => {
 
   return { ...changedSkills, ...missingSkills };
 };
+const getSkillGradeFactor = (skill) => {
+  if (!allSkills) allSkills = getSkills();
+  return (skillGrades?.indexOf(allSkills[skill].skillGrade) || 0) + 1;
+};
 
-const getValue = (num, from, skillValueFactor = 1) => {
+const getSkillValue = (level, skillGradeFactor) => {
+  const skillValues = { 1: 1, 2: 2, 3: 3, 4: 5, 5: 8 };
+  return skillValues[level] * skillGradeFactor;
+};
+
+const getHigherSkillByValue = (skill1, skill2) => {
+  if (skill1.skillValue > skill2.skillValue) return skill1;
+  return skill2;
+};
+
+const getSkillCost = (skillId, skillLevel) => {
+  if (!allSkills) allSkills = getSkills();
+
+  return skillCost[allSkills[skillId].skillGrade] * skillLevel;
+};
+
+const getBestSkillsInDeck = (skills) => {
+  if (!allSkills) allSkills = getSkills();
+  const bestSkillsOfEachCategory = Object.entries(skills).reduce(
+    (acc, [skillName, skillLevel]) => {
+      const skillGradeFactor = getSkillGradeFactor(skillName);
+      const skillValue = getSkillValue(skillLevel, skillGradeFactor);
+      const skillType = allSkills[skillName].type;
+      const skillData = {
+        id: skillName,
+        skillValue,
+        skillLevel,
+      };
+      if (skillType !== 'Common') {
+        if (acc[skillType]) {
+          return {
+            ...acc,
+            [skillType]: getHigherSkillByValue(acc[skillType], skillData),
+          };
+        }
+        return { ...acc, [skillType]: skillData };
+      }
+      return acc;
+    },
+    {}
+  );
+  const bestNonCommonSkills = Object.values(bestSkillsOfEachCategory).reduce(
+    (acc, { id, skillValue, skillLevel }) => ({
+      ...acc,
+      [id]: { skillValue, skillLevel },
+    }),
+    {}
+  );
+
+  const bestCommonSkills = Object.entries(skills).reduce(
+    (acc, [skillName, skillLevel]) => {
+      const skillGradeFactor = getSkillGradeFactor(skillName);
+      const skillValue = getSkillValue(skillLevel, skillGradeFactor);
+      const skillType = allSkills[skillName].type;
+
+      if (skillType === 'Common') {
+        return { ...acc, [skillName]: { skillValue, skillLevel } };
+      }
+      return acc;
+    },
+    {}
+  );
+
+  const bestSkills = Object.fromEntries(
+    Object.entries({
+      ...bestNonCommonSkills,
+      ...bestCommonSkills,
+    })
+      .sort((a, b) => (a[1].skillValue > b[1].skillValue ? -1 : 1))
+      .slice(0, 20)
+  );
+
+  return bestSkills;
+};
+
+const getTrainerSkillValue = (num, from, skillGradeFactor = 1) => {
   let val = 0;
   for (let i = from + 1; i <= num; i += 1) {
     switch (num) {
       case 5:
-        val += 8 * skillValueFactor;
+        val += 3 * skillGradeFactor;
         break;
       case 4:
-        val += 5 * skillValueFactor;
+        val += 2 * skillGradeFactor;
         break;
       default:
-        val += num * skillValueFactor;
+        val += 1 * skillGradeFactor;
         break;
     }
   }
@@ -78,14 +158,13 @@ const getValue = (num, from, skillValueFactor = 1) => {
 
 const getSkillValuesOfTrainer = (skillsInDeck, trainerSkills) =>
   Object.keys(trainerSkills).map((row) => {
-    const skillValueFactor =
-      (skillGrades?.indexOf(allSkills[row].skillGrade) || 0) + 1;
+    const skillGradeFactor = getSkillGradeFactor(row);
     const deckSkillLevel = parseInt(skillsInDeck[row], 10) || 0;
     const trainerSkillLevel = parseInt(trainerSkills[row], 10);
-    return getValue(
+    return getTrainerSkillValue(
       Math.min(trainerSkillLevel + deckSkillLevel, 5),
       deckSkillLevel,
-      skillValueFactor
+      skillGradeFactor
     );
   });
 
@@ -140,4 +219,6 @@ export {
   getSkillLevelDiff,
   getTrainerValueForDeck,
   createRosterObject,
+  getBestSkillsInDeck,
+  getSkillCost,
 };

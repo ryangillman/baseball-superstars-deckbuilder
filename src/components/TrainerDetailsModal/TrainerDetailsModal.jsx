@@ -10,7 +10,6 @@ import {
   Text,
   Box,
   Image,
-  Grid,
 } from '@chakra-ui/core';
 import SkillsDisplay from '../SkillsDisplay';
 import trainerImages from '../../assets/trainerImages';
@@ -92,18 +91,16 @@ const TrainerDetailsModal = ({ isOpen, onClose, trainer }) => {
                 }
                 onUpgradeMouseLeave={() => setTempSkills(null)}
               />
-              <Grid
+
+              <SkillsDisplay
                 gridTemplateColumns='repeat(2, 1fr)'
                 gridColumnGap={3}
                 gridRowGap={3}
                 gridAutoRows='40px'
                 mt={2}
-              >
-                <SkillsDisplay
-                  skills={tempSkills || trainer.skills[stars]}
-                  skillDiff={skillDiff}
-                />
-              </Grid>
+                skills={tempSkills || trainer.skills[stars]}
+                skillDiff={skillDiff}
+              />
             </Box>
           </ModalBody>
         </ModalContent>
