@@ -7,9 +7,10 @@ import {
   useToast,
   Box,
   IconButton,
+  Text,
 } from '@chakra-ui/core';
 import { useHistory } from 'react-router-dom';
-import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
+import { ChevronDownIcon, ChevronUpIcon, StarIcon } from '@chakra-ui/icons';
 import Trainer from '../Trainer';
 import TrainerSlot from '../TrainerSlot';
 import SkillsDisplayWithCategories from '../SkillDisplayWithCategories';
@@ -230,7 +231,24 @@ const Deck = ({
         )}
       </Flex>
       {Object.keys(skills).length > 0 && showActiveSkills && (
-        <Box bg='gray.800' border='2px inset' mt={-3} mb={5} p={2}>
+        <Box
+          bg='gray.800'
+          border='2px inset'
+          mt={-3}
+          mb={5}
+          p={2}
+          position='relative'
+        >
+          <Flex
+            alignItems='center'
+            flexWrap='nowrap'
+            position='absolute'
+            right='10px'
+            top='10px'
+          >
+            <StarIcon mr={3} ml='auto' color='yellow.400' />
+            <Text color='gray.300'>Skills with highest value in this deck</Text>
+          </Flex>
           <Flex justifyContent='center'>
             <Button
               colorScheme='blue'
@@ -250,23 +268,18 @@ const Deck = ({
               updateFilter={updateSkillFilter}
               skillFilter={filters.skills}
               withFilter
+              highlightBest
             />
           )}
           {!withCategories && (
-            <Grid
-              gridTemplateColumns='repeat(auto-fit, minmax(200px, 1fr))'
-              gridColumnGap={3}
-              gridRowGap={3}
-              gridAutoRows='40px'
-            >
-              <SkillsDisplay
-                skills={tempSkills || skills}
-                skillDiff={skillDiff}
-                updateFilter={updateSkillFilter}
-                skillFilter={filters.skills}
-                withFilter
-              />
-            </Grid>
+            <SkillsDisplay
+              skills={tempSkills || skills}
+              skillDiff={skillDiff}
+              updateFilter={updateSkillFilter}
+              skillFilter={filters.skills}
+              withFilter
+              highlightBest
+            />
           )}
         </Box>
       )}

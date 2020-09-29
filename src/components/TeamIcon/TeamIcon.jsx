@@ -10,6 +10,14 @@ const TeamIcon = ({ team }) => {
       return (
         <div className='team-icon team-rivercity' alt={team} title={team} />
       );
+    case 'Mystic Unicorns':
+      return (
+        <div
+          className='team-icon team-mystic-unicorns'
+          alt={team}
+          title={team}
+        />
+      );
     default:
       return null;
   }

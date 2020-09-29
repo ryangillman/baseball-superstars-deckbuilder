@@ -85,6 +85,9 @@ body {
 .team-rivercity {
   background-image: url('./assets/teams/rivercity.png');
 }
+.team-mystic-unicorns {
+  background-image: url('./assets/teams/mystic-unicorns.png');
+}
 
 @keyframes App-logo-spin {
   from {

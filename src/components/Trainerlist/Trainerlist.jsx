@@ -3,9 +3,10 @@ import { Grid, Heading, Flex, Text } from '@chakra-ui/core';
 import Trainer from '../Trainer';
 import TrainerFilter from '../TrainerFilter';
 import useSkillState from '../../hooks/useSkillState';
-import { getTrainerValueForDeck } from '../../util';
+import { getSkillLevelsSum, getTrainerValueForDeck } from '../../util';
 import useTrainerDisplaySettings from '../../hooks/useTrainerDisplaySettings';
 import UpgradeSelector from '../UpgradeSelector';
+import TrainerValue from '../Trainer/TrainerValue/TrainerValue';
 
 const getSkills = (state) => state.skills;
 const getSortBy = (state) => state.sortBy;
@@ -28,16 +29,27 @@ const Trainerlist = ({
   const allTrainerValues = useMemo(() => {
     if (!allTrainers || !allTrainers?.length) return null;
     if (selectedTrainers?.some((row) => row !== null)) {
-      return allTrainers?.reduce(
-        (acc, trainer) => ({
+      return allTrainers?.reduce((acc, trainer) => {
+        if (!selectedTrainers.find((sel) => sel?.name === trainer?.name)) {
+          return {
+            ...acc,
+            [trainer?.name]: getTrainerValueForDeck(
+              skills,
+              trainer?.skills[trainer?.stars] || {}
+            ),
+          };
+        }
+        const selectedTrainersWithoutCurrent = selectedTrainers.map((row) =>
+          row?.name === trainer?.name ? null : row
+        );
+        return {
           ...acc,
           [trainer?.name]: getTrainerValueForDeck(
-            skills,
+            getSkillLevelsSum(selectedTrainersWithoutCurrent),
             trainer?.skills[trainer?.stars] || {}
           ),
-        }),
-        {}
-      );
+        };
+      }, {});
     }
     return null;
     // doesn't need selectedTrainers dep since skills is already a dependency of selectedTrainers
@@ -99,32 +111,30 @@ const Trainerlist = ({
         gridColumnGap={2}
       >
         {(sortBy.type === 'skillvalue'
-          ? allTrainers?.sort((a, b) => {
-              if (sortBy.type === 'skillvalue') {
-                return allTrainerValues?.[a.name] > allTrainerValues?.[b.name]
-                  ? -1
-                  : 1;
-              }
-              return 0;
-            })
-          : allTrainers
+          ? allTrainers?.sort((a, b) =>
+              allTrainerValues?.[a.name] > allTrainerValues?.[b.name] ? -1 : 1
+            )
+          : allTrainers?.sort((a, b) => (a.order < b.order ? -1 : 1))
         ).map((trainer) => {
           const trainerIndex = selectedTrainers?.findIndex(
             (row) => row?.name === trainer?.name
           );
           return (
-            <Trainer
-              withRemove={withRemove}
-              updateSelectedTrainers={updateSelectedTrainers}
-              trainer={trainer}
-              trainerIndex={trainerIndex}
-              trainerValue={allTrainerValues?.[trainer.name]}
-              key={trainer.name}
-              updateTrainerStars={updateTrainerStars}
-              showOverlay={showOverlay}
-              overlayText={trainerIndex + 1}
-              skillFilter={skillFilter}
-            />
+            <Flex maxW={120} key={trainer.name} position='relative'>
+              <Trainer
+                withRemove={withRemove}
+                updateSelectedTrainers={updateSelectedTrainers}
+                trainer={trainer}
+                trainerIndex={trainerIndex}
+                updateTrainerStars={updateTrainerStars}
+                showOverlay={showOverlay}
+                overlayText={trainerIndex + 1}
+                skillFilter={skillFilter}
+              />
+              {allTrainerValues?.[trainer.name] && (
+                <TrainerValue trainerValue={allTrainerValues?.[trainer.name]} />
+              )}
+            </Flex>
           );
         })}
       </Grid>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, Box, Tag, IconButton, Flex, useTheme } from '@chakra-ui/core';
-import { SearchIcon } from '@chakra-ui/icons';
+import { SearchIcon, StarIcon } from '@chakra-ui/icons';
 import { getSkillColor } from '../../util';
 
 import useTrainerDisplaySettings, {
@@ -16,6 +16,7 @@ const Skill = ({
   updateFilter,
   skillDiff,
   withFilter = false,
+  isBest,
 }) => {
   const theme = useTheme();
   const dontHighlightNeededUpgrades = useTrainerDisplaySettings(
@@ -58,6 +59,7 @@ const Skill = ({
         justifyContent='space-between'
       >
         <Text display='inline-block'>{skillName}</Text>
+        {isBest && <StarIcon color='yellow.400' ml='auto' />}
         {skillDiff && (
           <Text
             color={skillDiff < 0 ? 'red.300' : 'green.200'}

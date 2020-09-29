@@ -1,7 +1,8 @@
-import React, { useCallback } from 'react';
-import { Grid, Heading } from '@chakra-ui/core';
+import React, { useCallback, useMemo } from 'react';
+import { Flex, Grid, Heading, Text } from '@chakra-ui/core';
 import Skill from '../Skill';
 import useSkills from '../../hooks/useSkills';
+import { getBestSkillsInDeck, getSkillCost } from '../../util';
 
 const rarityIndex = ['UR', 'SSR', 'SR', 'R', 'N'];
 
@@ -26,12 +27,23 @@ const SkillsDisplay = ({
   skillFilter,
   updateFilter,
   withFilter,
+  highlightBest,
 }) => {
   const { data: allSkills } = useSkills();
 
   const sortBySkillType = useCallback(
     (a, b) => (typeOrder.indexOf(a[0]) > typeOrder.indexOf(b[0]) ? 1 : -1),
     []
+  );
+
+  const bestSkills = useMemo(() => getBestSkillsInDeck(skills), [skills]);
+  const bestSkillMaxLevel = Object.keys(bestSkills)?.reduce(
+    (acc, row) => acc + bestSkills[row].skillLevel,
+    0
+  );
+  const bestSkillsMaxCost = Object.keys(bestSkills).reduce(
+    (acc, row) => acc + getSkillCost(row, bestSkills[row].skillLevel),
+    0
   );
 
   const sortByGradeAndLevel = useCallback(
@@ -86,6 +98,8 @@ const SkillsDisplay = ({
                   .map(([skillId, skillLevel]) => (
                     <Skill
                       {...{
+                        isBest:
+                          highlightBest && bestSkills?.[skillId] !== undefined,
                         skillName: allSkills?.[skillId]?.name,
                         skillGrade: allSkills?.[skillId]?.skillGrade,
                         withFilter,
@@ -101,6 +115,22 @@ const SkillsDisplay = ({
               </Grid>
             </React.Fragment>
           ))}
+      {highlightBest && (
+        <Flex my={4} mt={10} justifyContent='space-around'>
+          <Text color='gray.300' fontSize={18}>
+            Highest value skills - Max Overall Skill Level:{' '}
+            <Text as='span' fontWeight='700'>
+              {bestSkillMaxLevel}
+            </Text>
+          </Text>
+          <Text color='gray.300' fontSize={18}>
+            Highest value skills - Max SP Cost (no Discounts):{' '}
+            <Text as='span' fontWeight='700'>
+              {bestSkillsMaxCost}
+            </Text>
+          </Text>
+        </Flex>
+      )}{' '}
     </>
   );
 };
