@@ -71,7 +71,7 @@ const SkillsDisplay = ({
                   key: skillId,
                   skillId,
                   skillLevel,
-                  isActive: skillFilter?.includes(skillId),
+                  isActive: skillFilter?.skills?.includes(skillId),
                   updateFilter,
                 }}
               />
