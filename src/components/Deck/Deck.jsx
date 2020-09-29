@@ -99,8 +99,19 @@ const Deck = ({
       setFilters((prev) => ({
         skills:
           action === 'remove'
-            ? prev.skills.filter((row) => row !== skill)
-            : [...(prev?.skills || []), skill],
+            ? {
+                skillNames: prev?.skills?.skillNames?.filter(
+                  (row) => row !== skill
+                ),
+                skillLevels: {
+                  ...(prev.skills.skillLevels || {}),
+                  [skill]: undefined,
+                },
+              }
+            : {
+                skillNames: [...(prev?.skills?.skillNames || []), skill],
+                skillLevels: { ...(prev?.skills?.skillLevels, {}), [skill]: 1 },
+              },
       }));
     },
     [setFilters]
