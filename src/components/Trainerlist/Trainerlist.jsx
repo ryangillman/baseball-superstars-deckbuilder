@@ -7,6 +7,8 @@ import { getSkillLevelsSum, getTrainerValueForDeck } from '../../util';
 import useTrainerDisplaySettings from '../../hooks/useTrainerDisplaySettings';
 import UpgradeSelector from '../UpgradeSelector';
 import TrainerValue from '../Trainer/TrainerValue/TrainerValue';
+import ComboEventIcon from '../ComboEventIcon/ComboEventIcon';
+import useComboEvents from '../../hooks/useComboEvents';
 
 const getSkills = (state) => state.skills;
 const getSortBy = (state) => state.sortBy;
@@ -24,6 +26,7 @@ const Trainerlist = ({
   showInfo = false,
 }) => {
   const skills = useSkillState(getSkills);
+  const { data: comboEvents } = useComboEvents();
   const sortBy = useTrainerDisplaySettings(getSortBy);
 
   const allTrainerValues = useMemo(() => {
@@ -56,6 +59,7 @@ const Trainerlist = ({
     // eslint-disable-next-line
   }, [skills, allTrainers]);
 
+  if (!comboEvents) return null;
   return (
     <>
       <Heading color='gray.300' mb={3}>
@@ -119,6 +123,15 @@ const Trainerlist = ({
           const trainerIndex = selectedTrainers?.findIndex(
             (row) => row?.name === trainer?.name
           );
+          const trainerComboEvents =
+            trainer?.comboEvents?.filter((row) =>
+              comboEvents[row].requiredTrainers.every((trainerName) =>
+                [...selectedTrainers.filter(Boolean), trainer]
+                  .map((selTrainer) => selTrainer.name)
+                  .includes(trainerName)
+              )
+            ) || [];
+
           return (
             <Flex maxW={120} key={trainer.name} position='relative'>
               <Trainer
@@ -134,6 +147,9 @@ const Trainerlist = ({
               {allTrainerValues?.[trainer.name] && (
                 <TrainerValue trainerValue={allTrainerValues?.[trainer.name]} />
               )}
+              {trainerComboEvents.length > 0 ? (
+                <ComboEventIcon blinking={trainerIndex === -1} />
+              ) : null}
             </Flex>
           );
         })}
