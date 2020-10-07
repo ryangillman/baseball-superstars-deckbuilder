@@ -1,0 +1,406 @@
+{
+  "customized_treatment": {
+    "name": "Customized Treatment",
+    "requiredTrainers": ["Roy", "Lucy"]
+  },
+  "priority": { "name": "Priority", "requiredTrainers": ["Roy", "Zia"] },
+  "trainee": { "name": "Trainee", "requiredTrainers": ["Rachel", "Michaella"] },
+  "unreachable": {
+    "name": "Unreachable",
+    "requiredTrainers": ["Rachel", "Monique"]
+  },
+  "michaella_s_satellite": {
+    "name": "Michaella's Satellite",
+    "requiredTrainers": ["Michaella", "Sophie"]
+  },
+  "strong_requisites": {
+    "name": "Strong Requisites",
+    "requiredTrainers": ["Tsubaki", "Britra"]
+  },
+  "just_like_you_": {
+    "name": "Just Like You!",
+    "requiredTrainers": ["Luther", "Rex"]
+  },
+  "a_movie_star": {
+    "name": "A Movie Star",
+    "requiredTrainers": ["Luther", "Drucker"]
+  },
+  "captain_and_kate": {
+    "name": "Captain and Kate",
+    "requiredTrainers": ["Luther", "Kate"]
+  },
+  "hammer_throwing": {
+    "name": "Hammer Throwing",
+    "requiredTrainers": ["Luther", "Tauric"]
+  },
+  "weird_relationship": {
+    "name": "Weird Relationship",
+    "requiredTrainers": ["Flamesh", "Nameless"]
+  },
+  "turning_back_time_": {
+    "name": "Turning Back Time?",
+    "requiredTrainers": ["Flamesh", "Albert"]
+  },
+  "no_sleeping_here_": {
+    "name": "No Sleeping Here!",
+    "requiredTrainers": ["Britra", "Kalisto"]
+  },
+  "o_dear_goddess_": {
+    "name": "O Dear Goddess!",
+    "requiredTrainers": ["Britra", "Basedevil"]
+  },
+  "hating_generations": {
+    "name": "Hating Generations",
+    "requiredTrainers": ["Helga", "Captain Jack"]
+  },
+  "meaning_of_betrayal": {
+    "name": "Meaning of Betrayal",
+    "requiredTrainers": ["Helga", "John Roger"]
+  },
+  "law_abiding_viking": {
+    "name": "Law-abiding Viking",
+    "requiredTrainers": ["Helga", "Policia"]
+  },
+  "soft_spot": { "name": "Soft Spot", "requiredTrainers": ["Seiryu", "Nio"] },
+  "fated_rivalry": {
+    "name": "Fated Rivalry",
+    "requiredTrainers": ["Seiryu", "Soun"]
+  },
+  "dragon_s_artifact": {
+    "name": "Dragon's Artifact",
+    "requiredTrainers": ["Seiryu", "Dragona"]
+  },
+  "wulin_s_best": {
+    "name": "Wulin's Best",
+    "requiredTrainers": ["Kai", "Liuxing"]
+  },
+  "what_is_harmony_": {
+    "name": "What is Harmony?",
+    "requiredTrainers": ["Kai", "Liuxia"]
+  },
+  "fighting_and_swords": {
+    "name": "Fighting And Swords",
+    "requiredTrainers": ["Kai", "Ara"]
+  },
+  "let_s_be_friends": {
+    "name": "Let's Be Friends",
+    "requiredTrainers": ["Nina", "Guy-E"]
+  },
+  "your_right_arm_": {
+    "name": "Your Right Arm!",
+    "requiredTrainers": ["Nina", "Elfin"]
+  },
+  "secret_of_the_arm": {
+    "name": "Secret of the Arm",
+    "requiredTrainers": ["Nina", "King Tiger"]
+  },
+  "teacher_and_student": {
+    "name": "Teacher and Student",
+    "requiredTrainers": ["Sohyang", "Zena"]
+  },
+  "refusal_to_train": {
+    "name": "Refusal to Train",
+    "requiredTrainers": ["Sohyang", "Ara"]
+  },
+  "who_s_the_strongest_": {
+    "name": "Who's the Strongest?",
+    "requiredTrainers": ["Ara", "Scumbag Joe"]
+  },
+  "joe_s_helper": {
+    "name": "Joe's Helper",
+    "requiredTrainers": ["King Tiger", "Scumbag Joe"]
+  },
+  "irrevocable": {
+    "name": "Irrevocable",
+    "requiredTrainers": ["King Tiger", "Leon"]
+  },
+  "old_friends": {
+    "name": "Old Friends",
+    "requiredTrainers": ["King Tiger", "Tauric"]
+  },
+  "cut_to_the_chase": {
+    "name": "Cut to the Chase",
+    "requiredTrainers": ["Luna", "Drucker"]
+  },
+  "what_a_coincidence_": {
+    "name": "What a Coincidence!",
+    "requiredTrainers": ["Luna", "Wonhee"]
+  },
+  "admiring_her": {
+    "name": "Admiring Her",
+    "requiredTrainers": ["Luna", "Titania"]
+  },
+  "servant_of_the_month": {
+    "name": "Servant of the Month",
+    "requiredTrainers": ["Luna", "Helen"]
+  },
+  "outside_the_field": {
+    "name": "Outside the Field",
+    "requiredTrainers": ["Kunio", "Riki"]
+  },
+  "oh__my_captain_": {
+    "name": "Oh, My Captain!",
+    "requiredTrainers": ["Dragona", "Stinger"]
+  },
+  "a_lion_and_a_human": {
+    "name": "A Lion and a Human",
+    "requiredTrainers": ["Leon", "Leonie"]
+  },
+  "a_wonderful_day": {
+    "name": "A Wonderful Day",
+    "requiredTrainers": ["Leon", "Reuben"]
+  },
+  "silver_fox": {
+    "name": "Silver Fox",
+    "requiredTrainers": ["Rowena", "Wendell"]
+  },
+  "recruitment_": {
+    "name": "Recruitment!",
+    "requiredTrainers": ["Kunio", "Bora"]
+  },
+  "recruit": { "name": "Recruit", "requiredTrainers": ["Rowena", "Soldia"] },
+  "different_thoughts": {
+    "name": "Different Thoughts",
+    "requiredTrainers": ["Belita", "Yomi"]
+  },
+  "who_": { "name": "Who?", "requiredTrainers": ["Violet", "Yomi"] },
+  "a_new_investor__": {
+    "name": "A new Investor?!",
+    "requiredTrainers": ["Violet", "Ditto"]
+  },
+  "the_last_piece": {
+    "name": "The Last Piece",
+    "requiredTrainers": ["Leonie", "Zhizi"]
+  },
+  "being_human": {
+    "name": "Being Human",
+    "requiredTrainers": ["Leonie", "Hunter G"]
+  },
+  "final_boss": {
+    "name": "Final Boss",
+    "requiredTrainers": ["Pluto", "Hellfire"]
+  },
+  "to_pluto_s_eyes_": {
+    "name": "To Pluto's Eyes?",
+    "requiredTrainers": ["Pluto", "Base Angel"]
+  },
+  "unexpected_reunion": {
+    "name": "Unexpected Reunion",
+    "requiredTrainers": ["Pluto", "Lucia"]
+  },
+  "inner_feelings": {
+    "name": "Inner Feelings",
+    "requiredTrainers": ["Violet", "Valentine"]
+  },
+  "unexpected_reaction": {
+    "name": "Unexpected Reaction",
+    "requiredTrainers": ["Valentine", "Brant"]
+  },
+  "who_am_i_": {
+    "name": "Who am I?",
+    "requiredTrainers": ["Valentine", "Golden Boy"]
+  },
+  "her_past": { "name": "Her Past", "requiredTrainers": ["Valentine", "Miho"] },
+  "one_sided_love": {
+    "name": "One-Sided Love",
+    "requiredTrainers": ["Ditto", "Phrygia"]
+  },
+  "strength_bracelet": {
+    "name": "Strength Bracelet",
+    "requiredTrainers": ["Ditto", "Psyker"]
+  },
+  "new_magic_trick__": {
+    "name": "New Magic Trick!?",
+    "requiredTrainers": ["Psyker", "Yomi"]
+  },
+  "liar__liar_": {
+    "name": "Liar, Liar!",
+    "requiredTrainers": ["Psyker", "Psyche"]
+  },
+  "fun_imagination": {
+    "name": "Fun Imagination",
+    "requiredTrainers": ["Kyoko", "Misako"]
+  },
+  "a_true_angel": {
+    "name": "A True Angel",
+    "requiredTrainers": ["Michaella", "Zia"]
+  },
+  "sad_destiny": {
+    "name": "Sad Destiny",
+    "requiredTrainers": ["Nameless", "Mei Mei"]
+  },
+  "diss_battle": {
+    "name": "Diss Battle",
+    "requiredTrainers": ["Monique", "Sophie"]
+  },
+  "mutualism": { "name": "Mutualism", "requiredTrainers": ["Albert", "Zena"] },
+  "villain_alert": {
+    "name": "Villain Alert",
+    "requiredTrainers": ["Base Hero", "Pazuzu"]
+  },
+  "source_of_power_": {
+    "name": "Source of Power?",
+    "requiredTrainers": ["Base Hero", "Phrygia"]
+  },
+  "no_more_beating_": {
+    "name": "No More Beating!",
+    "requiredTrainers": ["Helen", "Rose"]
+  },
+  "swept_away_by_nom": {
+    "name": "Swept away by NOM",
+    "requiredTrainers": ["NOM", "Zena"]
+  },
+  "water_and_oil": {
+    "name": "Water and Oil",
+    "requiredTrainers": ["NOM", "Golden Boy"]
+  },
+  "gloomy_graduation": {
+    "name": "Gloomy Graduation",
+    "requiredTrainers": ["Elfin", "Liew"]
+  },
+  "i_m_old_": { "name": "I'm Old?", "requiredTrainers": ["Lucy", "Velour"] },
+  "same_tastes_": {
+    "name": "Same Tastes!",
+    "requiredTrainers": ["Lucy", "Kryzer"]
+  },
+  "bodyguard": { "name": "Bodyguard", "requiredTrainers": ["Policia", "Mia"] },
+  "no_cheating_": {
+    "name": "No Cheating!",
+    "requiredTrainers": ["Basedevil", "Base Angel"]
+  },
+  "basedevil_s_students": {
+    "name": "Basedevil's Students",
+    "requiredTrainers": ["Basedevil", "Pazuzu"]
+  },
+  "harmony_mindset": {
+    "name": "Harmony Mindset",
+    "requiredTrainers": ["Pi", "Acro"]
+  },
+  "pi_and_talas": {
+    "name": "Pi and Talas",
+    "requiredTrainers": ["Pi", "Talas"]
+  },
+  "perfect_vocalist": {
+    "name": "Perfect Vocalist",
+    "requiredTrainers": ["Kryzer", "Nahyun"]
+  },
+  "pick_me_": { "name": "Pick Me!", "requiredTrainers": ["Mia", "Eunwoo"] },
+  "my_wish_is___": {
+    "name": "My Wish Is...",
+    "requiredTrainers": ["Liew", "Velour"]
+  },
+  "cleaning_buddy": {
+    "name": "Cleaning Buddy",
+    "requiredTrainers": ["Guy-E", "Hell Guy"]
+  },
+  "city_patrol": {
+    "name": "City Patrol",
+    "requiredTrainers": ["Guy-E", "Riki"]
+  },
+  "the_best_nurse": {
+    "name": "The Best Nurse",
+    "requiredTrainers": ["Medica", "Hilary"]
+  },
+  "stay_away_from_him_": {
+    "name": "Stay Away From Him!",
+    "requiredTrainers": ["Medica", "Psyche"]
+  },
+  "that_face": {
+    "name": "That Face",
+    "requiredTrainers": ["Rose", "Boomiger"]
+  },
+  "want_to_be_friends_": {
+    "name": "Want to Be Friends?",
+    "requiredTrainers": ["Rose", "Daisy"]
+  },
+  "more_than_a_trick": {
+    "name": "More Than a Trick",
+    "requiredTrainers": ["Allen", "Psyche"]
+  },
+  "the_best_snack": {
+    "name": "The Best Snack",
+    "requiredTrainers": ["Miho", "Zhizi"]
+  },
+  "meeting_thy_enemy": {
+    "name": "Meeting Thy Enemy",
+    "requiredTrainers": ["Captain Jack", "Bora"]
+  },
+  "an_offer": { "name": "An Offer", "requiredTrainers": ["Hunter G", "Bora"] },
+  "unusual_taste": {
+    "name": "Unusual Taste",
+    "requiredTrainers": ["Soldia", "Zhizi"]
+  },
+  "food_vs__medicine": {
+    "name": "Food vs. Medicine",
+    "requiredTrainers": ["Lucia", "Serena"]
+  },
+  "firelord": {
+    "name": "Firelord",
+    "requiredTrainers": ["Hellfire", "Firelord"]
+  },
+  "currently_recruiting": {
+    "name": "Currently Recruiting",
+    "requiredTrainers": ["Onestone", "Magmizer"]
+  },
+  "witches_and_a_golem": {
+    "name": "Witches and a Golem",
+    "requiredTrainers": ["Onestone", "Tera", "Cami"]
+  },
+  "neighbor_vs__problem": {
+    "name": "Neighbor vs. Problem",
+    "requiredTrainers": ["Boomiger", "Wendy"]
+  },
+  "noble_love": { "name": "Noble Love", "requiredTrainers": ["Lina", "Genie"] },
+  "happy_veggies": {
+    "name": "Happy Veggies",
+    "requiredTrainers": ["Flora", "Wonhee"]
+  },
+  "restoring_wid": {
+    "name": "Restoring Wid",
+    "requiredTrainers": ["Paris", "Eia"]
+  },
+  "gut_feeling": {
+    "name": "Gut Feeling",
+    "requiredTrainers": ["Patricia", "Siren"]
+  },
+  "master_and_servant": {
+    "name": "Master and Servant",
+    "requiredTrainers": ["Brokel", "Gladius"]
+  },
+  "different_sisters": {
+    "name": "Different Sisters",
+    "requiredTrainers": ["Genie", "Marvel"]
+  },
+  "conserve_water": {
+    "name": "Conserve Water",
+    "requiredTrainers": ["Kalisto", "Aqualord"]
+  },
+  "devil_meets_devil": {
+    "name": "Devil meets Devil",
+    "requiredTrainers": ["Anetta", "Wendy"]
+  },
+  "chase_is_on": {
+    "name": "Chase is On",
+    "requiredTrainers": ["Popo", "Amir"]
+  },
+  "meeting_new_people": {
+    "name": "Meeting new People",
+    "requiredTrainers": ["Drake", "Snipe"]
+  },
+  "venomous_adventure": {
+    "name": "Venomous Adventure",
+    "requiredTrainers": ["Dice", "Venomizer"]
+  },
+  "library_rivals": {
+    "name": "Library Rivals",
+    "requiredTrainers": ["Lupina", "Sherlia"]
+  },
+  "a_sign_of_hope": {
+    "name": "A Sign of Hope",
+    "requiredTrainers": ["Marcus", "Gryllson"]
+  },
+  "why_are_you_here_": {
+    "name": "Why Are You Here?",
+    "requiredTrainers": ["Lilo", "Casta"]
+  }
+}

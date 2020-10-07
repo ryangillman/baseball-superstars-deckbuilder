@@ -22,6 +22,8 @@ import {
 import useSkillState from '../../hooks/useSkillState';
 import useAuth from '../../hooks/useAuth';
 import SkillsDisplay from '../SkillsDisplay';
+import useComboEvents from '../../hooks/useComboEvents';
+import ComboEventIcon from '../ComboEventIcon/ComboEventIcon';
 
 const Deck = ({
   selectedTrainers,
@@ -37,6 +39,7 @@ const Deck = ({
   const [hideDeck, setHideDeck] = useState(false);
   const [tempSkills, setTempSkills] = useState(false);
   const [withCategories, setWithCategories] = useState(true);
+  const { data: comboEvents } = useComboEvents();
 
   const { skills, setState: setSkillState } = useSkillState();
   const toast = useToast();
@@ -191,17 +194,28 @@ const Deck = ({
         >
           {selectedTrainers?.map((trainer, i) => {
             if (trainer !== null) {
+              const trainerComboEvents =
+                trainer?.comboEvents?.filter((row) =>
+                  comboEvents[row].requiredTrainers.every((trainerName) =>
+                    [...selectedTrainers.filter(Boolean), trainer]
+                      .map((selTrainer) => selTrainer.name)
+                      .includes(trainerName)
+                  )
+                ) || [];
               return (
-                <Trainer
-                  trainer={trainer}
-                  key={trainer.name}
-                  updateSelectedTrainers={updateSelectedTrainers}
-                  updateTrainerStars={updateTrainerStars}
-                  onUpgradeMouseEnter={(stars) =>
-                    setTempSkills(getTempSkills(trainer)(stars))
-                  }
-                  onUpgradeMouseLeave={() => setTempSkills(null)}
-                />
+                <Flex maxW={120} key={trainer.name} position='relative'>
+                  <Trainer
+                    trainer={trainer}
+                    key={trainer.name}
+                    updateSelectedTrainers={updateSelectedTrainers}
+                    updateTrainerStars={updateTrainerStars}
+                    onUpgradeMouseEnter={(stars) =>
+                      setTempSkills(getTempSkills(trainer)(stars))
+                    }
+                    onUpgradeMouseLeave={() => setTempSkills(null)}
+                  />
+                  {trainerComboEvents.length > 0 ? <ComboEventIcon /> : null}
+                </Flex>
               );
             }
             // can disable because array always has 6 items and the index is stable

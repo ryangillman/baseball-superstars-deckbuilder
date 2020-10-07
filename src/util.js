@@ -171,7 +171,7 @@ const getSkillValuesOfTrainer = (skillsInDeck, trainerSkills) =>
 const getTrainerValueForDeck = (skillsInDeck, trainerSkills) => {
   if (!allSkills) allSkills = getSkills();
   const skillValues = getSkillValuesOfTrainer(skillsInDeck, trainerSkills);
-  return skillValues.reduce((acc, row) => acc + row);
+  return skillValues.reduce((acc, row) => acc + row, 0);
 };
 
 const trainersToUrl = (trainers) =>

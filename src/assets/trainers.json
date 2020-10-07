@@ -48,6 +48,7 @@
     "name": "Roy",
     "position": "C",
     "rarity": "UR",
+    "comboEvents": ["customized_treatment", "priority"],
     "skills": {
       "1": {
         "hr_king_blessing": 1,
@@ -124,6 +125,7 @@
     "position": "3B",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Rachel",
+    "comboEvents": ["trainee", "unreachable"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -240,6 +242,7 @@
     "position": "CF",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Michaella",
+    "comboEvents": ["trainee", "michaella_s_satellite", "a_true_angel"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -358,6 +361,7 @@
     "position": "SS",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Tsubaki",
+    "comboEvents": ["strong_requisites"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -469,6 +473,12 @@
     "position": "LF",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Luther",
+    "comboEvents": [
+      "just_like_you_",
+      "a_movie_star",
+      "captain_and_kate",
+      "hammer_throwing"
+    ],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -584,6 +594,7 @@
     "position": "2B",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Flamesh",
+    "comboEvents": ["weird_relationship", "turning_back_time_"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -698,6 +709,11 @@
     "position": "1B",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Britra",
+    "comboEvents": [
+      "no_sleeping_here_",
+      "o_dear_goddess_",
+      "strong_requisites"
+    ],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -815,6 +831,11 @@
     "position": "SS",
     "type": "GP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Helga",
+    "comboEvents": [
+      "hating_generations",
+      "meaning_of_betrayal",
+      "law_abiding_viking"
+    ],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -930,6 +951,7 @@
     "position": "3B",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Seiryu",
+    "comboEvents": ["soft_spot", "fated_rivalry", "dragon_s_artifact"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -1046,6 +1068,7 @@
     "position": "1B",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Kai",
+    "comboEvents": ["wulin_s_best", "what_is_harmony_", "fighting_and_swords"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -1164,6 +1187,7 @@
     "position": "RF",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Nina",
+    "comboEvents": ["let_s_be_friends", "your_right_arm_", "secret_of_the_arm"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -1281,6 +1305,7 @@
     "position": "LF",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Sohyang",
+    "comboEvents": ["teacher_and_student", "refusal_to_train"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -1398,6 +1423,11 @@
     "position": "CF",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Ara",
+    "comboEvents": [
+      "who_s_the_strongest_",
+      "refusal_to_train",
+      "fighting_and_swords"
+    ],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -1514,6 +1544,12 @@
     "position": "C",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/King_Tiger",
+    "comboEvents": [
+      "secret_of_the_arm",
+      "joe_s_helper",
+      "irrevocable",
+      "old_friends"
+    ],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -1628,6 +1664,12 @@
     "position": "2B",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Luna",
+    "comboEvents": [
+      "cut_to_the_chase",
+      "what_a_coincidence_",
+      "admiring_her",
+      "servant_of_the_month"
+    ],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -1743,6 +1785,7 @@
     "position": "SP",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Kunio",
+    "comboEvents": ["outside_the_field", "recruitment_"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -1805,6 +1848,126 @@
     },
     "devBonus": {
       "1": [
+        "[UR] Ball on Sale (Pitcher)",
+        "Initial Affinity +10",
+        "Training Reward (STR) +10",
+        "Sp. Training Rewards +150%",
+        "Training STM Use (STR) -20%"
+      ],
+      "2": [
+        "[UR] Ball on Sale (Pitcher)",
+        "Initial Affinity +10",
+        "Training Reward (STR) +10",
+        "Sp. Training Rewards +150%",
+        "Training STM Use (STR) -20%",
+        "Trainer Event Reward +20%"
+      ],
+      "3": [
+        "[UR] Ball on Sale (Pitcher)",
+        "Initial Affinity +20",
+        "Training Reward (STR) +10",
+        "Sp. Training Rewards +150%",
+        "Training STM Use (STR) -20%",
+        "Trainer Event Reward +20%"
+      ],
+      "4": [
+        "[UR] Ball on Sale (Pitcher)",
+        "Initial Affinity +20",
+        "Training Reward (STR) +10",
+        "Sp. Training Rewards +150%",
+        "STR Training Placement +15%",
+        "Training STM Use (STR) -20%",
+        "Trainer Event Reward +20%"
+      ],
+      "5": [
+        "[UR] Ball on Sale (Pitcher)",
+        "Initial Affinity +20",
+        "Training Reward (STR) +15",
+        "Sp. Training Rewards +150%",
+        "STR Training Placement +15%",
+        "Training STM Use (STR) -20%",
+        "Trainer Event Reward +20%"
+      ]
+    },
+    "stats": {
+      "1": { "STR": "1707", "INT": "1604", "DEX": "1577", "MNT": "1604" },
+      "2": { "STR": "1913", "INT": "1809", "DEX": "1786", "MNT": "1810" },
+      "3": { "STR": "2120", "INT": "2015", "DEX": "1995", "MNT": "2016" },
+      "4": { "STR": "2327", "INT": "2221", "DEX": "2204", "MNT": "2222" },
+      "5": { "STR": "2534", "INT": "2427", "DEX": "2414", "MNT": "2428" }
+    },
+    "order": 15
+  },
+  {
+    "name": "Belita",
+    "rarity": "UR",
+    "position": "SP",
+    "type": "INT",
+    "url": "https://baseball-superstars-2020.fandom.com/wiki/Kunio",
+    "comboEvents": ["different_thoughts"],
+    "bonusTeam": ["Shining Angels"],
+    "skills": {
+      "1": {
+        "supersonic_pitch": 1,
+        "super_right_arm": 1,
+        "sp_s_resolve": 1,
+        "hit_blockade": 2,
+        "screwball": 1,
+        "accuracy_control": 1,
+        "slow_curve": 1,
+        "recover": 1,
+        "no_runs_for_you": 2
+      },
+      "2": {
+        "supersonic_pitch": 1,
+        "super_right_arm": 1,
+        "sp_s_resolve": 1,
+        "hit_blockade": 2,
+        "screwball": 2,
+        "accuracy_control": 1,
+        "slow_curve": 1,
+        "recover": 1,
+        "no_runs_for_you": 2
+      },
+      "3": {
+        "supersonic_pitch": 2,
+        "super_right_arm": 1,
+        "sp_s_resolve": 1,
+        "hit_blockade": 3,
+        "screwball": 2,
+        "speed_control": 1,
+        "accuracy_control": 1,
+        "slow_curve": 1,
+        "recover": 1,
+        "no_runs_for_you": 2
+      },
+      "4": {
+        "supersonic_pitch": 2,
+        "super_right_arm": 1,
+        "sp_s_resolve": 1,
+        "hit_blockade": 3,
+        "screwball": 2,
+        "speed_control": 2,
+        "accuracy_control": 1,
+        "slow_curve": 1,
+        "recover": 1,
+        "no_runs_for_you": 2
+      },
+      "5": {
+        "supersonic_pitch": 2,
+        "super_right_arm": 2,
+        "sp_s_resolve": 1,
+        "hit_blockade": 3,
+        "screwball": 3,
+        "speed_control": 2,
+        "accuracy_control": 2,
+        "slow_curve": 2,
+        "recover": 1,
+        "no_runs_for_you": 2
+      }
+    },
+    "devBonus": {
+      "1": [
         "Initial Affinity +10",
         "Sp. Training Reward +150%",
         "Training Reward (All) +25%",
@@ -1845,13 +2008,13 @@
       ]
     },
     "stats": {
-      "1": { "STR": "1707", "INT": "1604", "DEX": "1577", "MNT": "1604" },
-      "2": { "STR": "1913", "INT": "1809", "DEX": "1786", "MNT": "1810" },
-      "3": { "STR": "2120", "INT": "2015", "DEX": "1995", "MNT": "2016" },
-      "4": { "STR": "2327", "INT": "2221", "DEX": "2204", "MNT": "2222" },
-      "5": { "STR": "2534", "INT": "2427", "DEX": "2414", "MNT": "2428" }
+      "1": { "STR": "1372", "INT": "1937", "DEX": "1407", "MNT": "1692" },
+      "2": { "STR": "1559", "INT": "2176", "DEX": "1599", "MNT": "1905" },
+      "3": { "STR": "1746", "INT": "2415", "DEX": "1791", "MNT": "2117" },
+      "4": { "STR": "1933", "INT": "2654", "DEX": "1983", "MNT": "2330" },
+      "5": { "STR": "2121", "INT": "2894", "DEX": "2176", "MNT": "2543" }
     },
-    "order": 15
+    "order": 16
   },
   {
     "name": "Dragona",
@@ -1859,6 +2022,7 @@
     "position": "SP",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Dragona",
+    "comboEvents": ["dragon_s_artifact", "oh__my_captain_"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -1968,7 +2132,7 @@
       "4": { "STR": "2203", "INT": "2210", "DEX": "2212", "MNT": "2292" },
       "5": { "STR": "2408", "INT": "2420", "DEX": "2422", "MNT": "2500" }
     },
-    "order": 16
+    "order": 17
   },
   {
     "name": "Leon",
@@ -1976,6 +2140,7 @@
     "position": "RP",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Leon",
+    "comboEvents": ["irrevocable", "a_lion_and_a_human", "a_wonderful_day"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -2087,7 +2252,7 @@
       "4": { "STR": "2134", "INT": "2030", "DEX": "2032", "MNT": "2023" },
       "5": { "STR": "2325", "INT": "2219", "DEX": "2220", "MNT": "2209" }
     },
-    "order": 17
+    "order": 18
   },
   {
     "name": "Rowena",
@@ -2095,6 +2260,7 @@
     "position": "SP",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Rowena",
+    "comboEvents": ["silver_fox", "recruit"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -2206,7 +2372,7 @@
       "4": { "STR": "1943", "INT": "1953", "DEX": "2048", "MNT": "1930" },
       "5": { "STR": "2118", "INT": "2136", "DEX": "2231", "MNT": "2108" }
     },
-    "order": 18
+    "order": 19
   },
   {
     "name": "Violet",
@@ -2214,6 +2380,7 @@
     "position": "CP",
     "type": "GP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Violet",
+    "comboEvents": ["who_", "a_new_investor__", "inner_feelings"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -2325,7 +2492,7 @@
       "4": { "STR": "2024", "INT": "2014", "DEX": "2025", "MNT": "2113" },
       "5": { "STR": "2211", "INT": "2202", "DEX": "2214", "MNT": "2298" }
     },
-    "order": 19
+    "order": 20
   },
   {
     "name": "Leonie",
@@ -2333,6 +2500,7 @@
     "position": "SP",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Leonie",
+    "comboEvents": ["the_last_piece", "being_human", "a_lion_and_a_human"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -2440,7 +2608,7 @@
       "4": { "STR": "2111", "INT": "2022", "DEX": "2007", "MNT": "2025" },
       "5": { "STR": "2299", "INT": "2210", "DEX": "2195", "MNT": "2212" }
     },
-    "order": 20
+    "order": 21
   },
   {
     "name": "Pluto",
@@ -2448,6 +2616,7 @@
     "position": "SP",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Pluto",
+    "comboEvents": ["final_boss", "to_pluto_s_eyes_", "unexpected_reunion"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -2559,7 +2728,7 @@
       "4": { "STR": "2032", "INT": "2023", "DEX": "2021", "MNT": "2123" },
       "5": { "STR": "2218", "INT": "2213", "DEX": "2210", "MNT": "2307" }
     },
-    "order": 21
+    "order": 22
   },
   {
     "name": "Valentine",
@@ -2567,6 +2736,12 @@
     "position": "RP",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Valentine",
+    "comboEvents": [
+      "inner_feelings",
+      "unexpected_reaction",
+      "who_am_i_",
+      "her_past"
+    ],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -2677,7 +2852,7 @@
       "4": { "STR": "1976", "INT": "1986", "DEX": "2082", "MNT": "1991" },
       "5": { "STR": "2155", "INT": "2172", "DEX": "2264", "MNT": "2178" }
     },
-    "order": 22
+    "order": 23
   },
   {
     "name": "Ditto",
@@ -2685,6 +2860,7 @@
     "position": "RP",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Ditto",
+    "comboEvents": ["one_sided_love", "a_new_investor__", "strength_bracelet"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -2794,7 +2970,7 @@
       "4": { "STR": "2035", "INT": "2137", "DEX": "2026", "MNT": "2020" },
       "5": { "STR": "2225", "INT": "2324", "DEX": "2217", "MNT": "2206" }
     },
-    "order": 23
+    "order": 24
   },
   {
     "name": "Psyker",
@@ -2802,6 +2978,7 @@
     "position": "CP",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Psyker",
+    "comboEvents": ["new_magic_trick__", "liar__liar_", "strength_bracelet"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -2910,13 +3087,14 @@
       "4": { "STR": "1972", "INT": "2091", "DEX": "1986", "MNT": "1996" },
       "5": { "STR": "2153", "INT": "2273", "DEX": "2170", "MNT": "2178" }
     },
-    "order": 24
+    "order": 25
   },
   {
     "name": "Kyoko",
     "rarity": "SSR",
     "position": "2B",
     "type": "DEX",
+    "comboEvents": ["fun_imagination"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -3023,9 +3201,10 @@
       "4": { "STR": "796", "INT": "541", "DEX": "959", "MNT": "772" },
       "5": { "STR": "846", "INT": "579", "DEX": "1006", "MNT": "824" }
     },
-    "order": 25
+    "order": 26
   },
   {
+    "comboEvents": ["a_true_angel", "priority"],
     "bonusTeam": ["Shining Angels"],
     "devBonus": {
       "1": [
@@ -3137,7 +3316,7 @@
     },
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Zia",
-    "order": 26
+    "order": 27
   },
   {
     "name": "Monique",
@@ -3145,6 +3324,7 @@
     "position": "C",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Monique",
+    "comboEvents": ["unreachable", "diss_battle"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -3252,7 +3432,7 @@
       "4": { "STR": "1514", "INT": "1024", "DEX": "1275", "MNT": "767" },
       "5": { "STR": "1632", "INT": "1101", "DEX": "1386", "MNT": "821" }
     },
-    "order": 27
+    "order": 28
   },
   {
     "name": "Sophie",
@@ -3260,6 +3440,7 @@
     "position": "CF",
     "type": "GP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Sophie",
+    "comboEvents": ["diss_battle", "michaella_s_satellite"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -3363,7 +3544,7 @@
       "4": { "STR": "820", "INT": "1111", "DEX": "780", "MNT": "1238" },
       "5": { "STR": "882", "INT": "1204", "DEX": "836", "MNT": "1337" }
     },
-    "order": 28
+    "order": 29
   },
   {
     "name": "Nameless",
@@ -3371,6 +3552,7 @@
     "position": "2B",
     "type": "GP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Nameless",
+    "comboEvents": ["sad_destiny", "weird_relationship"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -3474,7 +3656,7 @@
       "4": { "STR": "711", "INT": "814", "DEX": "719", "MNT": "719" },
       "5": { "STR": "763", "INT": "860", "DEX": "766", "MNT": "744" }
     },
-    "order": 29
+    "order": 30
   },
   {
     "name": "Mei Mei",
@@ -3482,6 +3664,7 @@
     "position": "LF",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Mei_Mei",
+    "comboEvents": ["sad_destiny"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -3586,7 +3769,7 @@
       "4": { "STR": "631", "INT": "649", "DEX": "632", "MNT": "738" },
       "5": { "STR": "667", "INT": "690", "DEX": "670", "MNT": "776" }
     },
-    "order": 30
+    "order": 31
   },
   {
     "name": "Albert",
@@ -3594,6 +3777,7 @@
     "position": "SS",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Albert",
+    "comboEvents": ["mutualism", "turning_back_time_"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -3659,7 +3843,7 @@
       "4": { "STR": "530", "INT": "1025", "DEX": "1236", "MNT": "478" },
       "5": { "STR": "558", "INT": "1102", "DEX": "1323", "MNT": "502" }
     },
-    "order": 31
+    "order": 32
   },
   {
     "name": "Base Hero",
@@ -3667,6 +3851,7 @@
     "position": "3B",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Base_Hero",
+    "comboEvents": ["villain_alert", "source_of_power_"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -3768,7 +3953,7 @@
       "4": { "STR": "726", "INT": "706", "DEX": "721", "MNT": "801" },
       "5": { "STR": "777", "INT": "752", "DEX": "770", "MNT": "851" }
     },
-    "order": 32
+    "order": 33
   },
   {
     "name": "Tauric",
@@ -3776,6 +3961,7 @@
     "position": "RF",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Tauric",
+    "comboEvents": ["old_friends", "hammer_throwing"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -3883,7 +4069,7 @@
       "4": { "STR": "1156", "INT": "624", "DEX": "817", "MNT": "584" },
       "5": { "STR": "1232", "INT": "673", "DEX": "867", "MNT": "621" }
     },
-    "order": 33
+    "order": 34
   },
   {
     "name": "Helen",
@@ -3891,6 +4077,7 @@
     "position": "RF",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Helen",
+    "comboEvents": ["no_more_beating_", "servant_of_the_month"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -3995,7 +4182,7 @@
       "4": { "STR": "674", "INT": "690", "DEX": "782", "MNT": "686" },
       "5": { "STR": "719", "INT": "734", "DEX": "828", "MNT": "731" }
     },
-    "order": 34
+    "order": 35
   },
   {
     "name": "NOM",
@@ -4003,6 +4190,7 @@
     "position": "CF",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/NOM",
+    "comboEvents": ["swept_away_by_nom", "water_and_oil"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -4107,7 +4295,7 @@
       "4": { "STR": "708", "INT": "717", "DEX": "802", "MNT": "724" },
       "5": { "STR": "754", "INT": "766", "DEX": "851", "MNT": "773" }
     },
-    "order": 35
+    "order": 36
   },
   {
     "name": "Golden Boy",
@@ -4115,6 +4303,7 @@
     "position": "LF",
     "type": "GP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Golden_Boy",
+    "comboEvents": ["water_and_oil", "who_am_i_"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -4218,7 +4407,7 @@
       "4": { "STR": "873", "INT": "783", "DEX": "772", "MNT": "797" },
       "5": { "STR": "923", "INT": "832", "DEX": "826", "MNT": "849" }
     },
-    "order": 36
+    "order": 37
   },
   {
     "name": "Elfin",
@@ -4226,6 +4415,7 @@
     "position": "1B",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Elfin",
+    "comboEvents": ["your_right_arm_", "gloomy_graduation"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -4332,7 +4522,7 @@
       "4": { "STR": "695", "INT": "790", "DEX": "679", "MNT": "684" },
       "5": { "STR": "736", "INT": "832", "DEX": "723", "MNT": "730" }
     },
-    "order": 37
+    "order": 38
   },
   {
     "name": "Lucy",
@@ -4340,6 +4530,7 @@
     "position": "C",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Lucy",
+    "comboEvents": ["i_m_old_", "same_tastes_", "customized_treatment"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -4441,7 +4632,7 @@
       "4": { "STR": "678", "INT": "773", "DEX": "679", "MNT": "682" },
       "5": { "STR": "772", "INT": "816", "DEX": "724", "MNT": "729" }
     },
-    "order": 38
+    "order": 39
   },
   {
     "name": "Policia",
@@ -4449,6 +4640,7 @@
     "position": "SS",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Policia",
+    "comboEvents": ["law_abiding_viking", "bodyguard"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -4548,7 +4740,7 @@
       "4": { "STR": "674", "INT": "696", "DEX": "773", "MNT": "678" },
       "5": { "STR": "721", "INT": "743", "DEX": "818", "MNT": "724" }
     },
-    "order": 39
+    "order": 40
   },
   {
     "name": "Basedevil",
@@ -4556,6 +4748,7 @@
     "position": "1B",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Basedevil",
+    "comboEvents": ["no_cheating_", "basedevil_s_students", "o_dear_goddess_"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -4659,7 +4852,7 @@
       "4": { "STR": "767", "INT": "744", "DEX": "768", "MNT": "850" },
       "5": { "STR": "820", "INT": "796", "DEX": "817", "MNT": "896" }
     },
-    "order": 40
+    "order": 41
   },
   {
     "name": "Pi",
@@ -4667,6 +4860,7 @@
     "position": "SS",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Pi",
+    "comboEvents": ["harmony_mindset", "pi_and_talas"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -4771,7 +4965,7 @@
       "4": { "STR": "790", "INT": "792", "DEX": "772", "MNT": "872" },
       "5": { "STR": "843", "INT": "845", "DEX": "824", "MNT": "925" }
     },
-    "order": 41
+    "order": 42
   },
   {
     "name": "Kryzer",
@@ -4779,6 +4973,7 @@
     "position": "2B",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Kryzer",
+    "comboEvents": ["perfect_vocalist", "same_tastes_"],
     "bonusTeam": ["Cruel Pumas", "River City"],
     "skills": {
       "1": {
@@ -4877,7 +5072,7 @@
       "4": { "STR": "861", "INT": "748", "DEX": "746", "MNT": "761" },
       "5": { "STR": "913", "INT": "795", "DEX": "793", "MNT": "814" }
     },
-    "order": 42
+    "order": 43
   },
   {
     "name": "Mia",
@@ -4885,6 +5080,7 @@
     "position": "2B",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Mia",
+    "comboEvents": ["pick_me_", "bodyguard"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -4987,7 +5183,7 @@
       "4": { "STR": "763", "INT": "858", "DEX": "759", "MNT": "746" },
       "5": { "STR": "813", "INT": "913", "DEX": "810", "MNT": "799" }
     },
-    "order": 43
+    "order": 44
   },
   {
     "name": "Zena",
@@ -4995,6 +5191,7 @@
     "position": "CF",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Zena",
+    "comboEvents": ["teacher_and_student", "swept_away_by_nom", "mutualism"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -5099,7 +5296,7 @@
       "4": { "STR": "643", "INT": "753", "DEX": "653", "MNT": "657" },
       "5": { "STR": "682", "INT": "796", "DEX": "697", "MNT": "700" }
     },
-    "order": 44
+    "order": 45
   },
   {
     "name": "Liew",
@@ -5107,6 +5304,7 @@
     "position": "3B",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Liew",
+    "comboEvents": ["my_wish_is___", "gloomy_graduation"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -5208,7 +5406,7 @@
       "4": { "STR": "686", "INT": "780", "DEX": "686", "MNT": "692" },
       "5": { "STR": "731", "INT": "822", "DEX": "731", "MNT": "740" }
     },
-    "order": 45
+    "order": 46
   },
   {
     "name": "Guy-E",
@@ -5216,6 +5414,7 @@
     "position": "1B",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Guy-E",
+    "comboEvents": ["let_s_be_friends", "cleaning_buddy", "city_patrol"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -5320,7 +5519,7 @@
       "4": { "STR": "814", "INT": "722", "DEX": "714", "MNT": "729" },
       "5": { "STR": "855", "INT": "768", "DEX": "757", "MNT": "773" }
     },
-    "order": 46
+    "order": 47
   },
   {
     "name": "Velour",
@@ -5328,6 +5527,7 @@
     "position": "3B",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Velour",
+    "comboEvents": ["my_wish_is___", "i_m_old_"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -5431,7 +5631,7 @@
       "4": { "STR": "760", "INT": "861", "DEX": "765", "MNT": "774" },
       "5": { "STR": "814", "INT": "915", "DEX": "815", "MNT": "824" }
     },
-    "order": 47
+    "order": 48
   },
   {
     "name": "Medica",
@@ -5439,6 +5639,7 @@
     "position": "RF",
     "type": "GP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Medica",
+    "comboEvents": ["the_best_nurse", "stay_away_from_him_"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -5543,7 +5744,7 @@
       "4": { "STR": "789", "INT": "883", "DEX": "783", "MNT": "794" },
       "5": { "STR": "840", "INT": "936", "DEX": "832", "MNT": "844" }
     },
-    "order": 48
+    "order": 49
   },
   {
     "name": "Scumbag Joe",
@@ -5551,6 +5752,7 @@
     "position": "LF",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Scumbag_Joe",
+    "comboEvents": ["who_s_the_strongest_", "joe_s_helper"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -5657,7 +5859,7 @@
       "4": { "STR": "812", "INT": "820", "DEX": "920", "MNT": "802" },
       "5": { "STR": "862", "INT": "874", "DEX": "970", "MNT": "852" }
     },
-    "order": 49
+    "order": 50
   },
   {
     "name": "Rose",
@@ -5665,6 +5867,7 @@
     "position": "C",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Rose",
+    "comboEvents": ["that_face", "want_to_be_friends_", "no_more_beating_"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -5765,13 +5968,14 @@
       "4": { "STR": "831", "INT": "735", "DEX": "715", "MNT": "734" },
       "5": { "STR": "877", "INT": "782", "DEX": "759", "MNT": "781" }
     },
-    "order": 50
+    "order": 51
   },
   {
     "name": "Misako",
     "rarity": "SSR",
     "position": "SP",
     "type": "STR",
+    "comboEvents": ["fun_imagination"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -5879,7 +6083,122 @@
       "4": { "STR": "869", "INT": "764", "DEX": "815", "MNT": "745" },
       "5": { "STR": "921", "INT": "811", "DEX": "799", "MNT": "867" }
     },
-    "order": 51
+    "order": 52
+  },
+  {
+    "name": "Allen",
+    "rarity": "SSR",
+    "position": "CP",
+    "type": "SP",
+    "comboEvents": ["more_than_a_trick"],
+    "bonusTeam": ["Mystic Unicorns"],
+    "skills": {
+      "1": {
+        "super_right_arm": 1,
+        "cp_s_resolve": 1,
+        "knuckle_curve": 2,
+        "high_kick": 1,
+        "anti_rh_batter": 1,
+        "slider": 1,
+        "anti_walk": 1
+      },
+      "2": {
+        "super_right_arm": 1,
+        "cp_s_resolve": 1,
+        "knuckle_curve": 2,
+        "screwball": 1,
+        "high_kick": 1,
+        "anti_rh_batter": 1,
+        "slider": 1,
+        "anti_walk": 1
+      },
+      "3": {
+        "super_right_arm": 1,
+        "cp_s_resolve": 1,
+        "knuckle_curve": 3,
+        "screwball": 1,
+        "v_slider": 1,
+        "high_kick": 2,
+        "anti_rh_batter": 1,
+        "slider": 1,
+        "anti_walk": 1
+      },
+      "4": {
+        "super_right_arm": 1,
+        "cp_s_resolve": 1,
+        "knuckle_curve": 3,
+        "screwball": 1,
+        "v_slider": 1,
+        "anti_rh_batter": 2,
+        "high_kick": 2,
+        "palmball": 1,
+        "slider": 1,
+        "anti_walk": 1
+      },
+      "5": {
+        "cp_s_resolve": 2,
+        "super_right_arm": 1,
+        "knuckle_curve": 3,
+        "screwball": 1,
+        "v_slider": 2,
+        "anti_rh_batter": 2,
+        "high_kick": 2,
+        "palmball": 1,
+        "slider": 1,
+        "anti_walk": 3
+      }
+    },
+    "devBonus": {
+      "1": [
+        "Initial Affinity +10",
+        "Initial Skill Points +100",
+        "Training Reward (Skill Points) +6",
+        "Sp. Training Reward +125%",
+        "Game Reward +15%"
+      ],
+      "2": [
+        "Initial Affinity +10",
+        "Initial Skill Points +100",
+        "Training Reward (Skill Points) +6",
+        "Sp. Training Reward +125%",
+        "Game Reward +15%",
+        "Trainer Event Reward +20%"
+      ],
+      "3": [
+        "Initial Affinity +20",
+        "Initial Skill Points +100",
+        "Training Reward (Skill Points) +6",
+        "Sp. Training Reward +125%",
+        "Game Reward +15%",
+        "Trainer Event Reward +20%"
+      ],
+      "4": [
+        "[UR] Cleats On Sale (Pitcher)",
+        "Initial Affinity +20",
+        "Initial Skill Points +100",
+        "Training Reward (Skill Points) +6",
+        "Sp. Training Reward +125%",
+        "Game Reward +15%",
+        "Trainer Event Reward +20%"
+      ],
+      "5": [
+        "[UR] Cleats On Sale (Pitcher)",
+        "Initial Affinity +20",
+        "Initial Skill Points +100",
+        "Training Reward (Skill Points) +10",
+        "Sp. Training Reward +125%",
+        "Game Reward +15%",
+        "Trainer Event Reward +20%"
+      ]
+    },
+    "stats": {
+      "1": { "STR": "592", "INT": "1194", "DEX": "646", "MNT": "956" },
+      "2": { "STR": "666", "INT": "1316", "DEX": "704", "MNT": "1044" },
+      "3": { "STR": "740", "INT": "1438", "DEX": "763", "MNT": "1133" },
+      "4": { "STR": "814", "INT": "1560", "DEX": "821", "MNT": "1221" },
+      "5": { "STR": "889", "INT": "1683", "DEX": "880", "MNT": "1310" }
+    },
+    "order": 53
   },
   {
     "name": "Miho",
@@ -5887,6 +6206,7 @@
     "position": "CP",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Miho",
+    "comboEvents": ["her_past", "the_best_snack"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -5994,7 +6314,7 @@
       "4": { "STR": "683", "INT": "774", "DEX": "683", "MNT": "674" },
       "5": { "STR": "728", "INT": "819", "DEX": "727", "MNT": "716" }
     },
-    "order": 52
+    "order": 54
   },
   {
     "name": "Captain Jack",
@@ -6002,6 +6322,7 @@
     "position": "SP",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Captain_Jack",
+    "comboEvents": ["meeting_thy_enemy", "hating_generations"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -6108,7 +6429,7 @@
       "4": { "STR": "679", "INT": "672", "DEX": "784", "MNT": "685" },
       "5": { "STR": "724", "INT": "718", "DEX": "826", "MNT": "728" }
     },
-    "order": 53
+    "order": 55
   },
   {
     "name": "Psyche",
@@ -6116,6 +6437,7 @@
     "position": "CP",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Psyche",
+    "comboEvents": ["stay_away_from_him_", "liar__liar_", "more_than_a_trick"],
     "bonusTeam": ["River City", "Mystic Unicorns"],
     "skills": {
       "1": {
@@ -6220,7 +6542,7 @@
       "4": { "STR": "682", "INT": "704", "DEX": "691", "MNT": "783" },
       "5": { "STR": "727", "INT": "752", "DEX": "738", "MNT": "829" }
     },
-    "order": 54
+    "order": 56
   },
   {
     "name": "Hunter G",
@@ -6228,6 +6550,7 @@
     "position": "RP",
     "type": "GP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Hunter_G",
+    "comboEvents": ["being_human", "an_offer"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -6332,7 +6655,7 @@
       "4": { "STR": "758", "INT": "749", "DEX": "858", "MNT": "740" },
       "5": { "STR": "810", "INT": "800", "DEX": "911", "MNT": "793" }
     },
-    "order": 55
+    "order": 57
   },
   {
     "name": "Soldia",
@@ -6340,6 +6663,7 @@
     "position": "SP",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Soldia",
+    "comboEvents": ["unusual_taste", "recruit"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -6444,7 +6768,7 @@
       "4": { "STR": "836", "INT": "750", "DEX": "754", "MNT": "753" },
       "5": { "STR": "886", "INT": "802", "DEX": "807", "MNT": "807" }
     },
-    "order": 56
+    "order": 58
   },
   {
     "name": "Bora",
@@ -6452,6 +6776,7 @@
     "position": "SP",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Bora",
+    "comboEvents": ["meeting_thy_enemy", "an_offer", "recruitment_"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -6558,7 +6883,7 @@
       "4": { "STR": "883", "INT": "785", "DEX": "781", "MNT": "784" },
       "5": { "STR": "932", "INT": "837", "DEX": "836", "MNT": "840" }
     },
-    "order": 57
+    "order": 59
   },
   {
     "name": "Lucia",
@@ -6566,6 +6891,7 @@
     "position": "SP",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Lucia",
+    "comboEvents": ["food_vs__medicine", "unexpected_reunion"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -6668,7 +6994,7 @@
       "4": { "STR": "741", "INT": "758", "DEX": "838", "MNT": "757" },
       "5": { "STR": "792", "INT": "811", "DEX": "891", "MNT": "812" }
     },
-    "order": 58
+    "order": 60
   },
   {
     "name": "Hellfire",
@@ -6676,6 +7002,7 @@
     "position": "RP",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Hellfire",
+    "comboEvents": ["final_boss", "firelord"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -6782,7 +7109,7 @@
       "4": { "STR": "719", "INT": "723", "DEX": "724", "MNT": "805" },
       "5": { "STR": "763", "INT": "770", "DEX": "770", "MNT": "849" }
     },
-    "order": 59
+    "order": 61
   },
   {
     "name": "Zhizi",
@@ -6790,6 +7117,7 @@
     "position": "CP",
     "type": "GP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Zhizi",
+    "comboEvents": ["the_last_piece", "unusual_taste", "the_best_snack"],
     "bonusTeam": ["Cruel Pumas", "River City"],
     "skills": {
       "1": {
@@ -6897,7 +7225,7 @@
       "4": { "STR": "824", "INT": "714", "DEX": "714", "MNT": "730" },
       "5": { "STR": "874", "INT": "767", "DEX": "763", "MNT": "777" }
     },
-    "order": 60
+    "order": 62
   },
   {
     "name": "Base Angel",
@@ -6905,6 +7233,7 @@
     "position": "RP",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Base_Angel",
+    "comboEvents": ["no_cheating_", "to_pluto_s_eyes_"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -7012,7 +7341,7 @@
       "4": { "STR": "760", "INT": "765", "DEX": "765", "MNT": "848" },
       "5": { "STR": "812", "INT": "817", "DEX": "815", "MNT": "900" }
     },
-    "order": 61
+    "order": 63
   },
   {
     "name": "Onestone",
@@ -7020,6 +7349,7 @@
     "position": "RP",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Onestone",
+    "comboEvents": ["currently_recruiting", "witches_and_a_golem"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -7127,7 +7457,7 @@
       "4": { "STR": "933", "INT": "840", "DEX": "836", "MNT": "825" },
       "5": { "STR": "984", "INT": "895", "DEX": "890", "MNT": "876" }
     },
-    "order": 62
+    "order": 64
   },
   {
     "name": "Boomiger",
@@ -7135,6 +7465,7 @@
     "position": "SP",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Boomiger",
+    "comboEvents": ["that_face", "neighbor_vs__problem"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -7241,7 +7572,7 @@
       "4": { "STR": "878", "INT": "987", "DEX": "893", "MNT": "872" },
       "5": { "STR": "936", "INT": "1046", "DEX": "949", "MNT": "926" }
     },
-    "order": 63
+    "order": 65
   },
   {
     "name": "Yomi",
@@ -7249,6 +7580,7 @@
     "position": "SP",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Yomi",
+    "comboEvents": ["who_", "new_magic_trick__", "different_thoughts"],
     "bonusTeam": ["Shining Angels", "River City"],
     "skills": {
       "1": {
@@ -7356,7 +7688,7 @@
       "4": { "STR": "695", "INT": "699", "DEX": "685", "MNT": "784" },
       "5": { "STR": "737", "INT": "742", "DEX": "728", "MNT": "825" }
     },
-    "order": 64
+    "order": 66
   },
   {
     "name": "Riki",
@@ -7364,6 +7696,7 @@
     "position": "1B",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Riki",
+    "comboEvents": ["outside_the_field", "city_patrol"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -7464,7 +7797,7 @@
       "4": { "STR": "770", "INT": "554", "DEX": "616", "MNT": "616" },
       "5": { "STR": "804", "INT": "584", "DEX": "665", "MNT": "659" }
     },
-    "order": 65
+    "order": 67
   },
   {
     "name": "Lina",
@@ -7472,6 +7805,7 @@
     "position": "3B",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Lina",
+    "comboEvents": ["noble_love"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -7570,7 +7904,7 @@
       "4": { "STR": "573", "INT": "780", "DEX": "585", "MNT": "644" },
       "5": { "STR": "614", "INT": "821", "DEX": "619", "MNT": "696" }
     },
-    "order": 66
+    "order": 68
   },
   {
     "name": "Kate",
@@ -7578,6 +7912,7 @@
     "position": "CF",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Kate",
+    "comboEvents": ["captain_and_kate"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -7677,7 +8012,7 @@
       "4": { "STR": "640", "INT": "767", "DEX": "627", "MNT": "526" },
       "5": { "STR": "689", "INT": "796", "DEX": "676", "MNT": "558" }
     },
-    "order": 67
+    "order": 69
   },
   {
     "name": "Rex",
@@ -7685,6 +8020,7 @@
     "position": "C",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Rex",
+    "comboEvents": ["just_like_you_"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -7783,7 +8119,7 @@
       "4": { "STR": "489", "INT": "485", "DEX": "613", "MNT": "480" },
       "5": { "STR": "521", "INT": "518", "DEX": "635", "MNT": "504" }
     },
-    "order": 68
+    "order": 70
   },
   {
     "name": "Flora",
@@ -7791,6 +8127,7 @@
     "position": "SS",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Flora",
+    "comboEvents": ["happy_veggies"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -7890,7 +8227,7 @@
       "4": { "STR": "429", "INT": "412", "DEX": "635", "MNT": "403" },
       "5": { "STR": "453", "INT": "434", "DEX": "651", "MNT": "424" }
     },
-    "order": 69
+    "order": 71
   },
   {
     "name": "Paris",
@@ -7898,6 +8235,7 @@
     "position": "LF",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Paris",
+    "comboEvents": ["restoring_wid"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -7995,7 +8333,7 @@
       "4": { "STR": "572", "INT": "554", "DEX": "683", "MNT": "568" },
       "5": { "STR": "614", "INT": "597", "DEX": "716", "MNT": "602" }
     },
-    "order": 70
+    "order": 72
   },
   {
     "name": "Eia",
@@ -8003,6 +8341,7 @@
     "position": "CF",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Eia",
+    "comboEvents": ["restoring_wid"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -8100,7 +8439,7 @@
       "4": { "STR": "556", "INT": "697", "DEX": "574", "MNT": "557" },
       "5": { "STR": "587", "INT": "732", "DEX": "611", "MNT": "587" }
     },
-    "order": 71
+    "order": 73
   },
   {
     "name": "Patricia",
@@ -8108,6 +8447,7 @@
     "position": "SS",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Patricia",
+    "comboEvents": ["gut_feeling"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -8208,7 +8548,7 @@
       "4": { "STR": "743", "INT": "609", "DEX": "601", "MNT": "619" },
       "5": { "STR": "772", "INT": "658", "DEX": "644", "MNT": "658" }
     },
-    "order": 72
+    "order": 74
   },
   {
     "name": "Siren",
@@ -8216,6 +8556,7 @@
     "position": "RF",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Siren",
+    "comboEvents": ["gut_feeling"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -8316,7 +8657,7 @@
       "4": { "STR": "616", "INT": "614", "DEX": "628", "MNT": "739" },
       "5": { "STR": "653", "INT": "662", "DEX": "677", "MNT": "773" }
     },
-    "order": 73
+    "order": 75
   },
   {
     "name": "Brokel",
@@ -8324,6 +8665,7 @@
     "position": "CF",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Brokel",
+    "comboEvents": ["master_and_servant"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -8420,7 +8762,7 @@
       "4": { "STR": "795", "INT": "582", "DEX": "591", "MNT": "590" },
       "5": { "STR": "834", "INT": "619", "DEX": "631", "MNT": "631" }
     },
-    "order": 74
+    "order": 76
   },
   {
     "name": "Gladius",
@@ -8428,6 +8770,7 @@
     "position": "2B",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Gladius",
+    "comboEvents": ["master_and_servant"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -8525,7 +8868,7 @@
       "4": { "STR": "604", "INT": "596", "DEX": "626", "MNT": "750" },
       "5": { "STR": "645", "INT": "640", "DEX": "669", "MNT": "789" }
     },
-    "order": 75
+    "order": 77
   },
   {
     "name": "Pazuzu",
@@ -8533,6 +8876,7 @@
     "position": "LF",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Pazuzu",
+    "comboEvents": ["basedevil_s_students", "villain_alert"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -8633,7 +8977,7 @@
       "4": { "STR": "731", "INT": "616", "DEX": "612", "MNT": "631" },
       "5": { "STR": "768", "INT": "652", "DEX": "658", "MNT": "671" }
     },
-    "order": 76
+    "order": 78
   },
   {
     "name": "Hell Guy",
@@ -8641,6 +8985,7 @@
     "position": "1B",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Hell_Guy",
+    "comboEvents": ["cleaning_buddy"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -8736,7 +9081,7 @@
       "4": { "STR": "492", "INT": "496", "DEX": "610", "MNT": "479" },
       "5": { "STR": "520", "INT": "532", "DEX": "630", "MNT": "514" }
     },
-    "order": 77
+    "order": 79
   },
   {
     "name": "Talas",
@@ -8744,6 +9089,7 @@
     "position": "3B",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Talas",
+    "comboEvents": ["pi_and_talas"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -8841,7 +9187,7 @@
       "4": { "STR": "481", "INT": "501", "DEX": "624", "MNT": "468" },
       "5": { "STR": "506", "INT": "525", "DEX": "645", "MNT": "498" }
     },
-    "order": 78
+    "order": 80
   },
   {
     "name": "Acro",
@@ -8849,6 +9195,7 @@
     "position": "RF",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Acro",
+    "comboEvents": ["harmony_mindset"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -8944,7 +9291,7 @@
       "4": { "STR": "621", "INT": "509", "DEX": "494", "MNT": "497" },
       "5": { "STR": "647", "INT": "538", "DEX": "519", "MNT": "533" }
     },
-    "order": 79
+    "order": 81
   },
   {
     "name": "Soun",
@@ -8952,6 +9299,7 @@
     "position": "3B",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Soun",
+    "comboEvents": ["fated_rivalry"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -9051,7 +9399,7 @@
       "4": { "STR": "624", "INT": "486", "DEX": "468", "MNT": "484" },
       "5": { "STR": "647", "INT": "507", "DEX": "497", "MNT": "510" }
     },
-    "order": 80
+    "order": 82
   },
   {
     "name": "Nio",
@@ -9059,6 +9407,7 @@
     "position": "RF",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Nio",
+    "comboEvents": ["soft_spot"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -9157,7 +9506,7 @@
       "4": { "STR": "735", "INT": "602", "DEX": "611", "MNT": "621" },
       "5": { "STR": "762", "INT": "646", "DEX": "654", "MNT": "664" }
     },
-    "order": 81
+    "order": 83
   },
   {
     "name": "Liuxia",
@@ -9165,6 +9514,7 @@
     "position": "RF",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Liuxia",
+    "comboEvents": ["what_is_harmony_"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -9257,7 +9607,7 @@
       "4": { "STR": "497", "INT": "506", "DEX": "497", "MNT": "613" },
       "5": { "STR": "532", "INT": "533", "DEX": "532", "MNT": "627" }
     },
-    "order": 82
+    "order": 84
   },
   {
     "name": "Liuxing",
@@ -9265,6 +9615,7 @@
     "position": "2B",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Liuxing",
+    "comboEvents": ["wulin_s_best"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -9361,7 +9712,7 @@
       "4": { "STR": "614", "INT": "470", "DEX": "471", "MNT": "475" },
       "5": { "STR": "638", "INT": "496", "DEX": "495", "MNT": "496" }
     },
-    "order": 83
+    "order": 85
   },
   {
     "name": "Nahyun",
@@ -9369,6 +9720,7 @@
     "position": "CF",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Nahyun",
+    "comboEvents": ["perfect_vocalist"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -9465,7 +9817,7 @@
       "4": { "STR": "408", "INT": "425", "DEX": "402", "MNT": "531" },
       "5": { "STR": "430", "INT": "444", "DEX": "426", "MNT": "539" }
     },
-    "order": 84
+    "order": 86
   },
   {
     "name": "Eunwoo",
@@ -9473,6 +9825,7 @@
     "position": "LF",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Eunwoo",
+    "comboEvents": ["pick_me_"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -9569,7 +9922,7 @@
       "4": { "STR": "416", "INT": "405", "DEX": "405", "MNT": "538" },
       "5": { "STR": "437", "INT": "426", "DEX": "432", "MNT": "546" }
     },
-    "order": 85
+    "order": 87
   },
   {
     "name": "Genie",
@@ -9577,6 +9930,7 @@
     "position": "2B",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Genie",
+    "comboEvents": ["noble_love", "different_sisters"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -9675,7 +10029,7 @@
       "4": { "STR": "493", "INT": "484", "DEX": "592", "MNT": "483" },
       "5": { "STR": "519", "INT": "513", "DEX": "611", "MNT": "510" }
     },
-    "order": 86
+    "order": 88
   },
   {
     "name": "Marvel",
@@ -9683,6 +10037,7 @@
     "position": "SS",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Marvel",
+    "comboEvents": ["different_sisters"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -9775,7 +10130,7 @@
       "4": { "STR": "510", "INT": "660", "DEX": "513", "MNT": "514" },
       "5": { "STR": "536", "INT": "682", "DEX": "540", "MNT": "545" }
     },
-    "order": 87
+    "order": 89
   },
   {
     "name": "Titania",
@@ -9783,6 +10138,7 @@
     "position": "2B",
     "type": "GP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Titania",
+    "comboEvents": ["admiring_her"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -9882,7 +10238,7 @@
       "4": { "STR": "497", "INT": "624", "DEX": "491", "MNT": "474" },
       "5": { "STR": "520", "INT": "648", "DEX": "527", "MNT": "507" }
     },
-    "order": 88
+    "order": 90
   },
   {
     "name": "Kalisto",
@@ -9890,6 +10246,7 @@
     "position": "SS",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Kalisto",
+    "comboEvents": ["conserve_water", "no_sleeping_here_"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -9987,7 +10344,7 @@
       "4": { "STR": "491", "INT": "616", "DEX": "494", "MNT": "499" },
       "5": { "STR": "516", "INT": "634", "DEX": "526", "MNT": "528" }
     },
-    "order": 89
+    "order": 91
   },
   {
     "name": "Brant",
@@ -9995,6 +10352,7 @@
     "position": "3B",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Brant",
+    "comboEvents": ["unexpected_reaction"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -10095,7 +10453,7 @@
       "4": { "STR": "496", "INT": "618", "DEX": "469", "MNT": "501" },
       "5": { "STR": "521", "INT": "635", "DEX": "502", "MNT": "527" }
     },
-    "order": 90
+    "order": 92
   },
   {
     "name": "Drucker",
@@ -10103,6 +10461,7 @@
     "position": "1B",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Drucker",
+    "comboEvents": ["cut_to_the_chase", "a_movie_star"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -10198,7 +10557,7 @@
       "4": { "STR": "573", "INT": "565", "DEX": "571", "MNT": "705" },
       "5": { "STR": "606", "INT": "605", "DEX": "604", "MNT": "740" }
     },
-    "order": 91
+    "order": 93
   },
   {
     "name": "Daisy",
@@ -10206,6 +10565,7 @@
     "position": "C",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Daisy",
+    "comboEvents": ["want_to_be_friends_"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -10303,7 +10663,7 @@
       "4": { "STR": "501", "INT": "602", "DEX": "479", "MNT": "481" },
       "5": { "STR": "526", "INT": "622", "DEX": "500", "MNT": "509" }
     },
-    "order": 92
+    "order": 94
   },
   {
     "name": "Phrygia",
@@ -10311,6 +10671,7 @@
     "position": "1B",
     "type": "GP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Phrygia",
+    "comboEvents": ["one_sided_love", "source_of_power_"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -10411,7 +10772,7 @@
       "4": { "STR": "639", "INT": "508", "DEX": "506", "MNT": "523" },
       "5": { "STR": "660", "INT": "539", "DEX": "543", "MNT": "556" }
     },
-    "order": 93
+    "order": 95
   },
   {
     "name": "Wonhee",
@@ -10419,6 +10780,7 @@
     "position": "C",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Wonhee",
+    "comboEvents": ["what_a_coincidence_", "happy_veggies"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -10517,7 +10879,7 @@
       "4": { "STR": "522", "INT": "415", "DEX": "397", "MNT": "398" },
       "5": { "STR": "530", "INT": "441", "DEX": "416", "MNT": "424" }
     },
-    "order": 94
+    "order": 96
   },
   {
     "name": "Hilary",
@@ -10525,6 +10887,7 @@
     "position": "LF",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Hilary",
+    "comboEvents": ["the_best_nurse"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -10622,7 +10985,7 @@
       "4": { "STR": "422", "INT": "568", "DEX": "417", "MNT": "433" },
       "5": { "STR": "446", "INT": "580", "DEX": "440", "MNT": "454" }
     },
-    "order": 95
+    "order": 97
   },
   {
     "name": "Anetta",
@@ -10630,6 +10993,7 @@
     "position": "RP",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Anetta",
+    "comboEvents": ["devil_meets_devil"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -10734,7 +11098,7 @@
       "4": { "STR": "421", "INT": "399", "DEX": "421", "MNT": "533" },
       "5": { "STR": "446", "INT": "416", "DEX": "440", "MNT": "537" }
     },
-    "order": 96
+    "order": 98
   },
   {
     "name": "Shuri",
@@ -10742,6 +11106,7 @@
     "position": "CP",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Shuri",
+    "comboEvents": [],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -10847,7 +11212,7 @@
       "4": { "STR": "359", "INT": "410", "DEX": "383", "MNT": "554" },
       "5": { "STR": "378", "INT": "426", "DEX": "401", "MNT": "561" }
     },
-    "order": 97
+    "order": 99
   },
   {
     "name": "Popo",
@@ -10855,6 +11220,7 @@
     "position": "CP",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Popo",
+    "comboEvents": ["chase_is_on"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -10958,7 +11324,7 @@
       "4": { "STR": "436", "INT": "640", "DEX": "414", "MNT": "516" },
       "5": { "STR": "459", "INT": "667", "DEX": "430", "MNT": "555" }
     },
-    "order": 98
+    "order": 100
   },
   {
     "name": "Tera",
@@ -10966,6 +11332,7 @@
     "position": "SP",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Tera",
+    "comboEvents": ["witches_and_a_golem"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -11070,7 +11437,7 @@
       "4": { "STR": "627", "INT": "621", "DEX": "603", "MNT": "739" },
       "5": { "STR": "670", "INT": "659", "DEX": "650", "MNT": "773" }
     },
-    "order": 99
+    "order": 101
   },
   {
     "name": "Cami",
@@ -11078,6 +11445,7 @@
     "position": "CP",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Cami",
+    "comboEvents": ["witches_and_a_golem"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -11180,7 +11548,7 @@
       "4": { "STR": "617", "INT": "732", "DEX": "624", "MNT": "616" },
       "5": { "STR": "656", "INT": "765", "DEX": "672", "MNT": "663" }
     },
-    "order": 100
+    "order": 102
   },
   {
     "name": "Stinger",
@@ -11188,6 +11556,7 @@
     "position": "CP",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Stinger",
+    "comboEvents": ["oh__my_captain_"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -11296,7 +11665,7 @@
       "4": { "STR": "598", "INT": "614", "DEX": "763", "MNT": "631" },
       "5": { "STR": "642", "INT": "658", "DEX": "791", "MNT": "676" }
     },
-    "order": 101
+    "order": 103
   },
   {
     "name": "Drake",
@@ -11304,6 +11673,7 @@
     "position": "RP",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Drake",
+    "comboEvents": ["meeting_new_people"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -11408,7 +11778,7 @@
       "4": { "STR": "770", "INT": "554", "DEX": "616", "MNT": "616" },
       "5": { "STR": "804", "INT": "584", "DEX": "665", "MNT": "659" }
     },
-    "order": 102
+    "order": 104
   },
   {
     "name": "John Roger",
@@ -11416,6 +11786,7 @@
     "position": "RP",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/John_Roger",
+    "comboEvents": ["meaning_of_betrayal"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -11520,7 +11891,7 @@
       "4": { "STR": "610", "INT": "612", "DEX": "624", "MNT": "771" },
       "5": { "STR": "658", "INT": "659", "DEX": "672", "MNT": "802" }
     },
-    "order": 103
+    "order": 105
   },
   {
     "name": "Dice",
@@ -11528,6 +11899,7 @@
     "position": "SP",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Dice",
+    "comboEvents": ["venomous_adventure"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -11632,7 +12004,7 @@
       "4": { "STR": "614", "INT": "748", "DEX": "601", "MNT": "605" },
       "5": { "STR": "654", "INT": "776", "DEX": "647", "MNT": "648" }
     },
-    "order": 104
+    "order": 106
   },
   {
     "name": "Lupina",
@@ -11640,6 +12012,7 @@
     "position": "CP",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Lupina",
+    "comboEvents": ["library_rivals"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -11745,7 +12118,7 @@
       "4": { "STR": "625", "INT": "551", "DEX": "742", "MNT": "639" },
       "5": { "STR": "669", "INT": "580", "DEX": "776", "MNT": "684" }
     },
-    "order": 105
+    "order": 107
   },
   {
     "name": "Sherlia",
@@ -11753,6 +12126,7 @@
     "position": "SP",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Sherlia",
+    "comboEvents": ["library_rivals"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -11855,7 +12229,7 @@
       "4": { "STR": "614", "INT": "745", "DEX": "619", "MNT": "638" },
       "5": { "STR": "663", "INT": "778", "DEX": "663", "MNT": "682" }
     },
-    "order": 106
+    "order": 108
   },
   {
     "name": "Amir",
@@ -11863,6 +12237,7 @@
     "position": "CP",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Amir",
+    "comboEvents": ["chase_is_on"],
     "bonusTeam": ["River City"],
     "skills": {
       "1": {
@@ -11967,7 +12342,7 @@
       "4": { "STR": "811", "INT": "682", "DEX": "658", "MNT": "671" },
       "5": { "STR": "854", "INT": "737", "DEX": "706", "MNT": "726" }
     },
-    "order": 107
+    "order": 109
   },
   {
     "name": "Reuben",
@@ -11975,6 +12350,7 @@
     "position": "SP",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Reuben",
+    "comboEvents": ["a_wonderful_day"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -12081,7 +12457,7 @@
       "4": { "STR": "635", "INT": "538", "DEX": "762", "MNT": "617" },
       "5": { "STR": "682", "INT": "566", "DEX": "792", "MNT": "662" }
     },
-    "order": 108
+    "order": 110
   },
   {
     "name": "Marcus",
@@ -12089,6 +12465,7 @@
     "position": "SP",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Marcus",
+    "comboEvents": ["a_sign_of_hope"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -12189,7 +12566,7 @@
       "4": { "STR": "736", "INT": "637", "DEX": "623", "MNT": "618" },
       "5": { "STR": "768", "INT": "678", "DEX": "670", "MNT": "668" }
     },
-    "order": 109
+    "order": 111
   },
   {
     "name": "Gryllson",
@@ -12197,6 +12574,7 @@
     "position": "RP",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Gryllson",
+    "comboEvents": ["a_sign_of_hope"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -12297,7 +12675,7 @@
       "4": { "STR": "589", "INT": "585", "DEX": "749", "MNT": "609" },
       "5": { "STR": "633", "INT": "630", "DEX": "777", "MNT": "644" }
     },
-    "order": 110
+    "order": 112
   },
   {
     "name": "Wendell",
@@ -12305,6 +12683,7 @@
     "position": "SP",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Wendell",
+    "comboEvents": ["silver_fox"],
     "bonusTeam": ["Shining Angels"],
     "skills": {
       "1": {
@@ -12411,7 +12790,7 @@
       "4": { "STR": "618", "INT": "607", "DEX": "723", "MNT": "594" },
       "5": { "STR": "657", "INT": "654", "DEX": "761", "MNT": "640" }
     },
-    "order": 111
+    "order": 113
   },
   {
     "name": "Snipe",
@@ -12419,6 +12798,7 @@
     "position": "RP",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Snipe",
+    "comboEvents": ["meeting_new_people"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -12524,7 +12904,7 @@
       "4": { "STR": "592", "INT": "585", "DEX": "806", "MNT": "597" },
       "5": { "STR": "626", "INT": "623", "DEX": "849", "MNT": "638" }
     },
-    "order": 112
+    "order": 114
   },
   {
     "name": "Wendy",
@@ -12532,6 +12912,7 @@
     "position": "RP",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Wendy",
+    "comboEvents": ["neighbor_vs__problem", "devil_meets_devil"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -12633,7 +13014,7 @@
       "4": { "STR": "564", "INT": "700", "DEX": "572", "MNT": "593" },
       "5": { "STR": "599", "INT": "731", "DEX": "612", "MNT": "627" }
     },
-    "order": 113
+    "order": 115
   },
   {
     "name": "Serena",
@@ -12641,6 +13022,7 @@
     "position": "RP",
     "type": "SP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Serena",
+    "comboEvents": ["food_vs__medicine"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -12747,7 +13129,7 @@
       "4": { "STR": "480", "INT": "605", "DEX": "494", "MNT": "473" },
       "5": { "STR": "504", "INT": "618", "DEX": "526", "MNT": "502" }
     },
-    "order": 114
+    "order": 116
   },
   {
     "name": "Venomizer",
@@ -12755,6 +13137,7 @@
     "position": "RP",
     "type": "GP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Venomizer",
+    "comboEvents": ["venomous_adventure"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -12858,7 +13241,7 @@
       "4": { "STR": "598", "INT": "719", "DEX": "610", "MNT": "614" },
       "5": { "STR": "644", "INT": "747", "DEX": "652", "MNT": "653" }
     },
-    "order": 115
+    "order": 117
   },
   {
     "name": "Magmizer",
@@ -12866,6 +13249,7 @@
     "position": "SP",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Magmizer",
+    "comboEvents": ["currently_recruiting"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -12970,7 +13354,7 @@
       "4": { "STR": "793", "INT": "668", "DEX": "579", "MNT": "571" },
       "5": { "STR": "832", "INT": "712", "DEX": "624", "MNT": "611" }
     },
-    "order": 116
+    "order": 118
   },
   {
     "name": "Lilo",
@@ -12978,6 +13362,7 @@
     "position": "SP",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Lilo",
+    "comboEvents": ["why_are_you_here_"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -13081,7 +13466,7 @@
       "4": { "STR": "505", "INT": "492", "DEX": "508", "MNT": "624" },
       "5": { "STR": "532", "INT": "526", "DEX": "536", "MNT": "647" }
     },
-    "order": 117
+    "order": 119
   },
   {
     "name": "Casta",
@@ -13089,6 +13474,7 @@
     "position": "RP",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Casta",
+    "comboEvents": ["why_are_you_here_"],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -13193,7 +13579,7 @@
       "4": { "STR": "603", "INT": "619", "DEX": "740", "MNT": "614" },
       "5": { "STR": "648", "INT": "669", "DEX": "770", "MNT": "653" }
     },
-    "order": 118
+    "order": 120
   },
   {
     "name": "Firelord",
@@ -13201,6 +13587,7 @@
     "position": "RP",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Firelord",
+    "comboEvents": ["firelord"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -13305,7 +13692,7 @@
       "4": { "STR": "610", "INT": "741", "DEX": "598", "MNT": "629" },
       "5": { "STR": "651", "INT": "780", "DEX": "638", "MNT": "666" }
     },
-    "order": 119
+    "order": 121
   },
   {
     "name": "Aqualord",
@@ -13313,6 +13700,7 @@
     "position": "SP",
     "type": "GP",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Aqualord",
+    "comboEvents": ["conserve_water"],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -13419,7 +13807,7 @@
       "4": { "STR": "545", "INT": "545", "DEX": "543", "MNT": "693" },
       "5": { "STR": "575", "INT": "575", "DEX": "579", "MNT": "722" }
     },
-    "order": 120
+    "order": 122
   },
   {
     "name": "Matilda",
@@ -13427,6 +13815,7 @@
     "position": "RF",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Matilda",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": { "super_slide": 2, "scoring_chance": 2, "terminator": 1 },
@@ -13498,7 +13887,7 @@
       "4": { "STR": "465", "INT": "597", "DEX": "431", "MNT": "448" },
       "5": { "STR": "498", "INT": "621", "DEX": "453", "MNT": "482" }
     },
-    "order": 121
+    "order": 123
   },
   {
     "name": "Sarah",
@@ -13506,6 +13895,7 @@
     "position": "3B",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Sarah",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": { "anti_rh_pitcher": 2, "slugger_power": 2, "human_magnet": 1 },
@@ -13578,7 +13968,7 @@
       "4": { "STR": "450", "INT": "454", "DEX": "595", "MNT": "431" },
       "5": { "STR": "484", "INT": "482", "DEX": "615", "MNT": "458" }
     },
-    "order": 122
+    "order": 124
   },
   {
     "name": "Eva",
@@ -13586,6 +13976,7 @@
     "position": "LF",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Eva",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -13663,7 +14054,7 @@
       "4": { "STR": "597", "INT": "421", "DEX": "437", "MNT": "451" },
       "5": { "STR": "628", "INT": "447", "DEX": "466", "MNT": "485" }
     },
-    "order": 123
+    "order": 125
   },
   {
     "name": "Liz",
@@ -13671,6 +14062,7 @@
     "position": "1B",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Liz",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -13749,7 +14141,7 @@
       "4": { "STR": "456", "INT": "438", "DEX": "444", "MNT": "625" },
       "5": { "STR": "482", "INT": "466", "DEX": "479", "MNT": "655" }
     },
-    "order": 124
+    "order": 126
   },
   {
     "name": "Zett",
@@ -13757,6 +14149,7 @@
     "position": "RP",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Zett",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -13840,7 +14233,7 @@
       "4": { "STR": "453", "INT": "455", "DEX": "590", "MNT": "456" },
       "5": { "STR": "485", "INT": "485", "DEX": "613", "MNT": "485" }
     },
-    "order": 125
+    "order": 127
   },
   {
     "name": "Kang",
@@ -13848,6 +14241,7 @@
     "position": "SP",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Kang",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -13935,7 +14329,7 @@
       "4": { "STR": "599", "INT": "442", "DEX": "427", "MNT": "420" },
       "5": { "STR": "623", "INT": "466", "DEX": "448", "MNT": "450" }
     },
-    "order": 126
+    "order": 128
   },
   {
     "name": "Nick",
@@ -13943,6 +14337,7 @@
     "position": "RP",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Nick",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -14025,7 +14420,7 @@
       "4": { "STR": "413", "INT": "601", "DEX": "432", "MNT": "447" },
       "5": { "STR": "442", "INT": "624", "DEX": "456", "MNT": "471" }
     },
-    "order": 127
+    "order": 129
   },
   {
     "name": "Roland",
@@ -14033,6 +14428,7 @@
     "position": "SP",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Roland",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": {
@@ -14115,7 +14511,7 @@
       "4": { "STR": "452", "INT": "434", "DEX": "458", "MNT": "627" },
       "5": { "STR": "482", "INT": "460", "DEX": "492", "MNT": "653" }
     },
-    "order": 128
+    "order": 130
   },
   {
     "name": "Jorge",
@@ -14123,6 +14519,7 @@
     "position": "RF",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Jorge",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": { "dash": 1, "gambler": 2, "focused_defense": 1 },
@@ -14183,7 +14580,7 @@
       "4": { "STR": "319", "INT": "508", "DEX": "342", "MNT": "339" },
       "5": { "STR": "342", "INT": "531", "DEX": "366", "MNT": "366" }
     },
-    "order": 129
+    "order": 131
   },
   {
     "name": "Ruric",
@@ -14191,6 +14588,7 @@
     "position": "1B",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Ruric",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": { "target_sighted": 1, "early_challenge": 2, "walk_off_hit": 1 },
@@ -14260,7 +14658,7 @@
       "4": { "STR": "367", "INT": "366", "DEX": "491", "MNT": "349" },
       "5": { "STR": "387", "INT": "392", "DEX": "506", "MNT": "369" }
     },
-    "order": 130
+    "order": 132
   },
   {
     "name": "Gabe",
@@ -14268,6 +14666,7 @@
     "position": "LF",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Gabe",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": { "high_ball_batter": 1, "new_resolution": 2, "chaser": 1 },
@@ -14333,7 +14732,7 @@
       "4": { "STR": "507", "INT": "358", "DEX": "330", "MNT": "330" },
       "5": { "STR": "531", "INT": "381", "DEX": "350", "MNT": "353" }
     },
-    "order": 131
+    "order": 133
   },
   {
     "name": "Micky",
@@ -14341,6 +14740,7 @@
     "position": "3B",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Micky",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": { "pull_hit": 1, "new_resolution": 2, "chaser": 1 },
@@ -14411,7 +14811,7 @@
       "4": { "STR": "323", "INT": "348", "DEX": "332", "MNT": "487" },
       "5": { "STR": "344", "INT": "375", "DEX": "354", "MNT": "512" }
     },
-    "order": 132
+    "order": 134
   },
   {
     "name": "Choco",
@@ -14419,6 +14819,7 @@
     "position": "RP",
     "type": "MNT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Choco",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": { "two_seam": 2, "no_runs_for_you": 2, "change_of_mood": 1 },
@@ -14490,7 +14891,7 @@
       "4": { "STR": "320", "INT": "357", "DEX": "323", "MNT": "478" },
       "5": { "STR": "338", "INT": "375", "DEX": "338", "MNT": "498" }
     },
-    "order": 133
+    "order": 135
   },
   {
     "name": "Soda",
@@ -14498,6 +14899,7 @@
     "position": "RP",
     "type": "STR",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Soda",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": { "recover": 1, "slider": 1, "anti_walk": 2, "special_force": 1 },
@@ -14552,7 +14954,7 @@
       "4": { "STR": "503", "INT": "343", "DEX": "353", "MNT": "332" },
       "5": { "STR": "525", "INT": "368", "DEX": "378", "MNT": "350" }
     },
-    "order": 134
+    "order": 136
   },
   {
     "name": "Mocha",
@@ -14560,6 +14962,7 @@
     "position": "SP",
     "type": "DEX",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Mocha",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": { "anti_rh_batter": 1, "curve": 1, "strikeout_king": 2, "alert": 1 },
@@ -14634,7 +15037,7 @@
       "4": { "STR": "339", "INT": "327", "DEX": "481", "MNT": "336" },
       "5": { "STR": "363", "INT": "345", "DEX": "504", "MNT": "357" }
     },
-    "order": 135
+    "order": 137
   },
   {
     "name": "Frill",
@@ -14642,6 +15045,7 @@
     "position": "SP",
     "type": "INT",
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Frill",
+    "comboEvents": [],
     "bonusTeam": null,
     "skills": {
       "1": { "four_seam": 2, "concentration": 2, "confidence": 1 },
@@ -14715,6 +15119,6 @@
       "4": { "STR": "348", "INT": "485", "DEX": "324", "MNT": "345" },
       "5": { "STR": "369", "INT": "503", "DEX": "347", "MNT": "369" }
     },
-    "order": 136
+    "order": 138
   }
 ]
