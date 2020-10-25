@@ -402,5 +402,17 @@
   "why_are_you_here_": {
     "name": "Why Are You Here?",
     "requiredTrainers": ["Lilo", "Casta"]
+  },
+  "devils_and_angels": {
+    "name": "Devils and Angels",
+    "requiredTrainers": ["Eve", "Base Angel"]
+  },
+  "bad_and_worse": {
+    "name": "Bad and Worse",
+    "requiredTrainers": ["Eve", "Aliana"]
+  },
+  "love_for_spicy_food_": {
+    "name": "LOve for Spicy Food!",
+    "requiredTrainers": ["Aliana", "Zhizi"]
   }
 }
