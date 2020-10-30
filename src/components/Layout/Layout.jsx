@@ -31,9 +31,9 @@ const Layout = ({ children }) => {
         <Button
           as='a'
           colorScheme='blue'
-          href={`https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=${process.env.REACT_APP_PAYPAL_ID}&source=url`}
+          href={`mailto:${process.env.REACT_APP_EMAIL_ADDRESS}`}
         >
-          Donate
+          Contact Us
         </Button>
       </Flex>
     </Flex>
