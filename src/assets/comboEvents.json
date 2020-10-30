@@ -412,7 +412,27 @@
     "requiredTrainers": ["Eve", "Aliana"]
   },
   "love_for_spicy_food_": {
-    "name": "LOve for Spicy Food!",
+    "name": "Love for Spicy Food!",
     "requiredTrainers": ["Aliana", "Zhizi"]
+  },
+  "sisters": {
+    "name": "Sisters",
+    "requiredTrainers": ["Lilith", "Eve"]
+  },
+  "greenhouse_thief": {
+    "name": "Greenhouse Thief",
+    "requiredTrainers": ["Lilith", "Allen"]
+  },
+  "leaders_of_heirla": {
+    "name": "Leaders of Heirla",
+    "requiredTrainers": ["Lilith", "Aliana", "Hannibal"]
+  },
+  "oil_and_water": {
+    "name": "Oil and Water",
+    "requiredTrainers": ["Rowena", "Hannibal"]
+  },
+  "good_deeds_for_all": {
+    "name": "Good Deeds for All",
+    "requiredTrainers": ["Miho", "Hannibal"]
   }
 }
