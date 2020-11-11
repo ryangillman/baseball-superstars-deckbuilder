@@ -18,6 +18,14 @@ const TeamIcon = ({ team }) => {
           title={team}
         />
       );
+    case 'Zenonia Knights':
+      return (
+        <div
+          className='team-icon team-zenonia-knights'
+          alt={team}
+          title={team}
+        />
+      );
     default:
       return null;
   }
