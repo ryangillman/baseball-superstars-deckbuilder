@@ -88,6 +88,9 @@ body {
 .team-mystic-unicorns {
   background-image: url('./assets/teams/mystic-unicorns.png');
 }
+.team-zenonia-knights {
+  background-image: url('./assets/teams/zenonia-knights.png');
+}
 
 @keyframes App-logo-spin {
   from {

@@ -434,5 +434,13 @@
   "good_deeds_for_all": {
     "name": "Good Deeds for All",
     "requiredTrainers": ["Miho", "Hannibal"]
+  },
+  "way_of_the_sword": {
+    "name": "Way of the Sword",
+    "requiredTrainers": ["Chael", "Sohyang"]
+  },
+  "a_good_husband_": {
+    "name": "A good Husband?",
+    "requiredTrainers": ["Chael", "Tsubaki"]
   }
 }
