@@ -8866,7 +8866,7 @@
         "terminator": 2
       },
       "5": {
-        "lf_s_resolve": 1,
+        "lf_s_resolve": 2,
         "power_batter": 1,
         "high_ball_batter": 3,
         "target_sighted": 2,
