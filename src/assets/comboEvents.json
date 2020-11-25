@@ -442,5 +442,21 @@
   "a_good_husband_": {
     "name": "A good Husband?",
     "requiredTrainers": ["Chael", "Tsubaki"]
+  },
+  "prophesied_hero": {
+    "name": "Prophesied Hero",
+    "requiredTrainers": ["Zen", "Pale"]
+  },
+  "a_scout_report__": {
+    "name": "A Scout Report!?",
+    "requiredTrainers": ["Rowena", "Regret"]
+  },
+  "father": {
+    "name": "Father",
+    "requiredTrainers": ["Chael", "Regret"]
+  },
+  "proud_harpy": {
+    "name": "Proud Harpy",
+    "requiredTrainers": ["Shuri", "Regret"]
   }
 }
