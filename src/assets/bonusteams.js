@@ -15,6 +15,10 @@ const positions = [
     value: 'Mystic Unicorns',
     label: 'Mystic Unicorns',
   },
+  {
+    value: 'Zenonia Knights',
+    label: 'Zenonia Knights',
+  },
 ];
 
 export default positions;
