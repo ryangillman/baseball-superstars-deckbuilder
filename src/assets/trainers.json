@@ -9839,7 +9839,7 @@
         "no_stolen_bases": 2
       },
       "5": {
-        "c_s_resolve": 1,
+        "c_s_resolve": 2,
         "framing": 1,
         "iron_wall": 3,
         "target_sighted": 3,
@@ -9847,7 +9847,7 @@
         "high_ball_batter": 1,
         "slugger_power": 2,
         "no_stolen_bases": 2,
-        "human_magnet": 2
+        "human_magnet": 1
       }
     },
     "devBonus": {
