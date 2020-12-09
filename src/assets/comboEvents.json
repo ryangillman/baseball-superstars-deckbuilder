@@ -458,5 +458,21 @@
   "proud_harpy": {
     "name": "Proud Harpy",
     "requiredTrainers": ["Shuri", "Regret"]
+  },
+  "opposite_poles": {
+    "name": "Opposite Poles",
+    "requiredTrainers": ["Ines", "Pi"]
+  },
+  "old_era_survival": {
+    "name": "Old Era Survival",
+    "requiredTrainers": ["Ines", "Helga"]
+  },
+  "untouchable_": {
+    "name": "Untouchable!",
+    "requiredTrainers": ["Magnus", "Flamesh"]
+  },
+  "magnus_s_lucky_day": {
+    "name": "Magnus's Lucky Day",
+    "requiredTrainers": ["Magnus", "Rachel"]
   }
 }
