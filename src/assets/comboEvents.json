@@ -474,5 +474,25 @@
   "magnus_s_lucky_day": {
     "name": "Magnus's Lucky Day",
     "requiredTrainers": ["Magnus", "Rachel"]
+  },
+  "dangerous_deal": {
+    "name": "Dangerous Deal",
+    "requiredTrainers": ["Zena", "Clefina"]
+  },
+  "need_a_smart_robot": {
+    "name": "Need a Smart Robot",
+    "requiredTrainers": ["Clefina", "Medica"]
+  },
+  "shadow_of_a_genius": {
+    "name": "Shadow of a Genius",
+    "requiredTrainers": ["Ines", "Clefina"]
+  },
+  "two_robots": {
+    "name": "Two Robots",
+    "requiredTrainers": ["MK-3", "Boomiger"]
+  },
+  "are_you_a_robot_": {
+    "name": "Are You a Robot?",
+    "requiredTrainers": ["MK-3", "Onestone"]
   }
 }
