@@ -7,6 +7,7 @@ import useTrainers from '../../hooks/useTrainers';
 import useSaveRoster from '../../hooks/useSaveRoster';
 import useFilter from '../../hooks/useFilter';
 import useAuth from '../../hooks/useAuth';
+import fileDownload from 'js-file-download';
 
 const RosterManager = () => {
   const [roster, setRoster] = useState(null);
@@ -52,6 +53,15 @@ const RosterManager = () => {
     });
   };
 
+  const exportRoster = () => {
+    const exportData = roster.reduce((acc, trainer) => {
+      if (trainer.stars === 0) return acc;
+      return { ...acc, [trainer.name]: trainer.stars };
+    }, {});
+
+    fileDownload(JSON.stringify(exportData), 'My Roster.json');
+  };
+
   const updateRoster = useCallback((trainername, stars) => {
     setRoster((prev) =>
       prev.map((row) => {
@@ -74,6 +84,9 @@ const RosterManager = () => {
       <Flex justifyContent='center' position='sticky' top={5} zIndex={100}>
         <Button colorScheme='green' onClick={saveRoster}>
           Save Roster
+        </Button>
+        <Button colorScheme='blue' ml={5} onClick={() => exportRoster()}>
+          Export Roster
         </Button>
         {user && (
           <Button colorScheme='blue' ml={5} onClick={shareRoster}>
