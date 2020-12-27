@@ -59,7 +59,7 @@ const RosterManager = () => {
       return { ...acc, [trainer.name]: trainer.stars };
     }, {});
 
-    fileDownload(JSON.stringify(exportData), 'myRoster.json');
+    fileDownload(JSON.stringify(exportData), 'My Roster.json');
   };
 
   const updateRoster = useCallback((trainername, stars) => {
