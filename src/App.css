@@ -30,18 +30,22 @@ body {
 }
 
 .upgrade-icon {
+  max-width: 23.2px;
   height: 24px;
   background-repeat: no-repeat;
   background-size: contain;
   font-size: 0;
 }
+
 .inactive-upgrade {
   background-image: url('./assets/UpgradeInactive.png');
   position: relative;
 }
+
 .active-upgrade {
   background-image: url('./assets/UpgradeActive.png');
 }
+
 .type-icon {
   width: 100%;
   height: 100%;
@@ -50,6 +54,7 @@ body {
   background-size: contain;
   display: inline-block;
 }
+
 .type-icon-size2 {
   width: 75%;
   height: 75%;
@@ -63,24 +68,31 @@ body {
   right: 0;
   bottom: 0;
 }
+
 .str-icon {
   background-image: url('./assets/STR.png');
 }
+
 .int-icon {
   background-image: url('./assets/INT.png');
 }
+
 .dex-icon {
   background-image: url('./assets/DEX.png');
 }
+
 .mnt-icon {
   background-image: url('./assets/MNT.png');
 }
+
 .sp-icon {
   background-image: url('./assets/SP.png');
 }
+
 .gp-icon {
   background-image: url('./assets/GP.png');
 }
+
 .team-icon {
   width: 100%;
   height: 100%;
@@ -89,18 +101,23 @@ body {
   background-size: contain;
   display: inline-block;
 }
+
 .team-pumas {
   background-image: url('./assets/teams/pumas.png');
 }
+
 .team-angels {
   background-image: url('./assets/teams/angels.png');
 }
+
 .team-rivercity {
   background-image: url('./assets/teams/rivercity.png');
 }
+
 .team-mystic-unicorns {
   background-image: url('./assets/teams/mystic-unicorns.png');
 }
+
 .team-zenonia-knights {
   background-image: url('./assets/teams/zenonia-knights.png');
 }
@@ -109,6 +126,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -133,6 +151,7 @@ body {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -143,65 +162,80 @@ body {
     transform: scale(0.1, 0.1);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     transform: scale(1.2, 1.2);
     opacity: 0;
   }
 }
+
 @keyframes pulsate2 {
   0% {
     transform: scale(0.1, 0.1);
     opacity: 0;
   }
+
   25% {
     opacity: 1;
   }
+
   50% {
     transform: scale(1.2, 1.2);
     opacity: 0;
   }
+
   100% {
     transform: scale(1.2, 1.2);
     opacity: 0;
   }
 }
+
 @keyframes pulsate3 {
   0% {
     transform: scale(0.1, 0.1);
     opacity: 0;
   }
+
   16.66% {
     opacity: 1;
   }
+
   33.33% {
     transform: scale(1.2, 1.2);
     opacity: 0;
   }
+
   100% {
     transform: scale(1.2, 1.2);
     opacity: 0;
   }
 }
+
 @keyframes pulsate4 {
   0% {
     transform: scale(0.1, 0.1);
     opacity: 0;
   }
+
   12.5% {
     opacity: 1;
   }
+
   25% {
     transform: scale(1.2, 1.2);
     opacity: 0;
   }
+
   100% {
     transform: scale(1.2, 1.2);
     opacity: 0;
   }
 }
+
 /* @-webkit-keyframes pulsate {
   0% {
     -webkit-transform: scale(0.1, 0.1);
