@@ -494,5 +494,13 @@
   "are_you_a_robot_": {
     "name": "Are You a Robot?",
     "requiredTrainers": ["MK-3", "Onestone"]
+  },
+  "heavenly_rythm": {
+    "name": "Heavenly Rythm",
+    "requiredTrainers": ["Rachel", "Bastet"]
+  },
+  "a_fairy_of_money_": {
+    "name": "A Fairy of Money?",
+    "requiredTrainers": ["Monique", "Bastet"]
   }
 }

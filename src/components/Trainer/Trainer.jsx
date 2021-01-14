@@ -179,12 +179,17 @@ const Trainer = ({
               display='inline-block'
               position='relative'
               right='-6px'
-              top='2px'
-              w='25px'
+              w='40px'
               h='25px'
-              flex='0 0 25px'
+              flex='0 0 40px'
             >
-              <TypeIcon type={trainer.type} />
+              {trainer.type.map((type) => (
+                <TypeIcon
+                  key={type}
+                  type={type}
+                  className={`type-icon-size${trainer.type.length}`}
+                />
+              ))}
             </Box>
           </Flex>
         </Button>
