@@ -48,8 +48,14 @@ const TrainerDetailsModal = ({ isOpen, onClose, trainer }) => {
             <Flex justifyContent='space-around' mb={6}>
               <Flex flexDirection='column' alignItems='center' flex={1}>
                 <Text textAlign='center'>Type</Text>
-                <Box width='45px' height='45px' ml='10px'>
-                  <TypeIcon type={trainer.type} />
+                <Box width='45px' height='45px' ml='10px' position='relative'>
+                  {trainer.type.map((type) => (
+                    <TypeIcon
+                      key={type}
+                      type={type}
+                      className={`type-icon-size${trainer.type.length}`}
+                    />
+                  ))}
                 </Box>
               </Flex>
               <Box textAlign='center' flex={1}>
