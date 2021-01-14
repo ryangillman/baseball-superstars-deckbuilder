@@ -50,6 +50,19 @@ body {
   background-size: contain;
   display: inline-block;
 }
+.type-icon-size2 {
+  width: 75%;
+  height: 75%;
+  position: absolute;
+}
+.type-icon-size2:first-child {
+  left: 0;
+  top: 0;
+}
+.type-icon-size2:nth-child(2) {
+  right: 0;
+  bottom: 0;
+}
 .str-icon {
   background-image: url('./assets/STR.png');
 }

@@ -87,7 +87,11 @@ const useFilter = (allTrainers) => {
               if (value.length && !value.includes(row.rarity)) return false;
               break;
             case 'type':
-              if (value.length && !value.includes(row.type)) return false;
+              if (
+                value.length &&
+                !row.type.some((type) => value.includes(type))
+              )
+                return false;
               break;
             case 'bonusteams':
               if (
