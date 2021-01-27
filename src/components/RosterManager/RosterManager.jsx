@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button, Flex, useToast } from '@chakra-ui/core';
+import fileDownload from 'js-file-download';
 import useRoster from '../../hooks/useRoster';
 import Trainerlist from '../Trainerlist';
 import { createRosterObject } from '../../util';
@@ -7,7 +8,6 @@ import useTrainers from '../../hooks/useTrainers';
 import useSaveRoster from '../../hooks/useSaveRoster';
 import useFilter from '../../hooks/useFilter';
 import useAuth from '../../hooks/useAuth';
-import fileDownload from 'js-file-download';
 
 const RosterManager = () => {
   const [roster, setRoster] = useState(null);
