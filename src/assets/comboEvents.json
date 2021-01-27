@@ -502,5 +502,29 @@
   "a_fairy_of_money_": {
     "name": "A Fairy of Money?",
     "requiredTrainers": ["Monique", "Bastet"]
+  },
+  "a_good_noblian": {
+    "name": "A Good Noblian",
+    "requiredTrainers": ["Daphne", "Elfin"]
+  },
+  "benefits_of_being_short": {
+    "name": "Benefits of Being Short",
+    "requiredTrainers": ["Daphne", "Liew"]
+  },
+  "the_right_path": {
+    "name": "The Right Path",
+    "requiredTrainers": ["Daphne", "Dion"]
+  },
+  "how_jar_ring": {
+    "name": "How Jar-ring",
+    "requiredTrainers": ["Dion", "Seiryu"]
+  },
+  "your_name": {
+    "name": "Your Name",
+    "requiredTrainers": ["Dion", "Luther"]
+  },
+  "research_subject": {
+    "name": "Research Subject",
+    "requiredTrainers": ["Dion", "Ines"]
   }
 }

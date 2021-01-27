@@ -19,6 +19,10 @@ const positions = [
     value: 'Zenonia Knights',
     label: 'Zenonia Knights',
   },
+  {
+    value: 'Forest Elves',
+    label: 'Forest Elves',
+  },
 ];
 
 export default positions;

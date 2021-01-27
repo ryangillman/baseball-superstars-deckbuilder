@@ -121,6 +121,9 @@ body {
 .team-zenonia-knights {
   background-image: url('./assets/teams/zenonia-knights.png');
 }
+.team-forest-elves {
+  background-image: url('./assets/teams/forest-elves.png');
+}
 
 @keyframes App-logo-spin {
   from {

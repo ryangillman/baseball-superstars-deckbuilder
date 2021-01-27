@@ -26,6 +26,10 @@ const TeamIcon = ({ team }) => {
           title={team}
         />
       );
+    case 'Forest Elves':
+      return (
+        <div className='team-icon team-forest-elves' alt={team} title={team} />
+      );
     default:
       return null;
   }
