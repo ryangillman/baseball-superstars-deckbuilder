@@ -526,5 +526,29 @@
   "research_subject": {
     "name": "Research Subject",
     "requiredTrainers": ["Dion", "Ines"]
+  },
+  "message": {
+    "name": "Message",
+    "requiredTrainers": ["Penelope", "Ceres"]
+  },
+  "proving_one_s_skills": {
+    "name": "Proving One's Skills",
+    "requiredTrainers": ["Penelope", "Aliana"]
+  },
+  "rocks_move__": {
+    "name": "Rocks Move?!",
+    "requiredTrainers": ["Penelope", "Onestone"]
+  },
+  "beyond_the_void": {
+    "name": "Beyond the Void",
+    "requiredTrainers": ["Ceres", "Pluto"]
+  },
+  "righteous_power": {
+    "name": "Righteous Power",
+    "requiredTrainers": ["Ceres", "Belita"]
+  },
+  "fairy_s_gift": {
+    "name": "Fairy's Gift",
+    "requiredTrainers": ["Ceres", "Allen"]
   }
 }
