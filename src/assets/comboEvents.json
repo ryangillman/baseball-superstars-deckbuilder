@@ -550,5 +550,21 @@
   "fairy_s_gift": {
     "name": "Fairy's Gift",
     "requiredTrainers": ["Ceres", "Allen"]
+  },
+  "hathor_1": {
+    "name": "Hathor 1",
+    "requiredTrainers": ["Hathor", "Eve"]
+  },
+  "hathor_2": {
+    "name": "Hathor 2",
+    "requiredTrainers": ["Hathor", "Boomiger"]
+  },
+  "anubis_1": {
+    "name": "Anubis 1",
+    "requiredTrainers": ["Anubis", "Bastet"]
+  },
+  "anubis_2": {
+    "name": "Anubis 2",
+    "requiredTrainers": ["Anubis", "Seiryu"]
   }
 }
