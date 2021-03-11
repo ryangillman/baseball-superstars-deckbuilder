@@ -566,5 +566,13 @@
   "anubis_2": {
     "name": "Anubis 2",
     "requiredTrainers": ["Anubis", "Seiryu"]
+  },
+  "rare_quality": {
+    "name": "Rare Quality",
+    "requiredTrainers": ["Caroline", "Luna"]
+  },
+  "captain_and_commander": {
+    "name": "Captain and Commander",
+    "requiredTrainers": ["Caroline", "Luther"]
   }
 }
