@@ -9577,7 +9577,7 @@
       "two_robots",
       "hathor_2"
     ],
-    "bonusTeam": ["Zenonia Knights"],
+    "bonusTeam": ["Zenonia Knights", "Forest Elves"],
     "skills": {
       "1": {
         "super_left_arm": 1,
