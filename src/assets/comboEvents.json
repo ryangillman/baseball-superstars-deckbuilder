@@ -574,5 +574,13 @@
   "captain_and_commander": {
     "name": "Captain and Commander",
     "requiredTrainers": ["Caroline", "Luther"]
+  },
+  "beverage_invention": {
+    "name": "Beverage Invention",
+    "requiredTrainers": ["Claris", "Violet"]
+  },
+  "out_of_control": {
+    "name": "Out of Control",
+    "requiredTrainers": ["Claris", "Rowena"]
   }
 }

@@ -99,13 +99,15 @@
         "Team Pro. Success Rate +15%",
         "Trainer Event Reward +20%"
       ],
-      "5": ["[UR] Batting Gloves On Sale (Batter)",
+      "5": [
+        "[UR] Batting Gloves On Sale (Batter)",
         "Initial Affinity +20",
         "Training Reward (G Points) +120",
         "Sp. Training Reward +150%",
         "Personal Training Trigger Rate +20%",
         "Team Pro. Success Rate +15%",
-        "Trainer Event Reward +20%"]
+        "Trainer Event Reward +20%"
+      ]
     },
     "stats": {
       "1": { "STR": "1861", "INT": "1502", "DEX": "1431", "MNT": "1686" },
@@ -186,11 +188,37 @@
       }
     },
     "devBonus": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": []
+      "1": ["[UR] Bat On Sale (Batter)", "Initial Affinity +10", "Initial Skill Points +150", "Sp. Training Reward +210%"],
+      "2": [
+        "[UR] Bat On Sale (Batter)",
+        "Initial Affinity +10",
+        "Initial Skill Points +150",
+        "Sp. Training Reward +210%",
+        "Trainer Event Reward +20%"
+      ],
+      "3": [
+        "[UR] Bat On Sale (Batter)",
+        "Initial Affinity +20",
+        "Initial Skill Points +150",
+        "Sp. Training Reward +210%",
+        "Trainer Event Reward +20%"
+      ],
+      "4": [
+        "[UR] Bat On Sale (Batter)",
+        "Initial Affinity +20",
+        "Initial Skill Points +150",
+        "Sp. Training Reward +210%",
+        "Training Reward (INT) +5",
+        "Trainer Event Reward +20%"
+      ],
+      "5": [
+        "[UR] Bat On Sale (Batter)",
+        "Initial Affinity +20",
+        "Initial Skill Points +150",
+        "Sp. Training Reward +240%",
+        "Training Reward (INT) +5",
+        "Trainer Event Reward +20%"
+      ]
     },
     "stats": {
       "1": { "STR": "1572", "INT": "1627", "DEX": "1406", "MNT": "1845" },
@@ -2688,6 +2716,125 @@
     "order": 22
   },
   {
+    "name": "Claris",
+    "rarity": "UR",
+    "position": "CP",
+    "type": ["DEX"],
+    "url": "https://baseball-superstars-2020.fandom.com/wiki/Luna",
+    "comboEvents": ["beverage_invention", "out_of_control"],
+    "bonusTeam": [],
+    "skills": {
+      "1": {
+        "knuckleball": 1,
+        "super_left_arm": 1,
+        "cp_s_resolve": 1,
+        "v_slider": 2,
+        "tornado": 2,
+        "super_fastball": 1,
+        "curve": 1,
+        "cutter": 1,
+        "fire_baller": 2
+      },
+      "2": {
+        "knuckleball": 1,
+        "super_left_arm": 1,
+        "cp_s_resolve": 1,
+        "v_slider": 2,
+        "tornado": 2,
+        "super_fastball": 1,
+        "cutter": 2,
+        "curve": 1,
+        "fire_baller": 2
+      },
+      "3": {
+        "knuckleball": 2,
+        "super_left_arm": 1,
+        "cp_s_resolve": 1,
+        "tornado": 3,
+        "super_fastball": 2,
+        "v_slider": 2,
+        "cutter": 2,
+        "curve": 1,
+        "fire_baller": 2
+      },
+      "4": {
+        "knuckleball": 2,
+        "super_left_arm": 1,
+        "cp_s_resolve": 1,
+        "tornado": 3,
+        "super_fastball": 2,
+        "v_slider": 2,
+        "screwball": 1,
+        "cutter": 2,
+        "curve": 2,
+        "fire_baller": 2
+      },
+      "5": {
+        "knuckleball": 2,
+        "cp_s_resolve": 2,
+        "super_left_arm": 1,
+        "tornado": 3,
+        "v_slider": 3,
+        "screwball": 2,
+        "super_fastball": 2,
+        "curve": 3,
+        "cutter": 2,
+        "fire_baller": 2
+      }
+    },
+    "devBonus": {
+      "1": [
+        "Initial Affinity +10",
+        "Sp. Training Reward +150%",
+        "Training Reward (All) +25%",
+        "Training Success Rate (DEX) +20%",
+        "Rapport Effect +10%"
+      ],
+      "2": [
+        "Initial Affinity +10",
+        "Sp. Training Reward +150%",
+        "Training Reward (All) +25%",
+        "Trainer Event Reward +20%",
+        "Training Success Rate (DEX) +20%",
+        "Rapport Effect +10%"
+      ],
+      "3": [
+        "Initial Affinity +20",
+        "Sp. Training Reward +150%",
+        "Training Reward (All) +25%",
+        "Trainer Event Reward +20%",
+        "Training Success Rate (DEX) +20%",
+        "Rapport Effect +10%"
+      ],
+      "4": [
+        "Initial Affinity +20",
+        "Sp. Training Reward +150%",
+        "DEX Training Placement +15%",
+        "Training Reward (All) +25%",
+        "Trainer Event Reward +20%",
+        "Training Success Rate (DEX) +20%",
+        "Rapport Effect +10%"
+      ],
+      "5": [
+        "Initial Affinity +20",
+        "Sp. Training Reward +150%",
+        "DEX Training Placement +15%",
+        "Training Reward (All) +40%",
+        "Trainer Event Reward +20%",
+        "Training Success Rate (DEX) +20%",
+        "Rapport Effect +10%"
+      ]
+    },
+    "stats": {
+      "1": { "STR": "871", "INT": "2079", "DEX": "2262", "MNT": "1155" },
+      "2": { "STR": "970", "INT": "2351", "DEX": "2564", "MNT": "1288" },
+      "3": { "STR": "1069", "INT": "2623", "DEX": "2865", "MNT": "1421" },
+      "4": { "STR": "1168", "INT": "2895", "DEX": "3167", "MNT": "1554" },
+      "5": { "STR": "1267", "INT": "3167", "DEX": "3469", "MNT": "1687" }
+    },
+    "order": 23
+  },
+  {
     "name": "Ceres",
     "rarity": "UR",
     "position": "RP",
@@ -2811,7 +2958,7 @@
       "4": { "STR": "1820", "INT": "2752", "DEX": "1926", "MNT": "2132" },
       "5": { "STR": "1992", "INT": "2997", "DEX": "2107", "MNT": "2328" }
     },
-    "order": 23
+    "order": 24
   },
   {
     "name": "Kunio",
@@ -2930,7 +3077,7 @@
       "4": { "STR": "2327", "INT": "2221", "DEX": "2204", "MNT": "2222" },
       "5": { "STR": "2534", "INT": "2427", "DEX": "2414", "MNT": "2428" }
     },
-    "order": 24
+    "order": 25
   },
   {
     "name": "Eve",
@@ -3054,7 +3201,7 @@
       "4": { "STR": "2090", "INT": "2098", "DEX": "2388", "MNT": "2198" },
       "5": { "STR": "2288", "INT": "2292", "DEX": "2603", "MNT": "2402" }
     },
-    "order": 25
+    "order": 26
   },
   {
     "name": "Lilith",
@@ -3173,7 +3320,7 @@
       "4": { "STR": "2170", "INT": "2212", "DEX": "1923", "MNT": "2576" },
       "5": { "STR": "2373", "INT": "2417", "DEX": "2101", "MNT": "2813" }
     },
-    "order": 26
+    "order": 27
   },
   {
     "name": "Belita",
@@ -3291,7 +3438,7 @@
       "4": { "STR": "1933", "INT": "2654", "DEX": "1983", "MNT": "2330" },
       "5": { "STR": "2121", "INT": "2894", "DEX": "2176", "MNT": "2543" }
     },
-    "order": 27
+    "order": 28
   },
   {
     "name": "Dragona",
@@ -3409,7 +3556,7 @@
       "4": { "STR": "2203", "INT": "2210", "DEX": "2212", "MNT": "2292" },
       "5": { "STR": "2408", "INT": "2420", "DEX": "2422", "MNT": "2500" }
     },
-    "order": 28
+    "order": 29
   },
   {
     "name": "Regret",
@@ -3523,7 +3670,7 @@
       "4": { "STR": "2327", "INT": "2221", "DEX": "2204", "MNT": "2222" },
       "5": { "STR": "2534", "INT": "2427", "DEX": "2414", "MNT": "2428" }
     },
-    "order": 29
+    "order": 30
   },
   {
     "name": "Leon",
@@ -3643,7 +3790,7 @@
       "4": { "STR": "2134", "INT": "2030", "DEX": "2032", "MNT": "2023" },
       "5": { "STR": "2325", "INT": "2219", "DEX": "2220", "MNT": "2209" }
     },
-    "order": 30
+    "order": 31
   },
   {
     "name": "Rowena",
@@ -3655,7 +3802,8 @@
       "silver_fox",
       "recruit",
       "oil_and_water",
-      "a_scout_report__"
+      "a_scout_report__",
+      "out_of_control"
     ],
     "bonusTeam": ["Shining Angels"],
     "skills": {
@@ -3768,7 +3916,7 @@
       "4": { "STR": "1943", "INT": "1953", "DEX": "2048", "MNT": "1930" },
       "5": { "STR": "2118", "INT": "2136", "DEX": "2231", "MNT": "2108" }
     },
-    "order": 31
+    "order": 32
   },
   {
     "name": "Violet",
@@ -3776,7 +3924,12 @@
     "position": "CP",
     "type": ["GP"],
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Violet",
-    "comboEvents": ["who_", "a_new_investor__", "inner_feelings"],
+    "comboEvents": [
+      "who_",
+      "a_new_investor__",
+      "inner_feelings",
+      "beverage_invention"
+    ],
     "bonusTeam": ["Mystic Unicorns"],
     "skills": {
       "1": {
@@ -3888,7 +4041,7 @@
       "4": { "STR": "2024", "INT": "2014", "DEX": "2025", "MNT": "2113" },
       "5": { "STR": "2211", "INT": "2202", "DEX": "2214", "MNT": "2298" }
     },
-    "order": 32
+    "order": 33
   },
   {
     "name": "Leonie",
@@ -4005,7 +4158,7 @@
       "4": { "STR": "2111", "INT": "2022", "DEX": "2007", "MNT": "2025" },
       "5": { "STR": "2299", "INT": "2210", "DEX": "2195", "MNT": "2212" }
     },
-    "order": 33
+    "order": 34
   },
   {
     "name": "Pluto",
@@ -4130,7 +4283,7 @@
       "4": { "STR": "2032", "INT": "2023", "DEX": "2021", "MNT": "2123" },
       "5": { "STR": "2218", "INT": "2213", "DEX": "2210", "MNT": "2307" }
     },
-    "order": 34
+    "order": 35
   },
   {
     "name": "Valentine",
@@ -4254,7 +4407,7 @@
       "4": { "STR": "1976", "INT": "1986", "DEX": "2082", "MNT": "1991" },
       "5": { "STR": "2155", "INT": "2172", "DEX": "2264", "MNT": "2178" }
     },
-    "order": 35
+    "order": 36
   },
   {
     "name": "Ditto",
@@ -4372,7 +4525,7 @@
       "4": { "STR": "2035", "INT": "2137", "DEX": "2026", "MNT": "2020" },
       "5": { "STR": "2225", "INT": "2324", "DEX": "2217", "MNT": "2206" }
     },
-    "order": 36
+    "order": 37
   },
   {
     "name": "Psyker",
@@ -4489,7 +4642,7 @@
       "4": { "STR": "1972", "INT": "2091", "DEX": "1986", "MNT": "1996" },
       "5": { "STR": "2153", "INT": "2273", "DEX": "2170", "MNT": "2178" }
     },
-    "order": 37
+    "order": 38
   },
   {
     "name": "Daphne",
@@ -4603,7 +4756,7 @@
       "4": { "STR": "798", "INT": "733", "DEX": "842", "MNT": "1306" },
       "5": { "STR": "853", "INT": "794", "DEX": "902", "MNT": "1401" }
     },
-    "order": 39
+    "order": 40
   },
   {
     "name": "Kyoko",
@@ -4717,7 +4870,7 @@
       "4": { "STR": "796", "INT": "541", "DEX": "959", "MNT": "772" },
       "5": { "STR": "846", "INT": "579", "DEX": "1006", "MNT": "824" }
     },
-    "order": 39
+    "order": 40
   },
   {
     "comboEvents": ["a_true_angel", "priority"],
@@ -4832,7 +4985,7 @@
     },
     "type": ["SP"],
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Zia",
-    "order": 40
+    "order": 41
   },
   {
     "comboEvents": ["untouchable_", "magnus_s_lucky_day"],
@@ -4946,7 +5099,7 @@
     },
     "type": ["STR"],
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Zia",
-    "order": 41
+    "order": 42
   },
   {
     "name": "Monique",
@@ -5062,7 +5215,7 @@
       "4": { "STR": "1514", "INT": "1024", "DEX": "1275", "MNT": "767" },
       "5": { "STR": "1632", "INT": "1101", "DEX": "1386", "MNT": "821" }
     },
-    "order": 42
+    "order": 43
   },
   {
     "name": "Sophie",
@@ -5174,7 +5327,7 @@
       "4": { "STR": "820", "INT": "1111", "DEX": "780", "MNT": "1238" },
       "5": { "STR": "882", "INT": "1204", "DEX": "836", "MNT": "1337" }
     },
-    "order": 43
+    "order": 44
   },
   {
     "name": "Nameless",
@@ -5286,7 +5439,7 @@
       "4": { "STR": "711", "INT": "814", "DEX": "719", "MNT": "719" },
       "5": { "STR": "763", "INT": "860", "DEX": "766", "MNT": "744" }
     },
-    "order": 44
+    "order": 45
   },
   {
     "name": "Mei Mei",
@@ -5399,7 +5552,7 @@
       "4": { "STR": "631", "INT": "649", "DEX": "632", "MNT": "738" },
       "5": { "STR": "667", "INT": "690", "DEX": "670", "MNT": "776" }
     },
-    "order": 45
+    "order": 46
   },
   {
     "name": "Albert",
@@ -5473,7 +5626,7 @@
       "4": { "STR": "530", "INT": "1025", "DEX": "1236", "MNT": "478" },
       "5": { "STR": "558", "INT": "1102", "DEX": "1323", "MNT": "502" }
     },
-    "order": 46
+    "order": 47
   },
   {
     "name": "Base Hero",
@@ -5583,7 +5736,7 @@
       "4": { "STR": "726", "INT": "706", "DEX": "721", "MNT": "801" },
       "5": { "STR": "777", "INT": "752", "DEX": "770", "MNT": "851" }
     },
-    "order": 47
+    "order": 48
   },
   {
     "name": "Tauric",
@@ -5699,7 +5852,7 @@
       "4": { "STR": "1156", "INT": "624", "DEX": "817", "MNT": "584" },
       "5": { "STR": "1232", "INT": "673", "DEX": "867", "MNT": "621" }
     },
-    "order": 48
+    "order": 49
   },
   {
     "name": "Helen",
@@ -5812,7 +5965,7 @@
       "4": { "STR": "674", "INT": "690", "DEX": "782", "MNT": "686" },
       "5": { "STR": "719", "INT": "734", "DEX": "828", "MNT": "731" }
     },
-    "order": 49
+    "order": 50
   },
   {
     "name": "NOM",
@@ -5925,7 +6078,7 @@
       "4": { "STR": "708", "INT": "717", "DEX": "802", "MNT": "724" },
       "5": { "STR": "754", "INT": "766", "DEX": "851", "MNT": "773" }
     },
-    "order": 50
+    "order": 51
   },
   {
     "name": "Golden Boy",
@@ -6037,7 +6190,7 @@
       "4": { "STR": "873", "INT": "783", "DEX": "772", "MNT": "797" },
       "5": { "STR": "923", "INT": "832", "DEX": "826", "MNT": "849" }
     },
-    "order": 51
+    "order": 52
   },
   {
     "name": "Elfin",
@@ -6152,7 +6305,7 @@
       "4": { "STR": "695", "INT": "790", "DEX": "679", "MNT": "684" },
       "5": { "STR": "736", "INT": "832", "DEX": "723", "MNT": "730" }
     },
-    "order": 52
+    "order": 53
   },
   {
     "name": "Lucy",
@@ -6262,7 +6415,7 @@
       "4": { "STR": "678", "INT": "773", "DEX": "679", "MNT": "682" },
       "5": { "STR": "772", "INT": "816", "DEX": "724", "MNT": "729" }
     },
-    "order": 53
+    "order": 54
   },
   {
     "name": "Policia",
@@ -6370,7 +6523,7 @@
       "4": { "STR": "674", "INT": "696", "DEX": "773", "MNT": "678" },
       "5": { "STR": "721", "INT": "743", "DEX": "818", "MNT": "724" }
     },
-    "order": 54
+    "order": 55
   },
   {
     "name": "Basedevil",
@@ -6482,7 +6635,7 @@
       "4": { "STR": "767", "INT": "744", "DEX": "768", "MNT": "850" },
       "5": { "STR": "820", "INT": "796", "DEX": "817", "MNT": "896" }
     },
-    "order": 55
+    "order": 56
   },
   {
     "name": "Pi",
@@ -6595,7 +6748,7 @@
       "4": { "STR": "790", "INT": "792", "DEX": "772", "MNT": "872" },
       "5": { "STR": "843", "INT": "845", "DEX": "824", "MNT": "925" }
     },
-    "order": 56
+    "order": 57
   },
   {
     "name": "Kryzer",
@@ -6702,7 +6855,7 @@
       "4": { "STR": "861", "INT": "748", "DEX": "746", "MNT": "761" },
       "5": { "STR": "913", "INT": "795", "DEX": "793", "MNT": "814" }
     },
-    "order": 57
+    "order": 58
   },
   {
     "name": "Mia",
@@ -6813,7 +6966,7 @@
       "4": { "STR": "763", "INT": "858", "DEX": "759", "MNT": "746" },
       "5": { "STR": "813", "INT": "913", "DEX": "810", "MNT": "799" }
     },
-    "order": 58
+    "order": 59
   },
   {
     "name": "Zena",
@@ -6931,7 +7084,7 @@
       "4": { "STR": "643", "INT": "753", "DEX": "653", "MNT": "657" },
       "5": { "STR": "682", "INT": "796", "DEX": "697", "MNT": "700" }
     },
-    "order": 59
+    "order": 60
   },
   {
     "name": "Liew",
@@ -7041,7 +7194,7 @@
       "4": { "STR": "686", "INT": "780", "DEX": "686", "MNT": "692" },
       "5": { "STR": "731", "INT": "822", "DEX": "731", "MNT": "740" }
     },
-    "order": 60
+    "order": 61
   },
   {
     "name": "Guy-E",
@@ -7154,7 +7307,7 @@
       "4": { "STR": "814", "INT": "722", "DEX": "714", "MNT": "729" },
       "5": { "STR": "855", "INT": "768", "DEX": "757", "MNT": "773" }
     },
-    "order": 61
+    "order": 62
   },
   {
     "name": "Velour",
@@ -7266,7 +7419,7 @@
       "4": { "STR": "760", "INT": "861", "DEX": "765", "MNT": "774" },
       "5": { "STR": "814", "INT": "915", "DEX": "815", "MNT": "824" }
     },
-    "order": 62
+    "order": 63
   },
   {
     "name": "Medica",
@@ -7383,7 +7536,7 @@
       "4": { "STR": "789", "INT": "883", "DEX": "783", "MNT": "794" },
       "5": { "STR": "840", "INT": "936", "DEX": "832", "MNT": "844" }
     },
-    "order": 63
+    "order": 64
   },
   {
     "name": "Scumbag Joe",
@@ -7498,7 +7651,7 @@
       "4": { "STR": "812", "INT": "820", "DEX": "920", "MNT": "802" },
       "5": { "STR": "862", "INT": "874", "DEX": "970", "MNT": "852" }
     },
-    "order": 64
+    "order": 65
   },
   {
     "name": "Rose",
@@ -7607,7 +7760,7 @@
       "4": { "STR": "831", "INT": "735", "DEX": "715", "MNT": "734" },
       "5": { "STR": "877", "INT": "782", "DEX": "759", "MNT": "781" }
     },
-    "order": 65
+    "order": 66
   },
   {
     "name": "Penelope",
@@ -7721,7 +7874,7 @@
       "4": { "STR": "793", "INT": "1027", "DEX": "1198", "MNT": "706" },
       "5": { "STR": "851", "INT": "1102", "DEX": "1284", "MNT": "762" }
     },
-    "order": 66
+    "order": 67
   },
   {
     "name": "Misako",
@@ -7836,7 +7989,7 @@
       "4": { "STR": "869", "INT": "764", "DEX": "815", "MNT": "745" },
       "5": { "STR": "921", "INT": "811", "DEX": "799", "MNT": "867" }
     },
-    "order": 67
+    "order": 68
   },
   {
     "name": "Hannibal",
@@ -7947,7 +8100,7 @@
       "4": { "STR": "1829", "INT": "869", "DEX": "917", "MNT": "654" },
       "5": { "STR": "1983", "INT": "938", "DEX": "997", "MNT": "697" }
     },
-    "order": 68
+    "order": 69
   },
   {
     "name": "Aliana",
@@ -8067,7 +8220,7 @@
       "4": { "STR": "1184", "INT": "841", "DEX": "1396", "MNT": "853" },
       "5": { "STR": "1285", "INT": "901", "DEX": "1512", "MNT": "921" }
     },
-    "order": 70
+    "order": 71
   },
   {
     "name": "Allen",
@@ -8182,7 +8335,7 @@
       "4": { "STR": "814", "INT": "1560", "DEX": "821", "MNT": "1221" },
       "5": { "STR": "889", "INT": "1683", "DEX": "880", "MNT": "1310" }
     },
-    "order": 70
+    "order": 71
   },
   {
     "name": "MK-3",
@@ -8294,7 +8447,7 @@
       "4": { "STR": "1158", "INT": "1411", "DEX": "792", "MNT": "752" },
       "5": { "STR": "1243", "INT": "1514", "DEX": "846", "MNT": "807" }
     },
-    "order": 71
+    "order": 72
   },
   {
     "name": "Miho",
@@ -8410,7 +8563,7 @@
       "4": { "STR": "683", "INT": "774", "DEX": "683", "MNT": "674" },
       "5": { "STR": "728", "INT": "819", "DEX": "727", "MNT": "716" }
     },
-    "order": 72
+    "order": 73
   },
   {
     "name": "Captain Jack",
@@ -8525,7 +8678,7 @@
       "4": { "STR": "679", "INT": "672", "DEX": "784", "MNT": "685" },
       "5": { "STR": "724", "INT": "718", "DEX": "826", "MNT": "728" }
     },
-    "order": 73
+    "order": 74
   },
   {
     "name": "Psyche",
@@ -8638,7 +8791,7 @@
       "4": { "STR": "682", "INT": "704", "DEX": "691", "MNT": "783" },
       "5": { "STR": "727", "INT": "752", "DEX": "738", "MNT": "829" }
     },
-    "order": 74
+    "order": 75
   },
   {
     "name": "Hunter G",
@@ -8751,7 +8904,7 @@
       "4": { "STR": "758", "INT": "749", "DEX": "858", "MNT": "740" },
       "5": { "STR": "810", "INT": "800", "DEX": "911", "MNT": "793" }
     },
-    "order": 75
+    "order": 76
   },
   {
     "name": "Soldia",
@@ -8864,7 +9017,7 @@
       "4": { "STR": "836", "INT": "750", "DEX": "754", "MNT": "753" },
       "5": { "STR": "886", "INT": "802", "DEX": "807", "MNT": "807" }
     },
-    "order": 76
+    "order": 77
   },
   {
     "name": "Bora",
@@ -8979,7 +9132,7 @@
       "4": { "STR": "883", "INT": "785", "DEX": "781", "MNT": "784" },
       "5": { "STR": "932", "INT": "837", "DEX": "836", "MNT": "840" }
     },
-    "order": 77
+    "order": 78
   },
   {
     "name": "Lucia",
@@ -9090,7 +9243,7 @@
       "4": { "STR": "741", "INT": "758", "DEX": "838", "MNT": "757" },
       "5": { "STR": "792", "INT": "811", "DEX": "891", "MNT": "812" }
     },
-    "order": 78
+    "order": 79
   },
   {
     "name": "Hellfire",
@@ -9205,7 +9358,7 @@
       "4": { "STR": "719", "INT": "723", "DEX": "724", "MNT": "805" },
       "5": { "STR": "763", "INT": "770", "DEX": "770", "MNT": "849" }
     },
-    "order": 79
+    "order": 80
   },
   {
     "name": "Zhizi",
@@ -9326,7 +9479,7 @@
       "4": { "STR": "824", "INT": "714", "DEX": "714", "MNT": "730" },
       "5": { "STR": "874", "INT": "767", "DEX": "763", "MNT": "777" }
     },
-    "order": 80
+    "order": 81
   },
   {
     "name": "Base Angel",
@@ -9442,7 +9595,7 @@
       "4": { "STR": "760", "INT": "765", "DEX": "765", "MNT": "848" },
       "5": { "STR": "812", "INT": "817", "DEX": "815", "MNT": "900" }
     },
-    "order": 81
+    "order": 82
   },
   {
     "name": "Onestone",
@@ -9563,7 +9716,7 @@
       "4": { "STR": "933", "INT": "840", "DEX": "836", "MNT": "825" },
       "5": { "STR": "984", "INT": "895", "DEX": "890", "MNT": "876" }
     },
-    "order": 82
+    "order": 83
   },
   {
     "name": "Boomiger",
@@ -9577,7 +9730,7 @@
       "two_robots",
       "hathor_2"
     ],
-    "bonusTeam": ["Zenonia Knights"],
+    "bonusTeam": ["Zenonia Knights", "Forest Elves"],
     "skills": {
       "1": {
         "super_left_arm": 1,
@@ -9683,7 +9836,7 @@
       "4": { "STR": "878", "INT": "987", "DEX": "893", "MNT": "872" },
       "5": { "STR": "936", "INT": "1046", "DEX": "949", "MNT": "926" }
     },
-    "order": 83
+    "order": 84
   },
   {
     "name": "Yomi",
@@ -9799,7 +9952,7 @@
       "4": { "STR": "695", "INT": "699", "DEX": "685", "MNT": "784" },
       "5": { "STR": "737", "INT": "742", "DEX": "728", "MNT": "825" }
     },
-    "order": 84
+    "order": 85
   },
   {
     "name": "Riki",
@@ -9908,7 +10061,7 @@
       "4": { "STR": "770", "INT": "554", "DEX": "616", "MNT": "616" },
       "5": { "STR": "804", "INT": "584", "DEX": "665", "MNT": "659" }
     },
-    "order": 85
+    "order": 86
   },
   {
     "name": "Lina",
@@ -10015,7 +10168,7 @@
       "4": { "STR": "573", "INT": "780", "DEX": "585", "MNT": "644" },
       "5": { "STR": "614", "INT": "821", "DEX": "619", "MNT": "696" }
     },
-    "order": 86
+    "order": 87
   },
   {
     "name": "Kate",
@@ -10123,7 +10276,7 @@
       "4": { "STR": "640", "INT": "767", "DEX": "627", "MNT": "526" },
       "5": { "STR": "689", "INT": "796", "DEX": "676", "MNT": "558" }
     },
-    "order": 87
+    "order": 88
   },
   {
     "name": "Rex",
@@ -10230,7 +10383,7 @@
       "4": { "STR": "489", "INT": "485", "DEX": "613", "MNT": "480" },
       "5": { "STR": "521", "INT": "518", "DEX": "635", "MNT": "504" }
     },
-    "order": 88
+    "order": 89
   },
   {
     "name": "Flora",
@@ -10338,7 +10491,7 @@
       "4": { "STR": "429", "INT": "412", "DEX": "635", "MNT": "403" },
       "5": { "STR": "453", "INT": "434", "DEX": "651", "MNT": "424" }
     },
-    "order": 89
+    "order": 90
   },
   {
     "name": "Paris",
@@ -10444,7 +10597,7 @@
       "4": { "STR": "572", "INT": "554", "DEX": "683", "MNT": "568" },
       "5": { "STR": "614", "INT": "597", "DEX": "716", "MNT": "602" }
     },
-    "order": 90
+    "order": 91
   },
   {
     "name": "Eia",
@@ -10550,7 +10703,7 @@
       "4": { "STR": "556", "INT": "697", "DEX": "574", "MNT": "557" },
       "5": { "STR": "587", "INT": "732", "DEX": "611", "MNT": "587" }
     },
-    "order": 91
+    "order": 92
   },
   {
     "name": "Patricia",
@@ -10659,7 +10812,7 @@
       "4": { "STR": "743", "INT": "609", "DEX": "601", "MNT": "619" },
       "5": { "STR": "772", "INT": "658", "DEX": "644", "MNT": "658" }
     },
-    "order": 92
+    "order": 93
   },
   {
     "name": "Siren",
@@ -10768,7 +10921,7 @@
       "4": { "STR": "616", "INT": "614", "DEX": "628", "MNT": "739" },
       "5": { "STR": "653", "INT": "662", "DEX": "677", "MNT": "773" }
     },
-    "order": 93
+    "order": 94
   },
   {
     "name": "Brokel",
@@ -10873,7 +11026,7 @@
       "4": { "STR": "795", "INT": "582", "DEX": "591", "MNT": "590" },
       "5": { "STR": "834", "INT": "619", "DEX": "631", "MNT": "631" }
     },
-    "order": 94
+    "order": 95
   },
   {
     "name": "Gladius",
@@ -10979,7 +11132,7 @@
       "4": { "STR": "604", "INT": "596", "DEX": "626", "MNT": "750" },
       "5": { "STR": "645", "INT": "640", "DEX": "669", "MNT": "789" }
     },
-    "order": 95
+    "order": 96
   },
   {
     "name": "Pazuzu",
@@ -11088,7 +11241,7 @@
       "4": { "STR": "731", "INT": "616", "DEX": "612", "MNT": "631" },
       "5": { "STR": "768", "INT": "652", "DEX": "658", "MNT": "671" }
     },
-    "order": 96
+    "order": 97
   },
 
   {
@@ -11193,7 +11346,7 @@
       "4": { "STR": "492", "INT": "496", "DEX": "610", "MNT": "479" },
       "5": { "STR": "520", "INT": "532", "DEX": "630", "MNT": "514" }
     },
-    "order": 97
+    "order": 98
   },
   {
     "name": "Zen",
@@ -11299,7 +11452,7 @@
       "4": { "STR": "610", "INT": "610", "DEX": "609", "MNT": "746" },
       "5": { "STR": "648", "INT": "654", "DEX": "654", "MNT": "784" }
     },
-    "order": 98
+    "order": 99
   },
   {
     "name": "Pale",
@@ -11406,7 +11559,7 @@
       "4": { "STR": "494", "INT": "507", "DEX": "508", "MNT": "619" },
       "5": { "STR": "525", "INT": "544", "DEX": "536", "MNT": "634" }
     },
-    "order": 99
+    "order": 100
   },
   {
     "name": "Talas",
@@ -11512,7 +11665,7 @@
       "4": { "STR": "481", "INT": "501", "DEX": "624", "MNT": "468" },
       "5": { "STR": "506", "INT": "525", "DEX": "645", "MNT": "498" }
     },
-    "order": 100
+    "order": 101
   },
   {
     "name": "Acro",
@@ -11616,7 +11769,7 @@
       "4": { "STR": "621", "INT": "509", "DEX": "494", "MNT": "497" },
       "5": { "STR": "647", "INT": "538", "DEX": "519", "MNT": "533" }
     },
-    "order": 101
+    "order": 102
   },
   {
     "name": "Soun",
@@ -11724,7 +11877,7 @@
       "4": { "STR": "624", "INT": "486", "DEX": "468", "MNT": "484" },
       "5": { "STR": "647", "INT": "507", "DEX": "497", "MNT": "510" }
     },
-    "order": 102
+    "order": 103
   },
   {
     "name": "Nio",
@@ -11831,7 +11984,7 @@
       "4": { "STR": "735", "INT": "602", "DEX": "611", "MNT": "621" },
       "5": { "STR": "762", "INT": "646", "DEX": "654", "MNT": "664" }
     },
-    "order": 103
+    "order": 104
   },
   {
     "name": "Liuxia",
@@ -11932,7 +12085,7 @@
       "4": { "STR": "497", "INT": "506", "DEX": "497", "MNT": "613" },
       "5": { "STR": "532", "INT": "533", "DEX": "532", "MNT": "627" }
     },
-    "order": 104
+    "order": 105
   },
   {
     "name": "Liuxing",
@@ -12037,7 +12190,7 @@
       "4": { "STR": "614", "INT": "470", "DEX": "471", "MNT": "475" },
       "5": { "STR": "638", "INT": "496", "DEX": "495", "MNT": "496" }
     },
-    "order": 105
+    "order": 106
   },
   {
     "name": "Nahyun",
@@ -12142,7 +12295,7 @@
       "4": { "STR": "408", "INT": "425", "DEX": "402", "MNT": "531" },
       "5": { "STR": "430", "INT": "444", "DEX": "426", "MNT": "539" }
     },
-    "order": 106
+    "order": 107
   },
   {
     "name": "Eunwoo",
@@ -12247,7 +12400,7 @@
       "4": { "STR": "416", "INT": "405", "DEX": "405", "MNT": "538" },
       "5": { "STR": "437", "INT": "426", "DEX": "432", "MNT": "546" }
     },
-    "order": 107
+    "order": 108
   },
   {
     "name": "Genie",
@@ -12354,7 +12507,7 @@
       "4": { "STR": "493", "INT": "484", "DEX": "592", "MNT": "483" },
       "5": { "STR": "519", "INT": "513", "DEX": "611", "MNT": "510" }
     },
-    "order": 108
+    "order": 109
   },
   {
     "name": "Marvel",
@@ -12455,7 +12608,7 @@
       "4": { "STR": "510", "INT": "660", "DEX": "513", "MNT": "514" },
       "5": { "STR": "536", "INT": "682", "DEX": "540", "MNT": "545" }
     },
-    "order": 109
+    "order": 110
   },
   {
     "name": "Titania",
@@ -12563,7 +12716,7 @@
       "4": { "STR": "497", "INT": "624", "DEX": "491", "MNT": "474" },
       "5": { "STR": "520", "INT": "648", "DEX": "527", "MNT": "507" }
     },
-    "order": 110
+    "order": 111
   },
   {
     "name": "Kalisto",
@@ -12669,7 +12822,7 @@
       "4": { "STR": "491", "INT": "616", "DEX": "494", "MNT": "499" },
       "5": { "STR": "516", "INT": "634", "DEX": "526", "MNT": "528" }
     },
-    "order": 111
+    "order": 112
   },
   {
     "name": "Brant",
@@ -12778,7 +12931,7 @@
       "4": { "STR": "496", "INT": "618", "DEX": "469", "MNT": "501" },
       "5": { "STR": "521", "INT": "635", "DEX": "502", "MNT": "527" }
     },
-    "order": 112
+    "order": 113
   },
   {
     "name": "Drucker",
@@ -12882,7 +13035,7 @@
       "4": { "STR": "573", "INT": "565", "DEX": "571", "MNT": "705" },
       "5": { "STR": "606", "INT": "605", "DEX": "604", "MNT": "740" }
     },
-    "order": 113
+    "order": 114
   },
   {
     "name": "Daisy",
@@ -12988,7 +13141,7 @@
       "4": { "STR": "501", "INT": "602", "DEX": "479", "MNT": "481" },
       "5": { "STR": "526", "INT": "622", "DEX": "500", "MNT": "509" }
     },
-    "order": 114
+    "order": 115
   },
   {
     "name": "Phrygia",
@@ -13097,7 +13250,7 @@
       "4": { "STR": "639", "INT": "508", "DEX": "506", "MNT": "523" },
       "5": { "STR": "660", "INT": "539", "DEX": "543", "MNT": "556" }
     },
-    "order": 115
+    "order": 116
   },
   {
     "name": "Wonhee",
@@ -13204,7 +13357,7 @@
       "4": { "STR": "522", "INT": "415", "DEX": "397", "MNT": "398" },
       "5": { "STR": "530", "INT": "441", "DEX": "416", "MNT": "424" }
     },
-    "order": 116
+    "order": 117
   },
   {
     "name": "Hilary",
@@ -13310,7 +13463,7 @@
       "4": { "STR": "422", "INT": "568", "DEX": "417", "MNT": "433" },
       "5": { "STR": "446", "INT": "580", "DEX": "440", "MNT": "454" }
     },
-    "order": 117
+    "order": 118
   },
   {
     "name": "Anetta",
@@ -13423,7 +13576,7 @@
       "4": { "STR": "421", "INT": "399", "DEX": "421", "MNT": "533" },
       "5": { "STR": "446", "INT": "416", "DEX": "440", "MNT": "537" }
     },
-    "order": 118
+    "order": 119
   },
   {
     "name": "Shuri",
@@ -13537,7 +13690,7 @@
       "4": { "STR": "359", "INT": "410", "DEX": "383", "MNT": "554" },
       "5": { "STR": "378", "INT": "426", "DEX": "401", "MNT": "561" }
     },
-    "order": 119
+    "order": 120
   },
   {
     "name": "Popo",
@@ -13649,7 +13802,7 @@
       "4": { "STR": "436", "INT": "640", "DEX": "414", "MNT": "516" },
       "5": { "STR": "459", "INT": "667", "DEX": "430", "MNT": "555" }
     },
-    "order": 120
+    "order": 121
   },
   {
     "name": "Tera",
@@ -13762,7 +13915,7 @@
       "4": { "STR": "627", "INT": "621", "DEX": "603", "MNT": "739" },
       "5": { "STR": "670", "INT": "659", "DEX": "650", "MNT": "773" }
     },
-    "order": 121
+    "order": 122
   },
   {
     "name": "Cami",
@@ -13873,7 +14026,7 @@
       "4": { "STR": "617", "INT": "732", "DEX": "624", "MNT": "616" },
       "5": { "STR": "656", "INT": "765", "DEX": "672", "MNT": "663" }
     },
-    "order": 122
+    "order": 123
   },
   {
     "name": "Stinger",
@@ -13990,7 +14143,7 @@
       "4": { "STR": "598", "INT": "614", "DEX": "763", "MNT": "631" },
       "5": { "STR": "642", "INT": "658", "DEX": "791", "MNT": "676" }
     },
-    "order": 123
+    "order": 124
   },
   {
     "name": "Drake",
@@ -14103,7 +14256,7 @@
       "4": { "STR": "770", "INT": "554", "DEX": "616", "MNT": "616" },
       "5": { "STR": "804", "INT": "584", "DEX": "665", "MNT": "659" }
     },
-    "order": 124
+    "order": 125
   },
   {
     "name": "John Roger",
@@ -14216,7 +14369,7 @@
       "4": { "STR": "610", "INT": "612", "DEX": "624", "MNT": "771" },
       "5": { "STR": "658", "INT": "659", "DEX": "672", "MNT": "802" }
     },
-    "order": 125
+    "order": 126
   },
   {
     "name": "Dice",
@@ -14329,7 +14482,7 @@
       "4": { "STR": "614", "INT": "748", "DEX": "601", "MNT": "605" },
       "5": { "STR": "654", "INT": "776", "DEX": "647", "MNT": "648" }
     },
-    "order": 126
+    "order": 127
   },
   {
     "name": "Lupina",
@@ -14443,7 +14596,7 @@
       "4": { "STR": "625", "INT": "551", "DEX": "742", "MNT": "639" },
       "5": { "STR": "669", "INT": "580", "DEX": "776", "MNT": "684" }
     },
-    "order": 127
+    "order": 128
   },
   {
     "name": "Sherlia",
@@ -14554,7 +14707,7 @@
       "4": { "STR": "614", "INT": "745", "DEX": "619", "MNT": "638" },
       "5": { "STR": "663", "INT": "778", "DEX": "663", "MNT": "682" }
     },
-    "order": 128
+    "order": 129
   },
   {
     "name": "Amir",
@@ -14667,7 +14820,7 @@
       "4": { "STR": "811", "INT": "682", "DEX": "658", "MNT": "671" },
       "5": { "STR": "854", "INT": "737", "DEX": "706", "MNT": "726" }
     },
-    "order": 129
+    "order": 130
   },
   {
     "name": "Reuben",
@@ -14782,7 +14935,7 @@
       "4": { "STR": "635", "INT": "538", "DEX": "762", "MNT": "617" },
       "5": { "STR": "682", "INT": "566", "DEX": "792", "MNT": "662" }
     },
-    "order": 130
+    "order": 131
   },
   {
     "name": "Marcus",
@@ -14891,7 +15044,7 @@
       "4": { "STR": "736", "INT": "637", "DEX": "623", "MNT": "618" },
       "5": { "STR": "768", "INT": "678", "DEX": "670", "MNT": "668" }
     },
-    "order": 131
+    "order": 132
   },
   {
     "name": "Gryllson",
@@ -15000,7 +15153,7 @@
       "4": { "STR": "589", "INT": "585", "DEX": "749", "MNT": "609" },
       "5": { "STR": "633", "INT": "630", "DEX": "777", "MNT": "644" }
     },
-    "order": 132
+    "order": 133
   },
   {
     "name": "Wendell",
@@ -15115,7 +15268,7 @@
       "4": { "STR": "618", "INT": "607", "DEX": "723", "MNT": "594" },
       "5": { "STR": "657", "INT": "654", "DEX": "761", "MNT": "640" }
     },
-    "order": 133
+    "order": 134
   },
   {
     "name": "Snipe",
@@ -15229,7 +15382,7 @@
       "4": { "STR": "592", "INT": "585", "DEX": "806", "MNT": "597" },
       "5": { "STR": "626", "INT": "623", "DEX": "849", "MNT": "638" }
     },
-    "order": 134
+    "order": 135
   },
   {
     "name": "Wendy",
@@ -15339,7 +15492,7 @@
       "4": { "STR": "564", "INT": "700", "DEX": "572", "MNT": "593" },
       "5": { "STR": "599", "INT": "731", "DEX": "612", "MNT": "627" }
     },
-    "order": 135
+    "order": 136
   },
   {
     "name": "Serena",
@@ -15454,7 +15607,7 @@
       "4": { "STR": "480", "INT": "605", "DEX": "494", "MNT": "473" },
       "5": { "STR": "504", "INT": "618", "DEX": "526", "MNT": "502" }
     },
-    "order": 136
+    "order": 137
   },
   {
     "name": "Venomizer",
@@ -15566,7 +15719,7 @@
       "4": { "STR": "598", "INT": "719", "DEX": "610", "MNT": "614" },
       "5": { "STR": "644", "INT": "747", "DEX": "652", "MNT": "653" }
     },
-    "order": 137
+    "order": 138
   },
   {
     "name": "Magmizer",
@@ -15679,7 +15832,7 @@
       "4": { "STR": "793", "INT": "668", "DEX": "579", "MNT": "571" },
       "5": { "STR": "832", "INT": "712", "DEX": "624", "MNT": "611" }
     },
-    "order": 138
+    "order": 139
   },
   {
     "name": "Lilo",
@@ -15791,7 +15944,7 @@
       "4": { "STR": "505", "INT": "492", "DEX": "508", "MNT": "624" },
       "5": { "STR": "532", "INT": "526", "DEX": "536", "MNT": "647" }
     },
-    "order": 139
+    "order": 140
   },
   {
     "name": "Casta",
@@ -15904,7 +16057,7 @@
       "4": { "STR": "603", "INT": "619", "DEX": "740", "MNT": "614" },
       "5": { "STR": "648", "INT": "669", "DEX": "770", "MNT": "653" }
     },
-    "order": 140
+    "order": 141
   },
   {
     "name": "Firelord",
@@ -16017,7 +16170,7 @@
       "4": { "STR": "610", "INT": "741", "DEX": "598", "MNT": "629" },
       "5": { "STR": "651", "INT": "780", "DEX": "638", "MNT": "666" }
     },
-    "order": 141
+    "order": 142
   },
   {
     "name": "Aqualord",
@@ -16132,7 +16285,7 @@
       "4": { "STR": "545", "INT": "545", "DEX": "543", "MNT": "693" },
       "5": { "STR": "575", "INT": "575", "DEX": "579", "MNT": "722" }
     },
-    "order": 142
+    "order": 143
   },
   {
     "name": "Matilda",
@@ -16212,7 +16365,7 @@
       "4": { "STR": "465", "INT": "597", "DEX": "431", "MNT": "448" },
       "5": { "STR": "498", "INT": "621", "DEX": "453", "MNT": "482" }
     },
-    "order": 143
+    "order": 144
   },
   {
     "name": "Sarah",
@@ -16293,7 +16446,7 @@
       "4": { "STR": "450", "INT": "454", "DEX": "595", "MNT": "431" },
       "5": { "STR": "484", "INT": "482", "DEX": "615", "MNT": "458" }
     },
-    "order": 144
+    "order": 145
   },
   {
     "name": "Eva",
@@ -16379,7 +16532,7 @@
       "4": { "STR": "597", "INT": "421", "DEX": "437", "MNT": "451" },
       "5": { "STR": "628", "INT": "447", "DEX": "466", "MNT": "485" }
     },
-    "order": 145
+    "order": 146
   },
   {
     "name": "Liz",
@@ -16466,7 +16619,7 @@
       "4": { "STR": "456", "INT": "438", "DEX": "444", "MNT": "625" },
       "5": { "STR": "482", "INT": "466", "DEX": "479", "MNT": "655" }
     },
-    "order": 146
+    "order": 147
   },
   {
     "name": "Zett",
@@ -16558,7 +16711,7 @@
       "4": { "STR": "453", "INT": "455", "DEX": "590", "MNT": "456" },
       "5": { "STR": "485", "INT": "485", "DEX": "613", "MNT": "485" }
     },
-    "order": 147
+    "order": 148
   },
   {
     "name": "Kang",
@@ -16654,7 +16807,7 @@
       "4": { "STR": "599", "INT": "442", "DEX": "427", "MNT": "420" },
       "5": { "STR": "623", "INT": "466", "DEX": "448", "MNT": "450" }
     },
-    "order": 148
+    "order": 149
   },
   {
     "name": "Nick",
@@ -16745,7 +16898,7 @@
       "4": { "STR": "413", "INT": "601", "DEX": "432", "MNT": "447" },
       "5": { "STR": "442", "INT": "624", "DEX": "456", "MNT": "471" }
     },
-    "order": 149
+    "order": 150
   },
   {
     "name": "Roland",
@@ -16836,7 +16989,7 @@
       "4": { "STR": "452", "INT": "434", "DEX": "458", "MNT": "627" },
       "5": { "STR": "482", "INT": "460", "DEX": "492", "MNT": "653" }
     },
-    "order": 150
+    "order": 151
   },
   {
     "name": "Jorge",
@@ -16905,7 +17058,7 @@
       "4": { "STR": "319", "INT": "508", "DEX": "342", "MNT": "339" },
       "5": { "STR": "342", "INT": "531", "DEX": "366", "MNT": "366" }
     },
-    "order": 151
+    "order": 152
   },
   {
     "name": "Ruric",
@@ -16983,7 +17136,7 @@
       "4": { "STR": "367", "INT": "366", "DEX": "491", "MNT": "349" },
       "5": { "STR": "387", "INT": "392", "DEX": "506", "MNT": "369" }
     },
-    "order": 152
+    "order": 153
   },
   {
     "name": "Gabe",
@@ -17057,7 +17210,7 @@
       "4": { "STR": "507", "INT": "358", "DEX": "330", "MNT": "330" },
       "5": { "STR": "531", "INT": "381", "DEX": "350", "MNT": "353" }
     },
-    "order": 153
+    "order": 154
   },
   {
     "name": "Micky",
@@ -17136,7 +17289,7 @@
       "4": { "STR": "323", "INT": "348", "DEX": "332", "MNT": "487" },
       "5": { "STR": "344", "INT": "375", "DEX": "354", "MNT": "512" }
     },
-    "order": 154
+    "order": 155
   },
   {
     "name": "Choco",
@@ -17216,7 +17369,7 @@
       "4": { "STR": "320", "INT": "357", "DEX": "323", "MNT": "478" },
       "5": { "STR": "338", "INT": "375", "DEX": "338", "MNT": "498" }
     },
-    "order": 155
+    "order": 156
   },
   {
     "name": "Soda",
@@ -17279,7 +17432,7 @@
       "4": { "STR": "503", "INT": "343", "DEX": "353", "MNT": "332" },
       "5": { "STR": "525", "INT": "368", "DEX": "378", "MNT": "350" }
     },
-    "order": 156
+    "order": 157
   },
   {
     "name": "Mocha",
@@ -17362,7 +17515,7 @@
       "4": { "STR": "339", "INT": "327", "DEX": "481", "MNT": "336" },
       "5": { "STR": "363", "INT": "345", "DEX": "504", "MNT": "357" }
     },
-    "order": 157
+    "order": 158
   },
   {
     "name": "Frill",
@@ -17444,6 +17597,6 @@
       "4": { "STR": "348", "INT": "485", "DEX": "324", "MNT": "345" },
       "5": { "STR": "369", "INT": "503", "DEX": "347", "MNT": "369" }
     },
-    "order": 158
+    "order": 159
   }
 ]
