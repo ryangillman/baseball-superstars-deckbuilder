@@ -582,5 +582,17 @@
   "out_of_control": {
     "name": "Out of Control",
     "requiredTrainers": ["Claris", "Rowena"]
+  },
+  "deity_for_humans": {
+    "name": "Deity for Humans",
+    "requiredTrainers": ["Isis", "Hathor"]
+  },
+  "reward_for_faith": {
+    "name": "Reward for Faith",
+    "requiredTrainers": ["Isis", "Rowena"]
+  },
+  "speech_and_action": {
+    "name": "Speech and Action",
+    "requiredTrainers": ["Belita", "Isis"]
   }
 }
