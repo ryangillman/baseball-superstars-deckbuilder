@@ -235,7 +235,7 @@
     "position": "RP",
     "type": ["INT", "DEX"],
     "url": "https://baseball-superstars-2020.fandom.com/wiki/Bastet",
-    "comboEvents": ["hathor_1", "hathor_2"],
+    "comboEvents": ["hathor_1", "hathor_2", "deity_for_humans"],
     "bonusTeam": ["Cruel Pumas"],
     "skills": {
       "1": {
@@ -9811,8 +9811,7 @@
       "that_face",
       "neighbor_vs__problem",
       "two_robots",
-      "hathor_2",
-      "deity_for_humans"
+      "hathor_2"
     ],
     "bonusTeam": ["Zenonia Knights", "Forest Elves"],
     "skills": {
