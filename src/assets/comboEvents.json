@@ -594,5 +594,45 @@
   "speech_and_action": {
     "name": "Speech and Action",
     "requiredTrainers": ["Belita", "Isis"]
+  },
+  "loki_scissorhands": {
+    "name": "Loki Scissorhands",
+    "requiredTrainers": ["Loki", "Kai"]
+  },
+  "two_hustlers": {
+    "name": "Two Hustlers",
+    "requiredTrainers": ["Loki", "Flamesh"]
+  },
+  "meaning_of_family": {
+    "name": "Meaning of Family",
+    "requiredTrainers": ["Loki", "Nina"]
+  },
+  "a_clone___an_ai": {
+    "name": "A Clone & an AI",
+    "requiredTrainers": ["Sun Wukong", "Clefina"]
+  },
+  "duel": {
+    "name": "Duel",
+    "requiredTrainers": ["Sun Wukong", "Ara"]
+  },
+  "teachings": {
+    "name": "Teachings",
+    "requiredTrainers": ["Sun Wukong", "Nox"]
+  },
+  "white_lie": {
+    "name": "White Lie",
+    "requiredTrainers": ["Nox", "Clefina"]
+  },
+  "slight_sympathy": {
+    "name": "Slight Sympathy",
+    "requiredTrainers": ["Nox", "Chael"]
+  },
+  "medicine__please_": {
+    "name": "Medicine, Please!",
+    "requiredTrainers": ["Echo", "Claris"]
+  },
+  "empty_dreams": {
+    "name": "Empty Dreams",
+    "requiredTrainers": ["Echo", "Valentine"]
   }
 }

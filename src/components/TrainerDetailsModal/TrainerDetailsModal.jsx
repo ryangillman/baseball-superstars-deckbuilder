@@ -79,10 +79,14 @@ const TrainerDetailsModal = ({ isOpen, onClose, trainer }) => {
                 </Flex>
               )}
             </Flex>
-            <Heading size='lg' textAlign='center' mb={3}>
-              Stats
-            </Heading>
-            <TrainerStatsTable stats={trainer.stats} />
+            {Object.keys(trainer.stats).length > 0 && (
+              <>
+                <Heading size='lg' textAlign='center' mb={3}>
+                  Stats
+                </Heading>
+                <TrainerStatsTable stats={trainer.stats} />
+              </>
+            )}
             <Box mt={10}>
               <Heading size='lg' textAlign='center'>
                 Skills
