@@ -79,7 +79,7 @@ const TrainerDetailsModal = ({ isOpen, onClose, trainer }) => {
                 </Flex>
               )}
             </Flex>
-            {Object.keys(trainer.stats).length > 0 && (
+            {Object.keys(trainer?.stats || {}).length > 0 && (
               <>
                 <Heading size='lg' textAlign='center' mb={3}>
                   Stats
