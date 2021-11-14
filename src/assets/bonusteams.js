@@ -22,6 +22,9 @@ const positions = [
   {
     value: 'Forest Elves',
     label: 'Forest Elves',
+  },{
+    value: 'Summoners War',
+    label: 'Summoners War',
   },
 ];
 

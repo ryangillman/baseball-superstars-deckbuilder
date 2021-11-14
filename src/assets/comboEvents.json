@@ -634,5 +634,65 @@
   "empty_dreams": {
     "name": "Empty Dreams",
     "requiredTrainers": ["Echo", "Valentine"]
+  },
+  "a_big_scoop_":{
+    "name": "A Big Scoop!",
+    "requiredTrainers": ["Hayley", "Violet"]
+  },
+  "otherworldly_scoop_":{
+    "name": "Otherworldly Scoop!",
+    "requiredTrainers": ["Hayley", "Regret"]
+  },
+  "otherworldly_scoop_2":{
+    "name": "Otherworldly Scoop!",
+    "requiredTrainers": ["Hayley", "Artamiel"]
+  },
+  "cozy_light_and_warm_darkness":{
+    "name": "Otherworldly Scoop!",
+    "requiredTrainers": ["Nicki", "Artamiel"]
+  },
+  "innocent_power":{
+    "name": "Innocent Power",
+    "requiredTrainers": ["Eve", "Artamiel"]
+  },
+  "umbrella_magic_":{
+    "name": "Umbrella Magic",
+    "requiredTrainers": ["Nicki", "Psyker"]
+  },
+  "meaning_of_family2":{
+    "name": "Meaning of Family",
+    "requiredTrainers": ["Nicki", "Echo"]
+  },
+  "potential_ally":{
+    "name": "Potential Ally",
+    "requiredTrainers": ["Camilla", "Mav"]
+  },
+  "dimension_duel_1":{
+    "name": "Dimension Duel 1: The Best Warrior",
+    "requiredTrainers": ["Camilla", "Tsubaki"]
+  },
+  "dimension_duel_2":{
+    "name": "Dimension Duel 2: True Master",
+    "requiredTrainers": ["Camilla", "Kai"]
+  },
+  "celebrity_talent":{
+    "name": "Celebrity Talent",
+    "requiredTrainers": ["King Tiger", "Mav"]
+  },
+  "mistaken_desire":{
+    "name": "Mistaken Desire",
+    "requiredTrainers": ["Flamesh", "Mav"]
+  },
+  "speed_racer_":{
+    "name": "Speed Racer!",
+    "requiredTrainers": ["Hyper", "Ara"]
+  },
+  "hyper_the_troublemaker":{
+    "name": "Hyper the Troublemaker",
+    "requiredTrainers": ["Hyper", "Caroline"]
+  },
+  "music_preferences":{
+    "name": "Music Preferences",
+    "requiredTrainers": ["Hyper", "Michaella"]
   }
 }
