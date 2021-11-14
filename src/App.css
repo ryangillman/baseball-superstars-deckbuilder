@@ -124,6 +124,9 @@ body {
 .team-forest-elves {
   background-image: url('./assets/teams/forest-elves.png');
 }
+.team-summoners-war {
+  background-image: url('./assets/teams/summoners-war.png');
+}
 
 @keyframes App-logo-spin {
   from {

@@ -30,6 +30,10 @@ const TeamIcon = ({ team }) => {
       return (
         <div className='team-icon team-forest-elves' alt={team} title={team} />
       );
+    case 'Summoners War':
+      return (
+        <div className='team-icon team-summoners-war' alt={team} title={team} />
+      );
     default:
       return null;
   }
