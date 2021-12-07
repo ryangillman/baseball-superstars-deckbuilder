@@ -2681,7 +2681,7 @@
         "hit_master": 2,
         "provoke": 1,
         "dash": 2,
-        "if_defense_god": 1,
+        "if_defense_god": 2,
         "four_seam_hunter": 3,
         "gambler": 2
       }
