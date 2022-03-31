@@ -64,7 +64,7 @@ const getSkillGradeFactor = (skill) => {
 };
 
 const getSkillValue = (level, skillGradeFactor) => {
-  const skillValues = { 1: 1, 2: 2, 3: 3, 4: 5, 5: 8 };
+  const skillValues = { 1: 1, 2: 2.25, 3: 3.75, 4: 6, 5: 10 };
   return skillValues[level] * skillGradeFactor;
 };
 
